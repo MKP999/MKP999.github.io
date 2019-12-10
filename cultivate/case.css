@@ -1,0 +1,541 @@
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+header {
+  background: url("images/banner.jpg") no-repeat top center;
+  background-size: cover;
+  padding-top: 30px;
+}
+header .nav {
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  line-height: 60px;
+}
+header .nav ul.menu {
+  box-sizing: border-box;
+}
+header .nav ul.menu li {
+  float: left;
+  text-align: center;
+  margin-left: 20px;
+  text-transform: capitalize;
+}
+header .nav ul.menu li::after {
+  content: "/";
+  color: white;
+  margin-left: 20px;
+}
+header .nav ul.menu li:last-child::after {
+  content: "";
+}
+header .nav ul.menu li:first-child a {
+  color: yellow;
+  border-top: 4px solid yellow;
+}
+header .nav ul.menu a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.5s;
+}
+header .nav ul.menu a:hover {
+  color: yellow;
+  border-top: 4px solid yellow;
+}
+header .nav form {
+  position: relative;
+}
+header .nav form label {
+  position: relative;
+}
+header .nav form label input::placeholder {
+  color: white;
+}
+header .nav form label input:first-child {
+  padding: 6px 10px;
+  color: white;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+  height: 40px;
+}
+header .nav form label input:last-child {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  background: url("images/search.png") no-repeat center;
+  text-indent: 10em;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  cursor: pointer;
+}
+header .banner {
+  margin: 150px auto;
+  transition: all 1s;
+  transform: scale(0);
+}
+header .banner.active {
+  transform: scale(1.3);
+}
+header .banner h1 {
+  color: white;
+  font-size: 48px;
+  line-height: 1.5em;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  font-weight: bold;
+}
+header ul.gird {
+  position: relative;
+  top: 120px;
+  left: 0;
+}
+header ul.gird::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+header ul.gird li {
+  float: left;
+  text-align: center;
+  transition: all 1s;
+  position: relative;
+}
+header ul.gird li:first-child {
+  left: -500px;
+}
+header ul.gird li:first-child.active {
+  left: 0;
+}
+header ul.gird li:nth-child(2) {
+  top: -300px;
+}
+header ul.gird li:nth-child(2).active {
+  top: 0;
+}
+header ul.gird li:nth-child(3) {
+  top: 300px;
+}
+header ul.gird li:nth-child(3).active {
+  top: 0;
+}
+header ul.gird li:last-child {
+  left: 500px;
+}
+header ul.gird li:last-child.active {
+  left: 0;
+}
+header ul.gird li .card {
+  margin: 0 15px;
+  background: #16a667;
+  padding: 30px 15px;
+  transition: all 1.5s;
+}
+header ul.gird li .card img {
+  border-radius: 50%;
+  border: 8px solid white;
+  padding: 15px;
+}
+header ul.gird li .card img:hover {
+  transform: rotateY(360deg);
+  transition: all 0.5s;
+}
+header ul.gird li .card h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  line-height: 2em;
+}
+header ul.gird li .card p {
+  font-size: 14px;
+  color: white;
+  line-height: 1.5em;
+}
+section.about {
+  background: lightgray;
+  overflow: hidden;
+  padding-top: 150px;
+  padding-bottom: 40px;
+}
+section.about h3 {
+  width: 1140px;
+  margin: 0 auto;
+  font-size: 35px;
+  font-weight: bolder;
+  line-height: 2.5em;
+}
+section.about .content img {
+  float: left;
+  transition: all 1s;
+  position: relative;
+  left: 1500px;
+}
+section.about .content img.active {
+  left: 0;
+}
+section.about .content p {
+  line-height: 1.5em;
+  margin-top: 15px;
+  position: relative;
+  transition: all 1s;
+  left: -1500px;
+}
+section.about .content p.active {
+  left: 0;
+}
+section.services {
+  background: #37353b;
+  padding-bottom: 50px;
+}
+section.services h1 {
+  width: 1140px;
+  margin: 0 auto;
+  font-size: 35px;
+  color: white;
+  font-weight: bolder;
+  line-height: 4em;
+}
+section.services ul.gird {
+  overflow: hidden;
+  color: white;
+}
+section.services ul.gird li {
+  float: left;
+  text-align: center;
+  transition: all 1.5s;
+  position: relative;
+}
+section.services ul.gird li:first-child {
+  left: -500px;
+}
+section.services ul.gird li:first-child.active {
+  left: 0;
+}
+section.services ul.gird li:nth-child(2) {
+  top: -400px;
+}
+section.services ul.gird li:nth-child(2).active {
+  top: 0;
+}
+section.services ul.gird li:last-child {
+  left: 500px;
+}
+section.services ul.gird li:last-child.active {
+  left: 0;
+}
+section.services ul.gird li .card {
+  margin: 0 15px;
+  padding: 0 10px;
+}
+section.services ul.gird li .card img {
+  background: #16a667;
+  border-radius: 10px;
+  width: 90px;
+  height: 90px;
+}
+section.services ul.gird li .card img:hover {
+  background: orange;
+}
+section.services ul.gird li .card h3 {
+  font-size: 18px;
+  line-height: 2.5em;
+  font-weight: bold;
+}
+section.services ul.gird li .card p {
+  color: gray;
+}
+section.works {
+  background: lightgray;
+  padding-bottom: 50px;
+}
+section.works h3 {
+  width: 1140px;
+  margin: 0 auto;
+  font-size: 35px;
+  font-weight: bolder;
+  line-height: 3.5em;
+}
+section.works ul.gird::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+section.works ul.gird li {
+  padding: 0;
+  float: left;
+  position: relative;
+}
+section.works ul.gird li:hover::after {
+  transform: scale(1);
+}
+section.works ul.gird li::after {
+  content: "";
+  background: url("images/magnify.png") no-repeat center rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 0 white;
+  z-index: 1;
+}
+section.works ul.gird li img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+section.news {
+  padding-bottom: 50px;
+}
+section.news h3 {
+  font-size: 35px;
+  font-weight: bolder;
+  line-height: 3.5em;
+  width: 1140px;
+  margin: 0 auto;
+}
+section.news ul.grid {
+  overflow: hidden;
+}
+section.news ul.grid li {
+  float: left;
+  text-align: left;
+  position: relative;
+  transition: all 2s;
+}
+section.news ul.grid li:first-child {
+  left: -500px;
+}
+section.news ul.grid li:first-child.active {
+  left: 0;
+}
+section.news ul.grid li:nth-child(2) {
+  opacity: 0;
+}
+section.news ul.grid li:nth-child(2).active {
+  opacity: 1;
+}
+section.news ul.grid li:last-child {
+  left: 500px;
+}
+section.news ul.grid li:last-child.active {
+  left: 0;
+}
+section.news ul.grid li .card {
+  margin: 15px 15px;
+}
+section.news ul.grid li .card img {
+  width: 100%;
+  height: 100%;
+}
+section.news ul.grid li .card h5 {
+  font-size: 18px;
+  line-height: 2.5em;
+  font-weight: bolder;
+  cursor: pointer;
+}
+section.news ul.grid li .card p {
+  color: gray;
+  line-height: 1.5em;
+  margin: 10px 10px;
+}
+section.news ul.grid li .card p a {
+  text-decoration: none;
+}
+section.news ul.grid li .card p a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+section.news ul.grid li .card .button {
+  width: 120px;
+  height: 40px;
+  background: orange;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  text-transform: capitalize;
+  position: relative;
+  cursor: pointer;
+}
+section.news ul.grid li .card .button:hover::after {
+  transition: all 0.5s;
+  transform: rotateX(90deg);
+}
+section.news ul.grid li .card .button b {
+  z-index: 9;
+  position: relative;
+}
+section.news ul.grid li .card .button::after {
+  content: "";
+  background: #16a667;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.footer .contain {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background: #37353b;
+}
+.footer .contain ul.gird {
+  overflow: hidden;
+}
+.footer .contain ul.gird li.part {
+  float: left;
+  transition: all 1.5s;
+  position: relative;
+}
+.footer .contain ul.gird li.part:first-child {
+  left: -500px;
+}
+.footer .contain ul.gird li.part:first-child.active {
+  left: 0;
+}
+.footer .contain ul.gird li.part:nth-child(2) {
+  opacity: 0;
+}
+.footer .contain ul.gird li.part:nth-child(2).active {
+  opacity: 1;
+}
+.footer .contain ul.gird li.part:last-child {
+  left: 500px;
+}
+.footer .contain ul.gird li.part:last-child.active {
+  left: 0;
+}
+.footer .contain ul.gird li.part .events h3 {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 3em;
+}
+.footer .contain ul.gird li.part .events .namecard {
+  overflow: hidden;
+  margin-top: 15px;
+}
+.footer .contain ul.gird li.part .events .namecard img {
+  float: left;
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+}
+.footer .contain ul.gird li.part .events .namecard h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  line-height: 2em;
+}
+.footer .contain ul.gird li.part .events .namecard p {
+  color: gray;
+  line-height: 2em;
+  font-size: 14px;
+}
+.footer .contain ul.gird ul.catagories h3 {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 3em;
+}
+.footer .contain ul.gird ul.catagories li {
+  list-style: url(images/list-arrow.png);
+  color: gray;
+  line-height: 3em;
+  cursor: pointer;
+}
+.footer .contain ul.gird ul.catagories li:hover {
+  color: orange;
+}
+.footer .contain ul.gird .contact h3 {
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 3em;
+}
+.footer .contain ul.gird .contact li {
+  overflow: hidden;
+  margin-top: 30px;
+}
+.footer .contain ul.gird .contact li img {
+  float: left;
+  width: 48px;
+  height: 50px;
+  margin-right: 10px;
+  background: url(images/img-sprite1.png) no-repeat;
+  background-position-x: -220px;
+}
+.footer .contain ul.gird .contact li:nth-child(2) img {
+  background-position-x: -255px;
+}
+.footer .contain ul.gird .contact li:nth-child(3) img {
+  background-position-x: -298px;
+}
+.footer .contain ul.gird .contact li p {
+  margin-bottom: 10px;
+  color: gray;
+}
+.footer .end {
+  padding-top: 50px;
+  font-size: 0;
+}
+.footer .end ul.logo {
+  margin: 0 auto;
+  text-align: center;
+  transition: all 1s;
+  opacity: 0;
+}
+.footer .end ul.logo.active {
+  opacity: 1;
+}
+.footer .end ul.logo li {
+  background: url(images/img-sprite1.png) no-repeat;
+  width: 55px;
+  height: 55px;
+  display: inline-block;
+  margin: 0 5px;
+}
+.footer .end ul.logo li:nth-child(2) {
+  background-position-x: -110px;
+}
+.footer .end ul.logo li:nth-child(3) {
+  background-position-x: -165px;
+}
+.footer .end ul.logo li::nth-child(4) {
+  background-position-x: -220px;
+}
+.footer .end .menu {
+  text-align: center;
+  margin: 30px 0;
+}
+.footer .end .copyright {
+  text-align: center;
+  padding-bottom: 50px;
+  position: relative;
+  transition: all 1.5s;
+  left: -1000px;
+}
+.footer .end .copyright.active {
+  left: 0;
+}
+.footer .end .copyright p {
+  font-size: 18px;
+}
+.footer .end .copyright p b {
+  font-size: 22px;
+}
+.footer a {
+  width: 50px;
+  height: 26px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: url("images/to-top2.png") no-repeat center;
+}
+/*# sourceMappingURL=./case.css.map */
