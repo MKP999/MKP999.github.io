@@ -1,0 +1,109 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.stage {
+  width: 200%;
+  height: 100%;
+  background: red;
+  margin-left: 0%;
+  transition: all 0.3s;
+}
+.stage .game-start {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-position: center 0px;
+  background-repeat: repeat-y;
+  position: relative;
+  background-image: url("../images/background-start.png");
+}
+.stage .game-start button.start {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+  line-height: 30px;
+  background: #c4c9ca;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 30px;
+  display: block;
+  bottom: 100px;
+}
+.stage .game {
+  width: 50%;
+  height: 100%;
+  float: left;
+  background-size: cover;
+  background-position: center 0px;
+  background-repeat: repeat-y;
+  position: relative;
+  background-image: url("../images/background-game.png");
+}
+.stage .game img {
+  position: absolute;
+}
+.stage .game .score {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.stage .game .score span {
+  display: none;
+  margin: 20px;
+}
+.stage .game .score span:nth-child(1) {
+  float: left;
+}
+.stage .game .score span:nth-child(2) {
+  float: right;
+}
+.stage .game .ranking {
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid black;
+  transition: all 0.3s;
+  position: relative;
+  z-index: 9;
+}
+.stage .game .ranking table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #c3c8c9;
+}
+.stage .game .ranking table td,
+.stage .game .ranking table th {
+  border: 1px solid black;
+  text-align: center;
+  line-height: 24px;
+}
+.stage .game .dead {
+  transition: all 0.3s;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -100px;
+}
+.stage .game .dead button {
+  position: absolute;
+  left: 50%;
+  width: 120px;
+  margin-left: -60px;
+  line-height: 30px;
+  background: #c4c9ca;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 30px;
+  display: block;
+  position: static;
+  margin: 10px auto;
+  z-index: 9;
+  background: #c3c8c9;
+}
+/*# sourceMappingURL=./style.css.map */

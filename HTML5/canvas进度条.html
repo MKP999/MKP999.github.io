@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas进度条</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(#020a5a,#00060f);
+        }
+        .stage {
+            position: absolute;
+            width: 1000px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <canvas id="canvas" width="1000" height="400" "></canvas>
+    </div>
+
+    <script>
+        /** @type{HTMLCanvasElement}*/
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = "#999999";
+        ctx.fillRect(80, 80, 800, 30);
+
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(80, 80, 600, 30);
+
+
+        let bar = 0;
+        let frame = 0;
+        let balls = [];
+        //随机数字 
+        function randomNumer(n, m, int) {
+            if (int) {
+                return Math.floor(Math.random() * (m - n) + n);
+            } else {
+                return Math.random() * (m - n) + n;
+            }
+        }
+
+        //随机颜色
+        function randomColor() {
+            return `rgba(${randomNumer(50, 200, true)},${randomNumer(50, 200, true)},${randomNumer(50, 200, true)})`;
+        }
+
+        //小球构造器
+        class Ball {
+            constructor(...rest) {
+                [this.x, this.y, this.r, this.color] = rest;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+                ctx.closePath();
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            createSpeed(n,m,int){
+                this.sx = -randomNumer(n,m,int);
+                this.sy = -randomNumer(n,m,int);
+            }
+            move(){
+                this.x += this.sx/10;
+                this.y += this.sy/10;
+            }
+            updata(){
+                this.sy += 0.1;
+                this.r -= 0.01;
+                if (this.r <= 0) {
+                    this.r = 0;
+                }
+            }
+
+        }
+        
+        setInterval(() => {
+            frame++;
+            bar = bar <= 800 ? ++bar : 800;
+
+            //清空画布
+            ctx.clearRect(0, 0, 1000, 400);
+
+            //进度条底部
+            ctx.fillStyle = "#999999";
+            ctx.fillRect(80, 80, 800, 30);
+
+            //当前进度条
+            if (bar <= 800) {
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(80, 80, bar, 30);
+            } else {
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(80, 80, 800, 30);
+            }
+
+            //生成小球
+            if (frame % 15) {
+                let b = new Ball(bar + 80, 80, randomNumer(1,5,true), randomColor());
+                balls.push(b);
+                b.draw();
+                //初始化小球速度
+                b.createSpeed(2,10,false);
+            }
+            
+            balls.forEach((b,i,bs) => {
+                b.move();
+                b.draw();
+                b.updata();
+                if (b.r <= 0) {
+                    balls.splice(i,1);
+                }
+            })
+
+
+        }, 30);
+    </script>
+</body>
+
+</html>

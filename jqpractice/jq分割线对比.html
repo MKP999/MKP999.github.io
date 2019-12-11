@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分割线对比图</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #E43;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .stage {
+            width: 900px;
+            height: 500px;
+            margin: 50px auto;
+            background: white;
+            box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, .5);
+            /* padding: 30px; */
+        }
+
+        .stage ul.covered {
+            width: 850px;
+            height: 450px;
+            position: relative;
+            margin: 0 auto;
+            /* padding-top: 40px; */
+        }
+
+        .stage ul.covered li {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        .stage ul.covered li:first-child {
+            background: url('./images/l1.jpg') no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        .stage ul.covered li:last-child {
+            background: url('./images/l2.jpg') no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 225px;
+            border-bottom: 2px dotted white;
+        }
+
+        .stage .fix {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            /* background: yellow; */
+        }
+
+        .stage span {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            top: 27%;
+            left: 50%;
+            margin-left: -25px;
+            line-height: 50PX;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="covered">
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="fix">
+            <span></span>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //简单版 随鼠标移动变化
+        //  $('.stage span').mousedown(function (e) {
+        //     $('.stage ul.covered li').mousemove(function (e) {
+        //         // console.log(e.offsetY);
+        //         $('.stage ul.covered li:last-child').css({ height: e.offsetY + 'px' });
+        //         $('.stage span').css({ top: (e.offsetY + 25) + 'px', background: '#555'});
+        //     })
+        // })
+        // $('.stage ul.covered li').mouseout(function (e) {
+        //     $('.stage span').css('background', '#fff');
+
+        // }) 
+
+
+        //鼠标拖拽移动
+        $('.stage span').mousedown(function () {
+            // console.log('bbb');
+            $('.stage ul.covered li').on('mousemove',function (e) {
+                $('.stage ul.covered li:last-child').css({ height: e.offsetY + 'px' });
+                $('.stage span').css({ top: (e.offsetY + 25) + 'px', background: '#555'});
+              })
+        })
+        $('body').mouseup(function (e) {
+            $('.stage ul.covered li').off('mousemove');
+            $('.stage span').css('background', '#fff');
+
+        })
+
+        
+    </script>
+</body>
+
+</html>

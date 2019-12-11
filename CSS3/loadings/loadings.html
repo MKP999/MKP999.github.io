@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./loadings.css">
+    <title>loadings</title>
+</head>
+
+<body>
+    <ul class="stage">
+        <li>
+            <svg id="loading01" viewbox="0 0 100 100">
+                <g>
+                    <circle cx="50" cy="50" r="5" style="fill: #ffab91; stroke: #ffab91; stroke-width: 1;"></circle>
+                </g>
+                <g>
+                    <circle cx="50" cy="50" r="10" style="fill: none; stroke: #fff; stroke-width: 1;"></circle>
+                    <circle cx="60" cy="50" r="3" style="fill: #3ff9dc;"></circle>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50"
+                        to="360 50 50" dur="1s" repeatCount="indefinite" />
+                </g>
+                <g>
+                    <circle cx="50" cy="50" r="20" style="fill: none; stroke: #fff; stroke-width: 1;"></circle>
+                    <circle cx="70" cy="50" r="4" style="fill: #3ff9dc;"></circle>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50"
+                        to="360 50 50" dur="2s" repeatCount="indefinite" />
+                </g>
+                <g>
+                    <circle cx="50" cy="50" r="30" style="fill: none; stroke: #fff; stroke-width: 1;"></circle>
+                    <circle cx="80" cy="50" r="6" style="fill: #3ff9dc;"></circle>
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50"
+                        to="360 50 50" dur="3s" repeatCount="indefinite" />
+                </g>
+            </svg>
+        </li>
+
+        <li>
+            <svg width="250" viewbox="0 0 250 250" style="fill: #3ff9dc;">
+                <rect x="10" y="0" width="10" height="80">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="50 50; 50 90; 50 50" begin="0" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                </rect>
+                <rect x="50" y="0" width="10" height="80">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="50 50; 50 90; 50 50" begin="0.2s" dur="0.6s" repeatCount="indefinite">
+                    </animateTransform>
+                </rect>
+                <rect x="90" y="0" width="10" height="80">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="50 50; 50 90; 50 50" begin="0.4s" dur="0.6s" repeatCount="indefinite">
+                    </animateTransform>
+                </rect>
+                <rect x="130" y="0" width="10" height="80">
+                    <animateTransform attributeType="xml" attributeName="transform" type="translate"
+                        values="50 50; 50 90; 50 50" begin="0.6s" dur="0.6s" repeatCount="indefinite">
+                    </animateTransform>
+                </rect>
+            </svg>
+        </li>
+
+        <li>
+            <div class="loop">
+            </div>
+        </li>
+
+        <li>
+            <div class="circle">
+                <span class="before"></span>
+                <span class="middle"></span>
+                <span class="after"></span>
+            </div>
+        </li>
+
+        <li>
+            <div class="loading">
+                <p>L</p>
+                <p>O</p>
+                <p>A</p>
+                <p>D</p>
+                <p>I</p>
+                <p>N</p>
+                <p>G</p>
+            </div>
+        </li>
+
+        <li>
+            <div class="square">
+            </div>
+            <div class="squareon"></div>
+        </li>
+
+        <li>
+            <div class="round-circle">
+                <div class="sk-circle sk-circle-1"></div>
+                <div class="sk-circle sk-circle-2"></div>
+                <div class="sk-circle sk-circle-3"></div>
+                <div class="sk-circle sk-circle-4"></div>
+                <div class="sk-circle sk-circle-5"></div>
+                <div class="sk-circle sk-circle-6"></div>
+                <div class="sk-circle sk-circle-7"></div>
+                <div class="sk-circle sk-circle-8"></div>
+                <div class="sk-circle sk-circle-9"></div>
+                <div class="sk-circle sk-circle-10"></div>
+                <div class="sk-circle sk-circle-11"></div>
+                <div class="sk-circle sk-circle-12"></div>
+            </div>
+        </li>
+
+        <li>
+            <ul class="nine-square">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li>
+            <ul class="petal">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>

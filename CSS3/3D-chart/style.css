@@ -1,0 +1,338 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("600x600.jpg") no-repeat top;
+  -moz-background-size: cover;
+       background-size: cover;
+  -webkit-perspective: 1500px;
+     -moz-perspective: 1500px;
+          perspective: 1500px;
+  overflow: hidden;
+}
+.stage {
+  width: 450px;
+  height: 600px;
+  margin: 100px auto;
+  background: url("600x600.jpg") no-repeat center;
+  -moz-background-size: cover;
+       background-size: cover;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: -o-transform 0.2s;
+  -moz-transition: transform 0.2s, -moz-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s, -moz-transform 0.2s, -o-transform 0.2s;
+  -webkit-transform-origin: 50% 50% 150px;
+     -moz-transform-origin: 50% 50% 150px;
+      -ms-transform-origin: 50% 50% 150px;
+       -o-transform-origin: 50% 50% 150px;
+          transform-origin: 50% 50% 150px;
+  position: relative;
+  -webkit-perspective: 1000px;
+     -moz-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+.stage .mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: baseline;
+  -webkit-justify-content: baseline;
+     -moz-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  color: white;
+}
+.stage .mask h3 {
+  margin-top: 100px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.stage .mask p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.stage .mask .chart {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+.stage .mask .chart span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: black;
+  line-height: 30px;
+  margin: 0 10px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+     -moz-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateZ(-45deg);
+     -moz-transform: rotateZ(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+.stage .mask .chart span i {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: lightgray;
+  line-height: 100%;
+  text-align: right;
+  padding-right: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+.stage .mask .chart span i.top {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.stage .mask .chart span i.top p {
+  opacity: 0;
+}
+.stage .mask .chart span i.left {
+  -webkit-transform-origin: left;
+     -moz-transform-origin: left;
+      -ms-transform-origin: left;
+       -o-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(-90deg);
+     -moz-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+}
+.stage .mask .chart span i.left p {
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+.stage .mask .chart span i.front {
+  -webkit-transform-origin: left bottom;
+     -moz-transform-origin: left bottom;
+      -ms-transform-origin: left bottom;
+       -o-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: rotateY(-90deg) rotateX(90deg);
+     -moz-transform: rotateY(-90deg) rotateX(90deg);
+          transform: rotateY(-90deg) rotateX(90deg);
+}
+.stage::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  -webkit-box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.9);
+     -moz-box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.9);
+          box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.9);
+  -webkit-transform: translate3d(0, 0, -20px);
+     -moz-transform: translate3d(0, 0, -20px);
+          transform: translate3d(0, 0, -20px);
+}
+.stage::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+  background: rgba(0, 0, 0, 0.15);
+}
+.stage .active-mask {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 15px;
+     -moz-border-radius: 15px;
+          border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.3)));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  background: -moz- oldlinear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+}
+.stage.active {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: -o-transform 1s;
+  -moz-transition: transform 1s, -moz-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s, -moz-transform 1s, -o-transform 1s;
+  -webkit-transform: rotateX(60deg) rotateY(0deg);
+     -moz-transform: rotateX(60deg) rotateY(0deg);
+          transform: rotateX(60deg) rotateY(0deg);
+}
+.stage.active .active-mask {
+  opacity: 1;
+}
+.stage.active .mask h3 {
+  -webkit-transform: translate3d(0, 0, 150px) rotateX(-90deg);
+     -moz-transform: translate3d(0, 0, 150px) rotateX(-90deg);
+          transform: translate3d(0, 0, 150px) rotateX(-90deg);
+  font-size: 48px;
+  color: #333;
+}
+.stage.active .mask p {
+  -webkit-transform: translate3d(0, 0, 50px);
+     -moz-transform: translate3d(0, 0, 50px);
+          transform: translate3d(0, 0, 50px);
+}
+.stage.active .mask .chart span i {
+  background: -webkit-linear-gradient(330deg, lightgray, #ec7b71);
+  background: -moz- oldlinear-gradient(330deg, lightgray, #ec7b71);
+  background: -o-linear-gradient(330deg, lightgray, #ec7b71);
+  background: linear-gradient(120deg, lightgray, #ec7b71);
+}
+.stage.active .mask .chart span:nth-child(1) i.left,
+.stage.active .mask .chart span:nth-child(1) i.front {
+  width: 150px;
+}
+.stage.active .mask .chart span:nth-child(1) i.left > p,
+.stage.active .mask .chart span:nth-child(1) i.front > p {
+  opacity: 1;
+}
+.stage.active .mask .chart span:nth-child(1) i.top {
+  -webkit-transform: translate3d(0, 0, 150px);
+     -moz-transform: translate3d(0, 0, 150px);
+          transform: translate3d(0, 0, 150px);
+}
+.stage.active .mask .chart span:nth-child(2) i.left,
+.stage.active .mask .chart span:nth-child(2) i.front {
+  width: 50px;
+}
+.stage.active .mask .chart span:nth-child(2) i.left > p,
+.stage.active .mask .chart span:nth-child(2) i.front > p {
+  opacity: 1;
+}
+.stage.active .mask .chart span:nth-child(2) i.top {
+  -webkit-transform: translate3d(0, 0, 50px);
+     -moz-transform: translate3d(0, 0, 50px);
+          transform: translate3d(0, 0, 50px);
+}
+.stage.active .mask .chart span:nth-child(3) i.left,
+.stage.active .mask .chart span:nth-child(3) i.front {
+  width: 100px;
+}
+.stage.active .mask .chart span:nth-child(3) i.left > p,
+.stage.active .mask .chart span:nth-child(3) i.front > p {
+  opacity: 1;
+}
+.stage.active .mask .chart span:nth-child(3) i.top {
+  -webkit-transform: translate3d(0, 0, 100px);
+     -moz-transform: translate3d(0, 0, 100px);
+          transform: translate3d(0, 0, 100px);
+}
+.stage.active .mask .chart span:nth-child(4) i.left,
+.stage.active .mask .chart span:nth-child(4) i.front {
+  width: 170px;
+}
+.stage.active .mask .chart span:nth-child(4) i.left > p,
+.stage.active .mask .chart span:nth-child(4) i.front > p {
+  opacity: 1;
+}
+.stage.active .mask .chart span:nth-child(4) i.top {
+  -webkit-transform: translate3d(0, 0, 170px);
+     -moz-transform: translate3d(0, 0, 170px);
+          transform: translate3d(0, 0, 170px);
+}
+.stage.active .mask .chart span:nth-child(5) i.left,
+.stage.active .mask .chart span:nth-child(5) i.front {
+  width: 80px;
+}
+.stage.active .mask .chart span:nth-child(5) i.left > p,
+.stage.active .mask .chart span:nth-child(5) i.front > p {
+  opacity: 1;
+}
+.stage.active .mask .chart span:nth-child(5) i.top {
+  -webkit-transform: translate3d(0, 0, 80px);
+     -moz-transform: translate3d(0, 0, 80px);
+          transform: translate3d(0, 0, 80px);
+}
+.stage.active .mask .chart span:nth-child(6) i.left,
+.stage.active .mask .chart span:nth-child(6) i.front {
+  width: 120px;
+}
+.stage.active .mask .chart span:nth-child(6) i.left > p,
+.stage.active .mask .chart span:nth-child(6) i.front > p {
+  opacity: 1;
+}
+.stage.active .mask .chart span:nth-child(6) i.top {
+  -webkit-transform: translate3d(0, 0, 120px);
+     -moz-transform: translate3d(0, 0, 120px);
+          transform: translate3d(0, 0, 120px);
+}
+/*# sourceMappingURL=./style.css.map */

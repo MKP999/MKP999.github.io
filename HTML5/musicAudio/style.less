@@ -1,0 +1,173 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(rgb(255, 0, 119), pink 50%, rgb(247, 0, 255));
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.stage {
+    width: 350px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    .ui {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 100px 20px;
+        & > h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 1px 1px #000;
+            line-height: 2em;
+        }
+        & > p {
+            color: white;
+            font-size: 18px;
+            font-weight: lighter;
+            line-height: 2em;
+            margin-bottom: 30px;
+        }
+        label {
+            background: rgb(194, 194, 194);
+            width: 300px;
+            height: 10px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            .progress {
+                background: #f55c5c;
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 5px;
+                pointer-events: none;
+                transition: all .5s;
+                &::after {
+                    content: "";
+                    display: block;
+                    float: right;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: yellow;
+                    margin-right: -5px;
+                }
+            }
+            input[type="range"] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all .5s;
+            }
+        }
+        .time {
+            span {
+                color: white;
+                font-size: 14px;
+                display: inline-block;
+
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+    }
+    @keyframes myrotate {
+        form {
+            transform: rotateZ(0deg);
+        }
+        to {
+            transform: rotateZ(360deg);
+        }
+    }
+    .playlist {
+        ul {
+            // height: 200px;
+            // overflow: scroll;
+            li.item {
+                background: white;
+                cursor: pointer;
+                &.playing {
+                    background: #f55c5c;
+                    color: white;
+                    .card{
+                       p {
+                        color: white;
+                    } 
+                    }
+                    
+                    img {
+                        animation: myrotate 5s linear infinite;
+                    }
+                }
+                &.paused {
+                    img {
+                        animation-play-state: paused;
+                    }
+                }
+                .card {
+                    height: 60px;
+                    padding: 10px;
+                    img {
+                        height: 100%;
+                        border-radius: 50%;
+                        float: left;
+                        margin-right: 20px;
+                    }
+                    h3 {
+                    }
+                    p {
+                        color: gray;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .controls {
+        display: flex;
+        span {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: rgb(240, 240, 240);
+            position: relative;
+            i {
+                font-size: 24px;
+                cursor: pointer;
+
+                .faposition() {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    line-height: 70px;
+                }
+                &.fa-play {
+                    .faposition;
+                }
+                &.fa-pause {
+                    .faposition;
+                }
+            }
+        }
+    }
+}

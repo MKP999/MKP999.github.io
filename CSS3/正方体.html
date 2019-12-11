@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D正方体</title>
+    <style>
+        @keyframes myrotate {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg); 
+            }
+            /* 50%{
+                transform: rotateX(-30deg) rotateY(-360deg);
+            } */
+            100%{
+                transform: rotateX(360deg) rotateY(360deg); 
+            }
+            
+        }
+        @keyframes myrotatereve {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg); 
+            }
+            /* 50%{
+                transform: rotateX(-30deg) rotateY(-360deg);
+            } */
+            100%{
+                transform: rotateX(-360deg) rotateY(-360deg); 
+            }
+            
+        }
+        body{
+            perspective: 500px;
+            /* perspective-origin: center top; */
+            background: lightblue;
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            /* background: rgba(0, 0, 0, .5); */
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            /* transform: rotate3d(1,1,1,-30deg); */
+            transform: rotateX(-30deg) rotateY(-35deg);
+            position: relative;
+            animation: myrotate 10s linear 0s infinite;
+            z-index: 99;
+        }
+
+        .square .side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid white;
+        }
+
+        .square .side-top {
+            background: rgba(204, 22, 22, 0.5);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .square .side-bottom{
+            background: rgba(11, 231, 95, 0.5);
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        .square .side-left {
+            background: rgba(37, 17, 214, 0.5);
+            transform: rotateY(90deg)  translateZ(100px);
+        }
+        .square .side-right{
+            background: rgba(211, 248, 3, 0.5);
+            transform: rotateY(-90deg)  translateZ(100px);
+        }
+        .square .side-front {
+            background: rgba(233, 11, 177, 0.5);
+            transform:  translateZ(100px);
+        }
+        .square .side-back{
+            background: rgba(248, 134, 3, 0.5);
+            transform: rotateY(-180deg) translateZ(100px);
+        }
+
+
+        
+
+        .cubes {
+            width: 100px;
+            height: 100px;
+            /* background: rgba(0, 0, 0, .5); */
+            /* margin: 100px auto; */
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+            /* transform: rotate3d(1,1,1,-30deg); */
+            transform: rotateX(-30deg) rotateY(-35deg) translate3d(0,0,100px);
+            position: relative;
+            animation: myrotatereve 10s linear 0s infinite;
+            
+        }
+
+        .cubes .side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid white;
+        }
+
+        .cubes .side-top {
+            background: rgba(204, 22, 22, 0.5);
+            transform: rotateX(90deg) translateZ(50px);
+        }
+        .cubes .side-bottom{
+            background: rgba(11, 231, 95, 0.5);
+            transform: rotateX(90deg) translateZ(-50px);
+        }
+        .cubes .side-left {
+            background: rgba(37, 17, 214, 0.5);
+            transform: rotateY(90deg)  translateZ(50px);
+        }
+        .cubes .side-right{
+            background: rgba(211, 248, 3, 0.5);
+            transform: rotateY(-90deg)  translateZ(50px);
+        }
+        .cubes .side-front {
+            background: rgba(233, 11, 177, 0.5);
+            transform:  translateZ(50px);
+        }
+        .cubes .side-back{
+            background: rgba(248, 134, 3, 0.5);
+            transform: rotateY(-180deg) translateZ(50px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square">
+        <div class="side side-top"></div>
+        <div class="side side-bottom"></div>
+        <div class="side side-left"></div>
+        <div class="side side-right"></div>
+        <div class="side side-front"></div>
+        <div class="side side-back"></div>
+
+        <div class="cubes">
+            <div class="side side-top"></div>
+            <div class="side side-bottom"></div>
+            <div class="side side-left"></div>
+            <div class="side side-right"></div>
+            <div class="side side-front"></div>
+            <div class="side side-back"></div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

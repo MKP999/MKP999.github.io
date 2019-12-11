@@ -1,0 +1,370 @@
+header {
+  position: relative;
+}
+header .nav {
+  width: 1140px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+header .nav img {
+  width: 250px;
+  height: 80px;
+  float: left;
+}
+header .nav h3 {
+  float: left;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-top: 45px;
+  margin-left: 10px;
+}
+header .nav ul.nv {
+  float: left;
+  margin-left: 40px;
+}
+header .nav ul.nv > li {
+  float: left;
+  padding: 12px 15px;
+  margin: 0 2px;
+  cursor: pointer;
+}
+header .nav ul.nv > li ul.choice {
+  width: 150px;
+  position: absolute;
+  top: 80px;
+  left: 1002px;
+  color: white;
+  background: #ff5e00;
+  text-align: center;
+  display: none;
+}
+header .nav ul.nv > li ul.choice li {
+  width: 100%;
+  line-height: 1.5em;
+  background: black;
+}
+header .nav ul.nv > li ul.choice li:hover {
+  background: #ff5e00;
+}
+header .nav ul.nv > li:nth-child(4):hover ul.choice {
+  display: block;
+}
+header .nav ul.nv > li:first-child {
+  background: #ff5e00;
+}
+header .nav ul.nv > li:first-child .word a {
+  color: white;
+}
+header .nav ul.nv > li:hover {
+  background: #ff5e00;
+}
+header .nav ul.nv > li:hover .word a {
+  color: white;
+}
+header .nav ul.nv > li .word {
+  margin: 20px 20px;
+}
+header .nav ul.nv > li .word a {
+  text-decoration: none;
+  color: black;
+}
+header .banner {
+  background: url("images/banner.png") no-repeat center;
+  -moz-background-size: cover;
+       background-size: cover;
+  height: 600px;
+  width: 100%;
+}
+section.ol {
+  padding: 20px 0;
+}
+section.ol .gird {
+  width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+section.ol .gird h3 {
+  font-size: 18px;
+  line-height: 2em;
+}
+section.ol .gird p {
+  font-size: 12px;
+  color: gray;
+  line-height: 2em;
+}
+section.ol .gird ul.card {
+  width: 1140px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+section.ol .gird ul.card li {
+  float: left;
+  width: 25%;
+}
+section.ol .gird ul.card li .tea_card {
+  margin: 15px 15px;
+  cursor: pointer;
+}
+section.ol .gird ul.card li .tea_card:hover {
+  opacity: 0.5;
+}
+section.ol .gird ul.card li .tea_card p {
+  color: black;
+  font-size: 14px;
+}
+section.about {
+  background: url("images/aboutus\ bg.jpg") no-repeat center;
+  -moz-background-size: cover;
+       background-size: cover;
+  text-align: center;
+}
+section.about h3 {
+  color: white;
+  font-size: 20px;
+  line-height: 2em;
+}
+section.about p {
+  color: white;
+  font-size: 10px;
+  line-height: 1.5em;
+}
+section.about ul.gird {
+  overflow: hidden;
+  width: 1140px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+section.about ul.gird li {
+  float: left;
+  width: 33%;
+}
+section.about ul.gird li img {
+  width: 100%;
+  display: block;
+  height: 486px;
+}
+section.about ul.gird li .word {
+  background: white;
+  height: 485.98px;
+  position: relative;
+}
+section.about ul.gird li .word h5 {
+  font-size: 18px;
+  line-height: 2em;
+  padding-top: 50px;
+}
+section.about ul.gird li .word p {
+  font-size: 12px;
+  line-height: 2em;
+  color: gray;
+  text-indent: 2em;
+  text-align: left;
+}
+section.about ul.gird li .word .button {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  width: 100px;
+  color: white;
+  background: black;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+section.about ul.gird li .word .button:hover {
+  background: #ff5e00;
+}
+section.service {
+  padding: 50px 0;
+}
+section.service .content {
+  text-align: center;
+  width: 1140px;
+  margin: 0 auto;
+}
+section.service .content h3 {
+  font-size: 24px;
+  line-height: 2em;
+}
+section.service .content p {
+  font-size: 14px;
+  line-height: 1em;
+  color: gray;
+}
+section.service .content ul.gird {
+  width: 1140px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+section.service .content ul.gird li {
+  float: left;
+  width: 33%;
+}
+section.service .content ul.gird li .card {
+  margin: 15px;
+  padding: 30px;
+}
+section.service .content ul.gird li .card img {
+  background: url("images/servicebg.png") no-repeat center;
+  -moz-background-size: cover;
+       background-size: cover;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  -moz-transition: all 1s;
+  transition: all 1s;
+  cursor: pointer;
+}
+section.service .content ul.gird li .card img:hover {
+  -webkit-transform: rotateY(360deg);
+     -moz-transform: rotateY(360deg);
+          transform: rotateY(360deg);
+}
+section.service .content ul.gird li .card h5 {
+  font-size: 20px;
+  line-height: 2em;
+}
+section.service .content ul.gird li .card p {
+  font-size: 12px;
+  color: gray;
+  line-height: 2em;
+}
+section.news .news_in {
+  background: url("images/newsbg.jpg") no-repeat center;
+  -moz-background-size: cover;
+       background-size: cover;
+  position: relative;
+  cursor: pointer;
+}
+section.news .news_in .word {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 350px;
+}
+section.news .news_in .word:hover {
+  color: black;
+}
+section.news .content {
+  padding: 50px 0;
+  width: 1140px;
+  margin: 0 auto;
+}
+section.news .content .card {
+  overflow: hidden;
+}
+section.news .content .card img {
+  float: left;
+  margin-right: 100px;
+}
+section.news .content .card h5 {
+  font-size: 20px;
+  line-height: 2em;
+}
+section.news .content .card p {
+  font-size: 14px;
+  color: gray;
+  line-height: 1.5em;
+}
+section.news .content .card ul.feature {
+  margin-top: 40px;
+}
+section.news .content .card ul.feature li {
+  list-style: disc;
+  margin: 20px 20px;
+}
+section.news .content ul.gird {
+  width: 1140px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 30px;
+}
+section.news .content ul.gird li {
+  float: left;
+  width: 25%;
+}
+section.news .content ul.gird li img {
+  width: 95%;
+  height: 95%;
+  cursor: pointer;
+}
+section.news .content ul.gird li img:hover {
+  opacity: 0.5;
+}
+section.footer {
+  background-color: rgba(5, 1, 29, 0.897);
+  padding: 50px 0;
+}
+section.footer .contact {
+  margin-left: 90px;
+}
+section.footer .contact ul.gird {
+  overflow: hidden;
+  width: 1140px;
+  margin: 0 auto;
+}
+section.footer .contact ul.gird li {
+  float: left;
+  width: 33%;
+}
+section.footer .contact ul.gird li .card {
+  margin: 15px;
+  padding: 0 50px;
+}
+section.footer .contact ul.gird li .card img {
+  float: left;
+  margin-right: 10px;
+}
+section.footer .contact ul.gird li .card img::after {
+  content: '|';
+  color: white;
+}
+section.footer .contact ul.gird li .card p {
+  padding-top: 5px;
+  color: white;
+  line-height: 1.5em;
+  font-size: 12px;
+}
+section.footer .hr {
+  background: url('images/hr.png') no-repeat center;
+  margin: 30px 0;
+}
+section.footer .end_nav ul.menu {
+  overflow: hidden;
+  width: 1140px;
+  margin: 0 auto;
+  padding-left: 320px;
+}
+section.footer .end_nav ul.menu li {
+  float: left;
+  margin: 0 40px;
+}
+section.footer .end_nav ul.menu li a {
+  text-decoration: none;
+  color: gray;
+  font-size: 12px;
+}
+section.footer .end_nav ul.menu li a:hover {
+  opacity: 0.5;
+}
+section.footer .end_nav ul.menu li::after {
+  content: '|';
+  color: gray;
+  margin-left: 60px;
+}
+section.footer .end_nav ul.menu li:last-child::after {
+  content: '';
+}
+section.footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+}
+section.footer .copyright p {
+  line-height: 1.5em;
+  font-size: 12px;
+  color: gray;
+}
+/*# sourceMappingURL=./index.css.map */

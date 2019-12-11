@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小说阅读器</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            background: skyblue;
+        }
+
+        #stage {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .content {
+            width: 70%;
+            border: 1px dotted black;
+            margin: 0 auto;
+            /* transform: all .5s; */
+        }
+
+        .content h1 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        #stage.default {
+            background: #faeed7;
+        }
+
+        #stage.color1 {
+            background: #e9eff5;
+        }
+
+        #stage.color2 {
+            background: #e7f0e1;
+        }
+
+        #stage.color3 {
+            background: #f2e4e9;
+        }
+
+        #stage.color4 {
+            background: #343434;
+            color: white;
+        }
+
+        #stage>ul {
+            position: fixed;
+            top: 120px;
+            left: 10px;
+
+        }
+
+        #stage li {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid red;
+            margin: 5px;
+        }
+
+        #stage li:nth-child(1) {
+            background: #faeed7;
+        }
+
+        #stage li:nth-child(2) {
+            background: #e9eff5;
+        }
+
+        #stage li:nth-child(3) {
+            background: #e7f0e1;
+        }
+
+        #stage li:nth-child(4) {
+            background: #f2e4e9;
+        }
+
+        #stage li:nth-child(5) {
+            background: #343434;
+        }
+
+        .autoReadStart,
+        .autoReadStop {
+            position: fixed;
+            opacity: .5;
+            width: 100px;
+            height: 100px;
+            font-weight: bold;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            color: black;
+            cursor: pointer;
+        }
+
+        .autoReadStart {
+            top: 100px;
+            right: 100px;
+            background: yellow;
+
+        }
+
+        .autoReadStop {
+            top: 250px;
+            right: 100px;
+            background: red;
+        }
+
+        .autoReadStart ul.choice {
+            display: none;
+            position: relative;
+            top: -140px;
+            left: -60px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .autoReadStart .choice li {
+            margin: 10px 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <div class="default" id="stage">
+        <ul>
+            <li onclick="changeBgColor('default')"><span></span></li>
+            <li onclick="changeBgColor('color1')"><span></span></li>
+            <li onclick="changeBgColor('color2')"><span></span></li>
+            <li onclick="changeBgColor('color3')"><span></span></li>
+            <li onclick="changeBgColor('color4')"><span></span></li>
+
+        </ul>
+
+        <div class="autoReadStart">自动阅读
+            <ul class="choice">
+                <li>X 1.2</li>
+                <li>X 1.5</li>
+                <li>X 2.0</li>
+            </ul>
+        </div>
+        <div class="autoReadStop">暂停自动</div>
+
+        <div class="content">
+            <div class="read-content j_readContent">
+                <h1>逆天邪神</h1>
+                <p>　　五月，微风不燥，阳光正好。</p>
+                <p>　　一间不足二十平米的廉租房內，陈飞的心情很复杂。</p>
+                <p>　　千想万想，没有想到自己居然穿越了。</p>
+                <p>　　经典的孤儿开局，没有事业有成的父母，也没有可爱到爆炸的妹妹。</p>
+                <p>　　唯一的好消息是这具身体的前身也叫陈飞，不用再费劲吧啦的改名。</p>
+                <p>　　但没什么卵用，现在更重要的是养活自己。</p>
+                <p>　　前身只留下358块钱。</p>
+                <p>　　这不算什么，如果实在过不下去了，他就算是去搬砖，也能养活自己。</p>
+                <p>　　问题的关键是这具身体太弱了，陈飞能明显的感觉到身上的疼痛感与虚弱感。</p>
+                <p>　　堪称是千疮百孔！</p>
+                <p>　　这个世界和陈飞之前所在的世界完全不一样，历史虽然有些相似，但这个世界有飞天遁地的武者，有一翅膀能扇起十二级飓风的大沙雕。</p>
+                <p>　　这一切的缘由，来自于前些年出现的一艘超大只飞船。</p>
+                <p>　　真的超大只，据说堪比整个星球。</p>
+                <p>　　然后，这个星球就有了武者。</p>
+                <p>　　低级武者胸口碎大石，高级武者排山倒海。</p>
+                <p>　　玄幻小说里的故事照进了现实。</p>
+                <p>　　这是属于武者的世界，没有花里胡哨的魔法，有的，仅仅是繁衍到巅峰的武者！</p>
+                <p>　　这个陈飞的身体有什么关系？</p>
+                <p>　　前身是个孤儿，一直想弄明白自己到底是被父母抛弃了还是父母双亡。</p>
+                <p>　　所以他要变强，拥有极高的社会地位，才能查清楚这件事。</p>
+                <p>　　想要拥有超高的社会地位，唯一的捷径就是成为武者。</p>
+                <p>　　想要通过文的方式获得超高的社会地位实在是太难了。</p>
+                <p>　　于是前身就从网上搞了一本《铁布衫》瞎练。</p>
+                <p>　　练这种横练功夫，除了营养得跟上之外，每天还必须得泡药浴，恢复训练时留下的暗伤。</p>
+                <p>　　前身什么都不知道，就开始瞎练，接过把身体搞垮了，自己也嗝屁了。</p>
+                <p>　　穿过来的陈飞捡了个现成的便宜。</p>
+                <p>　　“脑瓜子疼啊！”陈飞揉揉发皱的眉心，虽然身为二十一世纪的四有青年，又经过无数网络小说的熏陶，还时不时的幻想穿越重生一下子。</p>
+                <p>　　但是一旦真的穿越了，陈飞发现自己就是个废物。</p>
+                <p>　　干啥啥不行，吃啥啥不剩。</p>
+                <p>　　堂堂一个大学生，连农民工都不如。</p>
+                <p>　　陈飞也是个心大的人，“既来之则安之，谁让自己作死通宵打游戏呢，先把自己身上的伤治好，然后找个工作，安稳的度过一生，就是要让在那个世界的爸妈伤心了。”</p>
+                <p>　　陈飞都可以想象到，自己失踪后，爸妈那伤心欲绝的表情。</p>
+                <p>　　“不过也不用担心爸妈的养老问题，小弟也快上大学了，他比我有出息。”陈飞心里想着，然后自言自语的说道：“不是说穿越众都有金手指吗，我的金手指在哪儿呢？”</p>
+                <p>　　......</p>
+                <p>　　“贪玩蓝月游戏安装成功。”</p>
+                <p>　　有网友留言想看主角的金手指。</p>
+                <p>　　今天，他来了！</p>
+                <p>　　在主角身上的这个，就是传说中的贪玩蓝月！</p>
+                <p>　　他，是一款集经典与创新的传奇游戏！</p>
+                <p>　　他，是一款氪金就能变强，不氪玩你麻痹的良心游戏！</p>
+                <p>　　你看他，有钱你是爸爸。</p>
+                <p>　　没钱送你穿越。</p>
+                <p>　　好了，编不下去了。</p>
+                <p>　　听到金手指的名字，陈飞愣了一下。</p>
+                <p>　　贪玩蓝月，那不是他玩的那款手游传奇吗？</p>
+                <p>　　白女票到一亿战力，成为区组内的十大高手之一，堪称是功成名就。</p>
+                <p>　　嗯，那个区里一共七个活人，还有三个是托。</p>
+                <p>　　......</p>
+                <p>　　陈飞还在纳闷，突然眼前一花，意识进入熟悉的游戏界面。</p>
+                <p>　　选择角色：战士。</p>
+                <p>　　输入姓名：我的金手指。</p>
+                <p>　　点击确定，进入游戏界面。</p>
+                <p>　　一进入游戏界面，游戏人物开始赤手空拳的砍怪。</p>
+                <p>　　几分钟后，游戏人物砍死一只一级怪，怪物化成灰烬，获得一点经验。</p>
+                <p>　　看了一下经验槽，一级升二级需要50点经验，也就是说，得砍死50只怪物才能升级。</p>
+                <p>　　“获取能量团×1，是否提取？”系统机械的声音传来。</p>
+                <p>　　“能量团？”</p>
+                <p>　　陈飞看到能量光团的简介。</p>
+                <p>　　能量团：可用于提升武道修为。</p>
+                <p>　　陈飞大喜，连道：“提取能量团。”</p>
+                <p>　　话音刚落，这个指甲盖大小的白色光团消失在游戏界面。</p>
+                <p>　　狭窄的房间中，陈飞睁开眼睛，看了看手上，什么东西都没有。</p>
+                <p>　　“能量团哪里去了？”就在陈飞迷惘的时候，突然看到自己脐下三寸丹田的位置，漂浮着一枚指甲盖大小的白色光团。</p>
+                <p>　　“这就是能量团？”陈飞看着丹田位置漂浮不动的白色光团，“试试能不能修炼！”</p>
+                <p>　　陈飞盘膝而坐，尝试运转铁布衫功法。</p>
+                <p>　　随着功法的运转，那团能量团化作一股暖流，扩散到四肢百骸。</p>
+                <p>　　半个小时后，陈飞惊喜的睁开眼睛，这能量光团居然能修复他体内的伤势！</p>
+                <p>　　这样一来，他就不用再费心思疗伤了！</p>
+                <p>　　好东西！</p>
+                <p>　　再度进入系统。</p>
+                <p>　　“挂机期间获得能量团×9，是否提取？”系统的声音传来。</p>
+                <p>　　“提取！”</p>
+                <p>　　陈飞大喜：“离线之后果然有收益，良心作者！”</p>
+                <p>　　“平均三分钟获得一个能量团，半个小时炼化一个能量团。</p>
+                <p>　　嗯，用掉一个能量团，获得十个能量团。”</p>
+                <p>　　“牛逼！”给系统点了三十二个赞，陈飞没急着离开，又将目光放向游戏其他界面。</p>
+                <p>　　贪玩蓝月可不止砍怪升级，这里面五花八门充钱的地方多了，纯粹一个充钱就能变强的游戏。</p>
+                <p>　　陈飞主动开口问道：“系统，其他增加战力的功能可以提取到外界吗？”</p>
+                <p>　　系统：“只要有足够的元宝，游戏内的所有功能都可以提取到外界。”</p>
+                <p>　　“果然！”陈飞激动了，“挂机怎么可能变强，只有氪金才能变强。”</p>
+                <p>　　陈飞问：“元宝怎么获得？”</p>
+                <p>　　系统答：“能量物品可兑换元宝。”</p>
+                <p>　　“能量物品。”陈飞有些失望，还以为只用大秦币就能充值呢，没想到要什么能量物品，他从哪弄那玩意去？</p>
+                <p>　　“氪金先不着急，当务之急是把身体的伤治好。”陈飞心道。</p>
+                <p>　　
+                </p>
+                <p>　　五月，微风不燥，阳光正好。</p>
+                <p>　　一间不足二十平米的廉租房內，陈飞的心情很复杂。</p>
+                <p>　　千想万想，没有想到自己居然穿越了。</p>
+                <p>　　经典的孤儿开局，没有事业有成的父母，也没有可爱到爆炸的妹妹。</p>
+                <p>　　唯一的好消息是这具身体的前身也叫陈飞，不用再费劲吧啦的改名。</p>
+                <p>　　但没什么卵用，现在更重要的是养活自己。</p>
+                <p>　　前身只留下358块钱。</p>
+                <p>　　这不算什么，如果实在过不下去了，他就算是去搬砖，也能养活自己。</p>
+                <p>　　问题的关键是这具身体太弱了，陈飞能明显的感觉到身上的疼痛感与虚弱感。</p>
+                <p>　　堪称是千疮百孔！</p>
+                <p>　　这个世界和陈飞之前所在的世界完全不一样，历史虽然有些相似，但这个世界有飞天遁地的武者，有一翅膀能扇起十二级飓风的大沙雕。</p>
+                <p>　　这一切的缘由，来自于前些年出现的一艘超大只飞船。</p>
+                <p>　　真的超大只，据说堪比整个星球。</p>
+                <p>　　然后，这个星球就有了武者。</p>
+                <p>　　低级武者胸口碎大石，高级武者排山倒海。</p>
+                <p>　　玄幻小说里的故事照进了现实。</p>
+                <p>　　这是属于武者的世界，没有花里胡哨的魔法，有的，仅仅是繁衍到巅峰的武者！</p>
+                <p>　　这个陈飞的身体有什么关系？</p>
+                <p>　　前身是个孤儿，一直想弄明白自己到底是被父母抛弃了还是父母双亡。</p>
+                <p>　　所以他要变强，拥有极高的社会地位，才能查清楚这件事。</p>
+                <p>　　想要拥有超高的社会地位，唯一的捷径就是成为武者。</p>
+                <p>　　想要通过文的方式获得超高的社会地位实在是太难了。</p>
+                <p>　　于是前身就从网上搞了一本《铁布衫》瞎练。</p>
+                <p>　　练这种横练功夫，除了营养得跟上之外，每天还必须得泡药浴，恢复训练时留下的暗伤。</p>
+                <p>　　前身什么都不知道，就开始瞎练，接过把身体搞垮了，自己也嗝屁了。</p>
+                <p>　　穿过来的陈飞捡了个现成的便宜。</p>
+                <p>　　“脑瓜子疼啊！”陈飞揉揉发皱的眉心，虽然身为二十一世纪的四有青年，又经过无数网络小说的熏陶，还时不时的幻想穿越重生一下子。</p>
+                <p>　　但是一旦真的穿越了，陈飞发现自己就是个废物。</p>
+                <p>　　干啥啥不行，吃啥啥不剩。</p>
+                <p>　　堂堂一个大学生，连农民工都不如。</p>
+                <p>　　陈飞也是个心大的人，“既来之则安之，谁让自己作死通宵打游戏呢，先把自己身上的伤治好，然后找个工作，安稳的度过一生，就是要让在那个世界的爸妈伤心了。”</p>
+                <p>　　陈飞都可以想象到，自己失踪后，爸妈那伤心欲绝的表情。</p>
+                <p>　　“不过也不用担心爸妈的养老问题，小弟也快上大学了，他比我有出息。”陈飞心里想着，然后自言自语的说道：“不是说穿越众都有金手指吗，我的金手指在哪儿呢？”</p>
+                <p>　　......</p>
+                <p>　　“贪玩蓝月游戏安装成功。”</p>
+                <p>　　有网友留言想看主角的金手指。</p>
+                <p>　　今天，他来了！</p>
+                <p>　　在主角身上的这个，就是传说中的贪玩蓝月！</p>
+                <p>　　他，是一款集经典与创新的传奇游戏！</p>
+                <p>　　他，是一款氪金就能变强，不氪玩你麻痹的良心游戏！</p>
+                <p>　　你看他，有钱你是爸爸。</p>
+                <p>　　没钱送你穿越。</p>
+                <p>　　好了，编不下去了。</p>
+                <p>　　听到金手指的名字，陈飞愣了一下。</p>
+                <p>　　贪玩蓝月，那不是他玩的那款手游传奇吗？</p>
+                <p>　　白女票到一亿战力，成为区组内的十大高手之一，堪称是功成名就。</p>
+                <p>　　嗯，那个区里一共七个活人，还有三个是托。</p>
+                <p>　　......</p>
+                <p>　　陈飞还在纳闷，突然眼前一花，意识进入熟悉的游戏界面。</p>
+                <p>　　选择角色：战士。</p>
+                <p>　　输入姓名：我的金手指。</p>
+                <p>　　点击确定，进入游戏界面。</p>
+                <p>　　一进入游戏界面，游戏人物开始赤手空拳的砍怪。</p>
+                <p>　　几分钟后，游戏人物砍死一只一级怪，怪物化成灰烬，获得一点经验。</p>
+                <p>　　看了一下经验槽，一级升二级需要50点经验，也就是说，得砍死50只怪物才能升级。</p>
+                <p>　　“获取能量团×1，是否提取？”系统机械的声音传来。</p>
+                <p>　　“能量团？”</p>
+                <p>　　陈飞看到能量光团的简介。</p>
+                <p>　　能量团：可用于提升武道修为。</p>
+                <p>　　陈飞大喜，连道：“提取能量团。”</p>
+                <p>　　话音刚落，这个指甲盖大小的白色光团消失在游戏界面。</p>
+                <p>　　狭窄的房间中，陈飞睁开眼睛，看了看手上，什么东西都没有。</p>
+                <p>　　“能量团哪里去了？”就在陈飞迷惘的时候，突然看到自己脐下三寸丹田的位置，漂浮着一枚指甲盖大小的白色光团。</p>
+                <p>　　“这就是能量团？”陈飞看着丹田位置漂浮不动的白色光团，“试试能不能修炼！”</p>
+                <p>　　陈飞盘膝而坐，尝试运转铁布衫功法。</p>
+                <p>　　随着功法的运转，那团能量团化作一股暖流，扩散到四肢百骸。</p>
+                <p>　　半个小时后，陈飞惊喜的睁开眼睛，这能量光团居然能修复他体内的伤势！</p>
+                <p>　　这样一来，他就不用再费心思疗伤了！</p>
+                <p>　　好东西！</p>
+                <p>　　再度进入系统。</p>
+                <p>　　“挂机期间获得能量团×9，是否提取？”系统的声音传来。</p>
+                <p>　　“提取！”</p>
+                <p>　　陈飞大喜：“离线之后果然有收益，良心作者！”</p>
+                <p>　　“平均三分钟获得一个能量团，半个小时炼化一个能量团。</p>
+                <p>　　嗯，用掉一个能量团，获得十个能量团。”</p>
+                <p>　　“牛逼！”给系统点了三十二个赞，陈飞没急着离开，又将目光放向游戏其他界面。</p>
+                <p>　　贪玩蓝月可不止砍怪升级，这里面五花八门充钱的地方多了，纯粹一个充钱就能变强的游戏。</p>
+                <p>　　陈飞主动开口问道：“系统，其他增加战力的功能可以提取到外界吗？”</p>
+                <p>　　系统：“只要有足够的元宝，游戏内的所有功能都可以提取到外界。”</p>
+                <p>　　“果然！”陈飞激动了，“挂机怎么可能变强，只有氪金才能变强。”</p>
+                <p>　　陈飞问：“元宝怎么获得？”</p>
+                <p>　　系统答：“能量物品可兑换元宝。”</p>
+                <p>　　“能量物品。”陈飞有些失望，还以为只用大秦币就能充值呢，没想到要什么能量物品，他从哪弄那玩意去？</p>
+                <p>　　“氪金先不着急，当务之急是把身体的伤治好。”陈飞心道。</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var stage = document.querySelector('#stage');
+        var stagelis = document.querySelectorAll('.stage ul li');
+        var autoReadStart = document.querySelector('.autoReadStart');
+        var autoReadStop = document.querySelector('.autoReadStop');
+        var autoChoice = document.querySelector('.autoReadStart .choice');
+        var autoChoicelis = document.querySelectorAll('.autoReadStart .choice li');
+
+        changeBgColor(getCookie('bgColor'));
+
+        //封装创建cookie函数 或 修改
+        function setCookie(key, value, expiredays) {
+            var now = new Date();
+            var d = new Date(now.getTime() + expiredays * 24 * 60 * 60 * 1000);
+            // console.log(d);
+            if (expiredays) {
+                document.cookie = key + '=' + value + ';' + 'expires =' + d;
+                return (key + '=' + value + ';' + 'expires =' + d);
+            } else {
+                document.cookie = key + '=' + value;
+                return (key + '=' + value);
+
+            }
+        }
+
+        //封装删除cookie函数
+        function delCookie(key) {
+            // document.cookie = key + "=;" + "expires=Sun Feb 01 1970 00:00:00 GMT+0800";
+            // document.cookie = key + "=;" + "expires"+"=" + new Date(1970,01,01);
+            document.cookie = key + '=;' + 'expires =Thu Jan 01 1970 00:00:00 GMT+0800;'
+
+        }
+
+        //封装查看cookie函数
+        function getCookie(key) {
+            var str = document.cookie;
+            var strArray = str.split(';');
+            var value;
+            strArray.forEach(function (str, index, arr) {
+                var subArr = str.split('=');
+                // console.log(subArr);
+                if (subArr[0].trim() === key) {
+                    // console.log(subArr[1]);
+                    value = subArr[1];
+                    for (var i = 1; i < subArr.length; i++) {
+                        value.concat('=', subArr[i]);
+                    }
+                }
+            });
+            return value;
+        }
+
+        //点击换背景颜色
+        function changeBgColor(name) {
+            stage.className = name;
+            // console.log(stage.className);
+            setCookie('bgColor', name, 1000);
+        }
+
+        //自动阅读定时器
+        var num = 1;
+        var timer ;
+        function autoSpeed(speed) {
+            // autoReadStart.addEventListener('click', function () {
+            if (num) {
+                timer = setInterval(function () {
+                    window.scrollBy(0, speed);
+                }, 30);
+            }
+            num = false;
+            // })
+        }
+
+        //自动阅读速度调节器选择
+        autoReadStart.addEventListener('mouseover', function () {
+            autoChoice.style.display = 'block';
+            autoChoicelis[0].onclick = function () {
+                stopAuto();
+                autoSpeed(1);
+
+            }
+            autoChoicelis[1].onclick = function () {
+                stopAuto();
+                autoSpeed(2);
+
+            }
+            autoChoicelis[2].onclick = function () {
+                stopAuto();
+                autoSpeed(3);
+
+            }
+        })
+
+        autoReadStart.addEventListener('mouseout', function () {
+            autoChoice.style.display = 'none';
+
+        })
+
+
+        //暂停自动阅读
+        function stopAuto() {
+            clearInterval(timer);
+            num = true;
+        }
+
+        autoReadStop.addEventListener('click', function () {
+            clearInterval(timer);
+            num = true;
+        })
+
+        //实现自动阅读
+        // var timer = 0;
+        //      autoReadStart.addEventListener('click', function () {
+        //       timer =   setInterval(function () {
+        //             window.scrollBy(0, 2);
+        //         }, 100);
+        //     })
+
+        // autoReadStop.onclick = function(){
+        //         clearInterval(timer);
+
+        // }
+    </script>
+</body>
+
+</html>

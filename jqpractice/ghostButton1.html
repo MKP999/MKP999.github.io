@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幽灵按钮</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./images/1.jpg') no-repeat top center;
+        }
+
+        /* 第一个 */
+        .box {
+            width: 200px;
+            height: 100px;
+            background: orange;
+            position: relative;
+            margin: 20px auto;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .box .circle {
+            width: 600px;
+            height: 600px;
+            background: gray;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 100px 5px black;
+            opacity: 0.8;
+            transform: scale(0);
+            transition: transform .8s;
+        }
+
+        .box .circle.active {
+            transform: scale(1);
+            background: lightgreen;
+            
+
+        }
+
+
+        .xxx {
+            width: 200px;
+            height: 100px;
+            background: orange;
+            position: relative;
+            margin: 0 auto;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .xxx .circle {
+            width: 600px;
+            height: 600px;
+            background: gray;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 100px 5px black;
+            opacity: 0.8;
+            transform: scale(0);
+            transition: transform .8s;
+        }
+
+        .xxx .circle.active {
+            transform: scale(1);
+            background: lightgreen;
+            
+
+        }
+        /* 第二个 */
+        .stage {
+            width: 200px;
+            height: 100px;
+            background: orangered;
+            position: relative;
+            top: 45px;
+            left: 50%;
+            margin-left: -100px;
+            border-radius: 10px;
+            cursor: pointer;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        .stage span {
+            position: absolute;
+            background: white;
+        }
+
+        .stage span.top {
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 5px;
+        }
+
+        .stage span.right {
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 0;
+        }
+
+        .stage span.bottom {
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 5px;
+        }
+
+        .stage span.left {
+            bottom: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+        }
+
+        /* 第三个 */
+        .lighterBt{
+            position: absolute;
+            top: 450px;
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+            height: 100px;
+            border: 1px solid rgb(146, 148, 248);
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .lighterBt .before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: all 650ms;
+            background: linear-gradient( 120deg, transparent, rgba(146, 148, 248, 0.4), transparent );
+        }
+
+        /* 第四个 */
+        .bigbt{
+            position: absolute;
+            bottom: 230px;
+            left: 50%;
+            margin-left: -95px;
+            padding: 30px 72px;
+            font-size: 24px;
+            display: inline-block;
+            background: orange;
+            border-radius: 12px;
+            box-shadow: 0 10px #999;
+            cursor: pointer;
+        }
+        .bigbt:active{
+            box-shadow: 0 6px #666;
+            transform: translateY(4px);
+            background: orangered;
+
+        }
+        .bigbt:hover{
+            background: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 第一个按钮 -->
+    <div class="box">
+        BUTTON
+        <div class="circle"></div>
+    </div><br>
+
+    <div class="xxx">
+            BUTTON
+            <div class="circle"></div>
+        </div>
+
+    <!-- 第二个按钮  -->
+    <div class="stage">
+            BUTTON
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
+    </div>
+
+    <!-- 第三个按钮 -->
+    <div class="lighterBt">BUTTON
+        <div class="before"></div>
+    </div>
+
+    <!-- 第四个按钮 -->
+    <div class="bigbt">click</div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //谷歌幽灵按钮
+        $('.box').mousemove(function (e) {
+            // console.log(e.pageX,e.pageY);
+            // console.log($('.box').offset());
+            var x = e.pageX - $('.box').offset().left;
+            var y = e.pageY - $('.box').offset().top;
+
+            $('.box .circle').css({ top: (y - $('.box .circle').height() / 2), left: (x - $('.box .circle').width() / 2) });
+            $('.box .circle').addClass('active');
+        })
+        $('.box').mouseleave(function () {
+
+            $('.box .circle').removeClass('active');
+        })
+
+        $('.xxx').mousemove(function (e) {
+            // console.log(e.pageX,e.pageY);
+            // console.log($('.box').offset());
+            var x = e.pageX - $('.xxx').offset().left;
+            var y = e.pageY - $('.xxx').offset().top;
+
+            $('.xxx .circle').css({ top: (y - $('.xxx .circle').height() / 2), left: (x - $('.xxx .circle').width() / 2) });
+            $('.xxx .circle').addClass('active');
+        })
+        $('.xxx').mouseleave(function () {
+
+            $('.xxx .circle').removeClass('active');
+        })
+
+        //幽灵按钮2
+        //当鼠标进去/点击按钮
+        $('.stage').mouseenter(function () {
+            $('span.top').animate({ width: 100 + '%' }, function () {
+                $('span.right').animate({ height: 100 + '%' }, function () {
+                    $('span.bottom').animate({ width: 100 + '%' }, function () {
+                        $('span.left').animate({ height: 100 + '%' })
+
+                    })
+                })
+            })
+        })
+
+        //当鼠标移出按钮
+        $('.stage').mouseleave(function () {
+            $('span.left').animate({ height: 0 }, function () {
+                $('span.bottom').animate({ width: 0 }, function () {
+                    $('span.right').animate({ height: 0 }, function () {
+                        $('span.top').animate({ width: 0 })
+
+                    })
+                })
+            })
+        })
+
+        //盘旋发光按钮
+        $('.lighterBt').mouseenter(function () {
+            $('.lighterBt .before').css({left : 100 + '%'});
+          })
+          $('.lighterBt').mouseleave(function () {
+            $('.lighterBt .before').css({left : -100 + '%'});
+          })
+    </script>
+</body>
+
+</html>

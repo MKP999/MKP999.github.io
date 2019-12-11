@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hover按钮</title>
+    <style>
+        html,body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgb(107, 112, 240),rgb(118, 230, 114));
+        }
+
+        /* 第一个 */
+        .border {
+            position: relative;
+            top: 90px;
+            width: 300px;
+            height: 300px;
+            /* background: red; */
+            border-radius: 50%;
+            border-left: 10px solid greenyellow;
+            border-top: 10px solid greenyellow;
+            border-right: 10px solid lightsalmon;
+            border-bottom: 10px solid lightsalmon;
+            transition: all 1s;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .container .content {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            overflow: hidden;
+        }
+
+        .container .content img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+
+        }
+
+        .container:hover .border {
+            transform: rotate(180deg);
+        }
+
+        .container:hover .mask {
+            opacity: 1;
+        }
+
+        .content .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1s;
+            opacity: 0;
+        }
+
+        .content .mask h3 {
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .content .mask p {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+        }
+
+
+        /* 第二个 */
+        .btn-2 {
+            position: absolute;
+            top: 100px;
+            left: 40%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            transition: all 1.5s;
+
+        }
+        
+        .btn-2 .shift {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url('./images/5.jpg') no-repeat center;
+            background-size: 120%;
+            transition: all 1.5s;
+            margin: 0 auto;
+            border: 20px solid rgba(255, 255, 255, .5);
+            box-sizing: border-box;
+        }
+
+        .btn-2 .btn-mask {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1.5s;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .btn-2 .btn-mask h3 {
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .btn-2 .btn-mask p {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+        }
+
+        .btn-2:hover .btn-mask {
+            opacity: 1;
+            left: 0;
+        }
+
+        .btn-2:hover .shift {
+            transform: rotate(-90deg);
+        }
+
+
+        /* 第三个 */
+        .btn-3{
+            position: absolute;
+            top: 100px;
+            left: 75%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            transition: all .5s;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1.5s;
+            border-radius: 50%;
+            perspective: 800px;
+        }
+        .btn-3 .shrink{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url('./images/4.jpg') no-repeat center;
+            background-size: 120%;
+            transition: all .5s;
+            margin: 0 auto;
+            border: 20px solid rgba(255, 255, 255, .5);
+            box-sizing: border-box;
+            transform-origin: left;
+        }
+        .btn-3 .mask{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .5s;
+            /* text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1.5s;
+            border-radius: 50%; */
+            /* display: none; */
+            /* opacity: 0; */
+        }
+        .btn-3 h3{
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+        .btn-3 p{
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+            
+        }
+        .btn-3:hover .shrink{
+            transform: rotateY(-180deg);
+        }
+        .btn-3:hover .mask{
+            opacity: 1;
+        }
+
+
+        /* 第四个 */
+
+    </style>
+</head>
+
+<body>
+    <!-- 第一个 -->
+    <div class="container">
+        <div class="border"></div>
+        <div class="content">
+            <img src="./images/2.jpg" alt="">
+            <div class="mask">
+                <h3>Heading <br> here</h3>
+
+                <p>Description goes here</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二个 -->
+    <div class="btn-2">
+            <div class="shift">
+                <!-- <img src="./images/5.jpg" alt=""> -->
+            </div>
+
+        <div class="btn-mask">
+            <h3>Heading <br> here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
+
+    <!-- 第三个 -->
+    <div class="btn-3">
+        <span></span>
+        <div class="shrink">
+
+        </div>
+        <div class="mask">
+                <h3>Heading <br> here</h3>
+                <p>Description goes here</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

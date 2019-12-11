@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>jquery简单音乐播放器</title>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="ui">
+            <h3>Dusk</h3>
+            <p>Tobu & Syndec</p>
+            <label>
+                <input type="range" id="input" value="0" min="0" max="100" step="1">
+                <div class="progress">
+                </div>
+
+            </label>
+            <div class="time">
+                    <span class="start">00:12</span>
+                    <span class="end">01:22</span>
+            </div>
+           
+            <audio src="" style="width: 300px; height: 50px;"></audio>
+        </div>
+        <div class="playlist">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="controls">
+            <span><i class=" fa fa-backward"></i></span>
+            <span><i class=" fa fa-play"></i><i class="fa fa-pause"></i></span>
+            <span><i class=" fa fa-forward"></i></span>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,393 @@
+.location() {
+    width: 1140px;
+    margin: 0 auto;
+}
+header {
+    position: relative;
+    .nav {
+        .location;
+        overflow: hidden;
+
+        img {
+            width: 250px;
+            height: 80px;
+            float: left;
+        }
+        h3 {
+            float: left;
+            font-size: 18px;
+            text-transform: capitalize;
+            margin-top: 45px;
+            margin-left: 10px;
+        }
+        ul.nv{
+            float: left;
+            margin-left: 40px;
+
+            > li {
+                float: left;
+                padding: 12px 15px;
+                margin: 0 2px;
+                cursor: pointer;
+
+                 ul.choice {
+                    width: 150px;
+                    position: absolute;
+                    top: 80px;
+                    left: 1002px;
+                    color: white;
+                    background: rgb(255, 94, 0);
+                    text-align: center;
+                    display: none;
+
+                    li {
+                        width: 100%;
+                        line-height: 1.5em;
+
+                        // padding: 12px 15px;
+                        //  margin: 0 2px;
+                        background: black;
+                        &:hover{
+                            background: rgb(255, 94, 0);
+                        }
+                    }
+                }
+                &:nth-child(4):hover {
+                    ul.choice  {
+                        display: block;
+                    }
+                }
+                &:first-child {
+                    background: rgb(255, 94, 0);
+                    .word a {
+                        color: white;
+                    }
+                }
+                &:hover {
+                    background: rgb(255, 94, 0);
+                    .word a {
+                        color: white;
+                    }
+                }
+                .word {
+                    margin: 20px 20px;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+    .banner {
+        background: url("./images/banner.png") no-repeat center;
+        background-size: cover;
+        height: 600px;
+        width: 100%;
+    }
+}
+
+// 第一部分：轻妍系列
+section.ol {
+    padding: 20px 0;
+    .gird {
+        .location;
+        text-align: center;
+        h3 {
+            font-size: 18px;
+            line-height: 2em;
+        }
+        p {
+            font-size: 12px;
+            color: gray;
+            line-height: 2em;
+        }
+        ul.card {
+            .location;
+            overflow: hidden;
+            li {
+                float: left;
+                width: 25%;
+
+                .tea_card {
+                    margin: 15px 15px;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                    img {
+                    }
+                    p {
+                        color: black;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 第二部分：关于我们
+section.about {
+    background: url("./images/aboutus\ bg.jpg") no-repeat center;
+    background-size: cover;
+    text-align: center;
+    h3 {
+        color: white;
+        font-size: 20px;
+        line-height: 2em;
+        // padding-top: 10px;
+    }
+    p {
+        color: white;
+        font-size: 10px;
+        line-height: 1.5em;
+    }
+    ul.gird {
+        overflow: hidden;
+        .location;
+        padding-top: 100px;
+        li {
+            float: left;
+            width: 33%;
+            img {
+                width: 100%;
+                display: block;
+                height: 486px;
+            }
+            .word {
+                background: white;
+                height: 485.98px;
+                position: relative;
+
+                h5 {
+                    font-size: 18px;
+                    line-height: 2em;
+                    padding-top: 50px;
+                }
+                p {
+                    font-size: 12px;
+                    line-height: 2em;
+                    color: gray;
+                    text-indent: 2em;
+                    text-align: left;
+                }
+                .button {
+                    position: absolute;
+                    bottom: 20px;
+                    right: 15px;
+                    width: 100px;
+                    color: white;
+                    background: black;
+                    border-radius: 5px;
+                    text-align: center;
+                    line-height: 30px;
+                    cursor: pointer;
+                    &:hover {
+                        background: rgb(255, 94, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 第三部分：服务优势
+section.service {
+    padding: 50px 0;
+
+    .content {
+        text-align: center;
+        .location;
+
+        h3 {
+            font-size: 24px;
+            line-height: 2em;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1em;
+            color: gray;
+        }
+        ul.gird {
+            .location;
+            overflow: hidden;
+            li {
+                float: left;
+                width: 33%;
+                .card {
+                    margin: 15px;
+                    padding: 30px;
+                    img {
+                        background: url("./images/servicebg.png") no-repeat
+                            center;
+                        background-size: cover;
+                        transition: all 1s;
+                        cursor: pointer;
+                        &:hover {
+                            transform: rotateY(360deg);
+                        }
+                    }
+                    h5 {
+                        font-size: 20px;
+                        line-height: 2em;
+                    }
+                    p {
+                        font-size: 12px;
+                        color: gray;
+                        line-height: 2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 第四部分：花果茶资讯
+section.news {
+    .news_in {
+        background: url("./images/newsbg.jpg") no-repeat center;
+        background-size: cover;
+        position: relative;
+        cursor: pointer;
+        .word {
+            color: white;
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 350px;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+    .content {
+        padding: 50px 0;
+        .location();
+        .card {
+            overflow: hidden;
+            img {
+                float: left;
+                margin-right: 100px;
+            }
+            h5 {
+                font-size: 20px;
+                line-height: 2em;
+            }
+            p {
+                font-size: 14px;
+                color: gray;
+                line-height: 1.5em;
+            }
+            ul.feature {
+                margin-top: 40px;
+
+                li {
+                    list-style: disc;
+                    margin: 20px 20px;
+                }
+            }
+        }
+        ul.gird {
+            .location;
+            overflow: hidden;
+            padding-top: 30px;
+            li {
+                float: left;
+                width: 25%;
+
+                img {
+                    width: 95%;
+                    height: 95%;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 第五部分：尾部
+section.footer {
+    background-color: rgba(5, 1, 29, 0.897);
+    padding:  50px 0;
+    .contact {
+        margin-left: 90px;
+        ul.gird {
+            overflow: hidden;
+            .location;
+            li {
+                float: left;
+                width: 33%;
+                
+                .card {
+                    margin: 15px;
+                    padding: 0 50px;
+                    img {
+                        float: left;
+                        margin-right: 10px;
+                        &::after{
+                            content: '|';
+                            // margin: 0 2px;
+                            color: white;
+                        }
+                    }
+                    p {
+                        padding-top: 5px;
+                        color: white;
+                        line-height: 1.5em;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .hr {
+        background: url('./images/hr.png') no-repeat center;
+        margin: 30px 0;
+    }
+
+    .end_nav {
+       
+        ul.menu {
+            overflow: hidden; 
+            .location;
+            padding-left: 320px;
+            li {
+                float: left;
+                margin: 0 40px;
+                a {
+                    text-decoration: none;
+                    color: gray;
+                    font-size: 12px;  
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+                &::after{
+                    content: '|';
+                    color: gray;
+                    margin-left: 60px;
+                }
+                &:last-child{
+                    &::after{
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        p{
+            line-height: 1.5em;
+            font-size: 12px;
+            color: gray;
+        }
+    }
+}

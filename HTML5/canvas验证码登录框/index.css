@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 400px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  margin: 100px auto;
+}
+.wrapper .inputbox {
+  position: relative;
+}
+.wrapper .inputbox input[type="text"] {
+  display: inline-block;
+  width: 300px;
+  height: auto;
+  padding: 15px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  outline: none;
+  border: 1px solid #999;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.wrapper .inputbox span {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -8px;
+  display: none;
+}
+.wrapper p {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+  display: none;
+}
+.wrapper .canvasbox {
+  position: relative;
+  margin-top: 15px;
+}
+.wrapper .canvasbox .imgbox {
+  width: 300px;
+  height: 80px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.wrapper .canvasbox .imgbox #myCanvas {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.wrapper .canvasbox button {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: inline-block;
+  margin-top: -16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  outline: none;
+}
+.wrapper button.submit {
+  padding: 10px 20px;
+  border: 0;
+  background-color: green;
+  color: #fff;
+  margin-top: 15px;
+  font-size: 18px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+/*# sourceMappingURL=./index.css.map */

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <style>
+        .content{
+            width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>canvas</h1>
+        <canvas id="mycat" width="400px" height="400px"></canvas>
+        <canvas id="myrobot" width="400px" height="400px"></canvas>
+    </div>
+
+    <script>
+        /** @type{HTMLCanvasElement} */
+        var canvas = document.getElementById('mycat');
+        var ctx = canvas.getContext("2d");
+        ctx.rect(0, 0, 400, 400);
+        ctx.stroke();
+
+
+        //头
+        ctx.beginPath();
+        ctx.fillStyle = 'blue';
+        ctx.ellipse(200, 200, 135, 130, 0, 0, 2 * Math.PI);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        ctx.fill();
+        // ctx.closePath();
+
+        //脸
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.ellipse(200, 230, 105, 100, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+
+        //眼睛
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 3;
+        ctx.ellipse(180, 140, 22, 30, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 3;
+        ctx.ellipse(223, 140, 22, 30, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+
+        //眼珠
+        ctx.beginPath();
+        ctx.fillStyle = 'black';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 3;
+        ctx.ellipse(185, 140, 10, 15, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+
+        ctx.beginPath();
+        ctx.fillStyle = 'black';
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 3;
+        ctx.ellipse(220, 140, 10, 15, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+        //眼白
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.arc(219, 144, 6, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.arc(185, 144, 6, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+        //鼻子
+        ctx.beginPath();
+        ctx.fillStyle = 'red';
+        ctx.arc(200, 200, 15, 0, 2 * Math.PI);
+        ctx.stroke();
+        ctx.fill();
+
+        //竖线
+        ctx.beginPath();
+        ctx.moveTo(200, 217);
+        ctx.quadraticCurveTo(210, 250, 200, 290);
+        ctx.stroke();
+
+
+        //猫须
+        ctx.beginPath();
+        ctx.moveTo(250, 200);
+        ctx.lineTo(340, 180);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 220);
+        ctx.lineTo(340, 220);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 240);
+        ctx.lineTo(340, 270);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(150, 200);
+        ctx.lineTo(60, 190);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(150, 220);
+        ctx.lineTo(60, 230);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(150, 240);
+        ctx.lineTo(60, 270);
+        ctx.stroke();
+
+        //嘴巴
+        ctx.beginPath();
+        ctx.moveTo(130, 260);
+        ctx.quadraticCurveTo(200, 330, 270, 260);
+        ctx.stroke();
+
+        //系带
+        ctx.beginPath();
+        ctx.strokeStyle = 'red';
+        ctx.moveTo(100, 295);
+        ctx.quadraticCurveTo(200, 380, 300, 295);
+        ctx.lineWidth = 10;
+        ctx.stroke();
+
+        //铃铛
+        ctx.beginPath();
+        ctx.arc(200, 355, 18, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 3;
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(200, 360, 6, 0, 2 * Math.PI);
+        ctx.fillStyle = 'yellow';
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(183, 352);
+        ctx.lineTo(218, 352);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(183, 348);
+        ctx.lineTo(216, 348);
+        ctx.stroke();
+
+        var myrobot = document.getElementById('myrobot');
+        var ct = myrobot.getContext("2d");
+        ct.rect(0, 0, 400, 400);
+        ct.stroke();
+
+        //手臂
+        ct.beginPath();
+        ct.lineCap = "round";
+        ct.moveTo(80, 150);
+        ct.lineTo(80, 250);
+        ct.lineWidth = 40;
+        ct.strokeStyle = 'yellowgreen';
+        ct.stroke();
+
+        ct.beginPath();
+        ct.lineCap = "round";
+        ct.moveTo(320, 150);
+        ct.lineTo(320, 250);
+        ct.lineWidth = 40;
+        ct.strokeStyle = 'yellowgreen';
+        ct.stroke();
+
+
+        //腿部
+        ct.beginPath();
+        ct.lineCap = "round";
+        ct.moveTo(150, 290);
+        ct.lineTo(150, 380);
+        ct.lineWidth = 40;
+        ct.strokeStyle = 'yellowgreen';
+        ct.stroke();
+
+        ct.beginPath();
+        ct.lineCap = "round";
+        ct.moveTo(250, 290);
+        ct.lineTo(250, 380);
+        ct.lineWidth = 40;
+        ct.strokeStyle = 'yellowgreen';
+        ct.stroke();
+
+        //头部
+        ct.beginPath();
+        ct.arc(200, 120, 90, 0, Math.PI, true);
+        ct.fillStyle = 'yellowgreen';
+        ct.fill();
+
+        //头线
+        ct.beginPath();
+        ct.moveTo(180, 100);
+        ct.lineTo(100, 10);
+        ct.lineWidth = 5;
+        ct.stroke();
+
+        ct.beginPath();
+        ct.moveTo(220, 100);
+        ct.lineTo(300, 10);
+        ct.lineWidth = 5;
+        ct.stroke();
+
+        //眼睛
+        ct.beginPath();
+        ct.arc(170, 80, 6, 0, 2 * Math.PI);
+        ct.fillStyle = 'white';
+        ct.fill();
+
+        ct.beginPath();
+        ct.arc(230, 80, 6, 0, 2 * Math.PI);
+        ct.fillStyle = 'white';
+        ct.fill();
+
+        //身体
+        ct.beginPath();
+        ct.rect(110, 130, 180, 150);
+        ct.fillStyle = 'yellowgreen';
+        ct.stroke();
+        ct.fill();
+
+        ct.beginPath();
+        ct.moveTo(118, 280);
+        ct.lineTo(282, 280);
+        ct.strokeStyle = 'yellowgreen';
+        ct.lineWidth = 20;
+        ct.stroke();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .stage{
+            /* width: 300px; */
+            height: 50px;
+            margin: 30px auto;
+            background: red;
+            border: 10px dotted blue;
+            padding: 10px;
+        }
+        .content{
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        span{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="content"> 努力一定很辛苦，但不努力一定很轻松！！！ ——鲁迅</div>
+         <span>|</span>   
+        
+        
+    </div>
+
+    <script>
+        var str = ' 人生就是这样起起落落落落落落。。。';
+        var arr = str.split('');
+        setInterval(function(){
+            var shift = arr.shift();
+            arr.push(shift);
+            document.title = arr.join('');
+        }, 300);
+
+        var content = document.querySelector('.content');
+        var span = document.querySelector('span');
+
+        var conStr = content.innerText;
+        content.innerText = '';
+        var conArr = conStr.split('');
+        var newArr = [];
+
+        var x = setInterval(function(){
+           var conShift = conArr.shift();
+           newArr.push(conShift);
+           content.innerText = newArr.join('');
+
+           if (conArr == 0) {
+               clearInterval(x);
+           }
+        }, 500);
+
+        var y = setInterval(function(){
+            if (span.style.opacity == '1') {
+                span.style.opacity = '0';
+            }else{
+                span.style.opacity = '1';
+            }
+        }, 300);
+        
+    </script>
+</body>
+</html>

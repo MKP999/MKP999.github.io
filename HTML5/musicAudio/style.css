@@ -1,0 +1,227 @@
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff0077), color-stop(50%, pink), to(#f700ff));
+  background: -webkit-linear-gradient(#ff0077, pink 50%, #f700ff);
+  background: -moz- oldlinear-gradient(#ff0077, pink 50%, #f700ff);
+  background: -o-linear-gradient(#ff0077, pink 50%, #f700ff);
+  background: linear-gradient(#ff0077, pink 50%, #f700ff);
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.stage {
+  width: 350px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.stage .ui {
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+       background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+}
+.stage .ui > h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 1px 1px #000;
+  line-height: 2em;
+}
+.stage .ui > p {
+  color: white;
+  font-size: 18px;
+  font-weight: lighter;
+  line-height: 2em;
+  margin-bottom: 30px;
+}
+.stage .ui label {
+  background: #c2c2c2;
+  width: 300px;
+  height: 10px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.stage .ui label .progress {
+  background: #f55c5c;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  pointer-events: none;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.stage .ui label .progress::after {
+  content: "";
+  display: block;
+  float: right;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  background: yellow;
+  margin-right: -5px;
+}
+.stage .ui label input[type="range"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.stage .ui .time span {
+  color: white;
+  font-size: 14px;
+  display: inline-block;
+}
+.stage .ui .time span:last-child {
+  float: right;
+}
+@-webkit-keyframes myrotate {
+  form {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+@-moz-keyframes myrotate {
+  form {
+    -moz-transform: rotateZ(0deg);
+         transform: rotateZ(0deg);
+  }
+  to {
+    -moz-transform: rotateZ(360deg);
+         transform: rotateZ(360deg);
+  }
+}
+@-o-keyframes myrotate {
+  form {
+    -o-transform: rotateZ(0deg);
+       transform: rotateZ(0deg);
+  }
+  to {
+    -o-transform: rotateZ(360deg);
+       transform: rotateZ(360deg);
+  }
+}
+@keyframes myrotate {
+  form {
+    -webkit-transform: rotateZ(0deg);
+       -moz-transform: rotateZ(0deg);
+         -o-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateZ(360deg);
+       -moz-transform: rotateZ(360deg);
+         -o-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+.stage .playlist ul li.item {
+  background: white;
+  cursor: pointer;
+}
+.stage .playlist ul li.item.playing {
+  background: #f55c5c;
+  color: white;
+}
+.stage .playlist ul li.item.playing .card p {
+  color: white;
+}
+.stage .playlist ul li.item.playing img {
+  -webkit-animation: myrotate 5s linear infinite;
+     -moz-animation: myrotate 5s linear infinite;
+       -o-animation: myrotate 5s linear infinite;
+          animation: myrotate 5s linear infinite;
+}
+.stage .playlist ul li.item.paused img {
+  -webkit-animation-play-state: paused;
+     -moz-animation-play-state: paused;
+       -o-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.stage .playlist ul li.item .card {
+  height: 60px;
+  padding: 10px;
+}
+.stage .playlist ul li.item .card img {
+  height: 100%;
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+  float: left;
+  margin-right: 20px;
+}
+.stage .playlist ul li.item .card p {
+  color: gray;
+  font-size: 14px;
+}
+.stage .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.stage .controls span {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  padding: 20px;
+  background: #f0f0f0;
+  position: relative;
+}
+.stage .controls span i {
+  font-size: 24px;
+  cursor: pointer;
+}
+.stage .controls span i.fa-play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  line-height: 70px;
+}
+.stage .controls span i.fa-pause {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  line-height: 70px;
+}
+/*# sourceMappingURL=./style.css.map */

@@ -1,0 +1,246 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    // background: linear-gradient(rgba(1, 27, 255, 0.6), rgba(2, 255, 36, 0.6));
+    background: url("./600x600.jpg") no-repeat top;
+    background-size: cover;
+    perspective: 1500px;
+    overflow: hidden;
+    // perspective-origin: 0px 0px ;
+}
+.stage {
+    width: 450px;
+    height: 600px;
+    margin: 100px auto;
+    background: url("./600x600.jpg") no-repeat center;
+    background-size: cover;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: transform 0.2s;
+    transform-origin: 50% 50% 150px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    .mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: baseline;
+        color: white;
+        h3 {
+            margin-top: 100px;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.5s;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: all 0.5s;
+        }
+        .chart {
+            margin-top: 50px;
+            display: flex;
+            text-align: center;
+            span {
+                display: block;
+                width: 30px;
+                height: 30px;
+                // background: white;
+                color: black;
+                line-height: 30px;
+                margin: 0 10px;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: rotateZ(-45deg);
+
+                i {
+                    width: 0;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: lightgray;
+                    transition: all 1s;
+                    line-height: 100%;
+                    text-align: right;
+                    padding-right: 10px;
+                    box-sizing: border-box;
+                    transition: all 1s;
+                    &.top {
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        p {
+                            opacity: 0;
+                        }
+                    }
+                    &.left {
+                        transform-origin: left;
+                        transform: rotateY(-90deg);
+                        p {
+                            opacity: 0;
+                            transition: all 1s;
+                        }
+                    }
+                    &.front {
+                        transform-origin: left bottom;
+                        transform: rotateY(-90deg) rotateX(90deg);
+                    }
+                }
+            }
+        }
+    }
+    .frame() {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &::after {
+        .frame;
+        background: black;
+        box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.9);
+        transform: translate3d(0, 0, -20px);
+    }
+    &::before {
+        .frame;
+        transition: all 1s;
+        background: rgba(0, 0, 0, 0.15);
+    }
+    .active-mask {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+        opacity: 0;
+        transition: all 1s;
+    }
+}
+
+.stage.active {
+    transition: transform 1s;
+    transform: rotateX(60deg) rotateY(0deg);
+    .active-mask {
+        opacity: 1;
+    }
+    .mask {
+        h3 {
+            transform: translate3d(0, 0, 150px) rotateX(-90deg);
+            font-size: 48px;
+            color: #333;
+        }
+        p {
+            transform: translate3d(0, 0, 50px);
+        }
+        .chart {
+            span {
+                i{
+                    background: linear-gradient(120deg, lightgray, rgb(236, 123, 113));
+
+                }
+                &:nth-child(1) {
+                    i {
+                        &.left,
+                        &.front {
+                            width: 150px;
+                            & > p {
+                                opacity: 1;
+                            }
+                        }
+                        &.top {
+                            transform: translate3d(0, 0, 150px);
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    i {
+                        &.left,
+                        &.front {
+                            width: 50px;
+                            & > p {
+                                opacity: 1;
+                            }
+                        }
+                        &.top {
+                            transform: translate3d(0, 0, 50px);
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    i {
+                        &.left,
+                        &.front {
+                            width: 100px;
+                            & > p {
+                                opacity: 1;
+                            }
+                        }
+                        &.top {
+                            transform: translate3d(0, 0, 100px);
+                        }
+                    }
+                }
+                &:nth-child(4) {
+                    i {
+                        &.left,
+                        &.front {
+                            width: 170px;
+                            & > p {
+                                opacity: 1;
+                            }
+                        }
+                        &.top {
+                            transform: translate3d(0, 0, 170px);
+                        }
+                    }
+                }
+                &:nth-child(5) {
+                    i {
+                        &.left,
+                        &.front {
+                            width: 80px;
+                            & > p {
+                                opacity: 1;
+                            }
+                        }
+                        &.top {
+                            transform: translate3d(0, 0, 80px);
+                        }
+                    }
+                }
+                &:nth-child(6) {
+                    i {
+                        &.left,
+                        &.front {
+                            width: 120px;
+                            & > p {
+                                opacity: 1;
+                            }
+                        }
+                        &.top {
+                            transform: translate3d(0, 0, 120px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

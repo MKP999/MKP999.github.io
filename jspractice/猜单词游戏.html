@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var words = ["monkey", "amazing", "banana", "bus", "car"];
+
+        //随机数字
+        var x = Math.floor(Math.random() * words.length);
+        console.log(x, words[x]);
+
+        //形成随机数字的下划线
+        var wordNumArr = new Array(words[x].length);
+        var wordHide = wordNumArr.fill('_');
+        wordHide.join(' ');
+        var remainderNum = words[x].length;
+        //
+        while (remainderNum > 0) {
+            alert(wordHide.join(' ') + '你所猜的单词长度为' + words[x].length);
+            var playerEnter = prompt('请输入第一个字母');
+            console.log(playerEnter);
+
+            if (playerEnter == null) {
+                 alert('怂货');
+                 break;
+            }
+            for (var i = 0; i < words[x].length; i++) {
+                var wordArr = words[x].split('');
+                if (playerEnter == wordArr[i]) {
+                    wordHide[i] = playerEnter;
+                    remainderNum--;
+                }
+            }
+        }
+        if (remainderNum <= 0) {
+            alert('恭喜你!猜中单词是 ' + words[x] );
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>转盘抽奖</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            background: #ffc40a;
+        }
+        .stage {
+            width: 650px;
+            height: 600px;
+            margin: 30px;
+            background: url('./img/turntable-bg.jpg') no-repeat;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .pointer,
+        .broad {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .broad {
+            top: 55px;
+            left: 117px;
+            /* transition: all 4s; */
+            /* transform: rotate(); */
+        }
+
+        .pointer {
+            top: 150px;
+            left: 249px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="broad"><img src="./img/turntable.png" alt=""></div>
+        <div class="pointer"><img src="./img/pointer.png" alt=""></div>
+    </div>
+
+    <script>
+        var broad = document.querySelector('.broad');
+        var pointer = document.querySelector('.pointer');
+
+        pointer.addEventListener('click',function x(){
+            var getNumber = getNum();
+            var getWon = getGift(getNumber);
+
+            console.log(getWon);
+            exchangePic(getWon);
+            pointer.removeEventListener('click', x);
+            setTimeout(function(){
+            pointer.addEventListener('click', x);
+
+            }, 4500);
+        })
+
+        // pointer.onclick = function () {
+        //     var getNumber = getNum();
+        //     var getWon = getGift(getNumber);
+
+        //     console.log(getWon);
+        //     exchangePic(getWon);
+        // }
+
+        //随机数字
+        function getNum() {
+            var x = Math.floor(Math.random() * 100);
+            return x;
+        }
+
+        //对应的奖励
+        function getGift(x) {
+            if (x < 3) {
+                return { code: 1, text: '一等奖' };
+            } else if (x < 8) {
+                return { code: 2, text: '二等奖' };
+            } else if (x < 15) {
+                return { code: 3, text: '三等奖' };
+            } else if (x < 25) {
+                return { code: 4, text: '四等奖' };
+            } else if (x < 40) {
+                return { code: 5, text: '五等奖' };
+            } else if (x < 65) {
+                return { code: 6, text: '六等奖' };
+            } else {
+                return { code: 7, text: '未得奖' };
+            }
+        }
+
+        //更新图片
+        function exchangePic(x) {
+            var d = (360 / 7 / 2) + (360 / 7) * (x.code - 1);
+            // console.log(d);
+            broad.style.transform = 'rotate(' + (d + 360 * 10) + 'deg)';
+            broad.style.transition = 'all 4s';
+
+            setTimeout(function () {
+                broad.style.transform = 'rotate(' + d + 'deg)';
+                broad.style.transition = 'none';
+                alert('恭喜您!!! ' + x.text);
+            }, 4500);
+        }
+
+    </script>
+</body>
+
+</html>

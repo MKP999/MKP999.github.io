@@ -1,0 +1,52 @@
+html,
+body {
+	margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+// 所有场景
+.scene() {
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-size: cover;
+	background-position: center 0px;
+	background-repeat: repeat-y;
+    position: relative;
+    // 内部子元素需要基于所在场景定位
+}
+
+// 舞台
+.stage {
+	width: 200%;
+	height: 100%;
+	background: red;
+    margin-left: 0%;
+    transition: all .3s;
+    // 游戏开始场景
+	.game-start {
+		.scene;
+		background-image: url("../images/background-start.png");
+
+		button.start {
+			position: absolute;
+			bottom: 100px;
+			left: 50%;
+			width: 120px;
+			margin-left: -60px;
+			line-height: 30px;
+			background: #c4c9ca;
+			outline: none;
+			border: 1px solid black;
+			border-radius: 30px;
+		}
+    }
+    // 游戏主体场景
+	.game {
+		.scene;
+		background-image: url("../images/background-game.png");
+		img {
+			position: absolute;
+		}
+	}
+}

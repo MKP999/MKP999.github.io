@@ -1,0 +1,1246 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+nav.navbar {
+  padding: 1rem;
+  margin: 0;
+  background: white;
+}
+nav.navbar .container-fluid a.navbar-brand {
+  font-family: "Srisakdi", cursive;
+  font-weight: 700;
+  font-size: 50px;
+  color: #fc427b;
+  display: initial;
+}
+nav.navbar .navbar-collapse ul.nav li {
+  margin: 15px;
+  text-align: center;
+}
+nav.navbar .navbar-collapse ul.nav li a {
+  color: #4c4c4c;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background-color: white;
+  transform: all 0.8s;
+  padding: 0;
+}
+nav.navbar .navbar-collapse ul.nav li a:hover {
+  background-color: white;
+  color: #fc427b;
+}
+nav.navbar .navbar-collapse ul.nav li a.active {
+  color: #fc427b;
+}
+nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu {
+  background: none;
+  border-radius: 5px;
+}
+nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu li a {
+  color: black;
+}
+section.banner .carousel ol li {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  background: #fc427b;
+  border: 5px solid white;
+  margin: 0 1px;
+}
+section.banner .carousel ol li:hover {
+  background: white;
+}
+section.banner .carousel ol .active {
+  background: white;
+}
+section.banner .carousel ul.carousel-inner {
+  width: 100%;
+  height: 400px;
+}
+section.banner .carousel ul.carousel-inner li.item {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: black;
+  text-align: right;
+  background-position: center;
+}
+section.banner .carousel ul.carousel-inner li.item .content {
+  margin-top: 100px;
+}
+section.banner .carousel ul.carousel-inner li.item .content p {
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+  font-family: "Poppins", sans-serif;
+}
+section.banner .carousel ul.carousel-inner li.item .content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+  color: white;
+  line-height: 1.5em;
+}
+section.banner .carousel ul.carousel-inner li.item .content button {
+  border: 2px solid white;
+  background: #fc427b;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 14px;
+}
+section.banner .carousel ul.carousel-inner li.item:nth-child(1) {
+  background: url("../images/2.jpg") no-repeat center;
+  background-size: cover;
+}
+section.banner .carousel ul.carousel-inner li.item:nth-child(2) {
+  background: url("../images/1.jpg") no-repeat center;
+  background-size: cover;
+}
+section.banner .carousel ul.carousel-inner li.item:nth-child(3) {
+  background: url("../images/4.jpg") no-repeat center;
+  background-size: cover;
+}
+section.Welcome {
+  padding-top: 50px;
+}
+section.Welcome .container .content > h3 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  color: #212529;
+  line-height: 1.2;
+  text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+}
+section.Welcome .container .content > p {
+  font-size: 16px;
+  line-height: 1.5em;
+  font-family: initial;
+  color: #464646;
+  letter-spacing: 2px;
+  font-style: italic;
+  margin: 20px 0;
+}
+section.Welcome .container .content .thumbnail {
+  border: none;
+  padding: 20px 15px 10px 15px;
+}
+section.Welcome .container .content .thumbnail span {
+  border-radius: 50%;
+  padding: 30px;
+  font-size: 24px;
+  background: #fc427b;
+  color: white;
+}
+section.Welcome .container .content .thumbnail .caption {
+  color: #343a40;
+}
+section.Welcome .container .content .thumbnail .caption h3 {
+  letter-spacing: 1px;
+  padding: 20px 0 20px 0;
+}
+section.Welcome .container .content .thumbnail .caption p {
+  letter-spacing: 1px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.9em;
+  font-family: "Sintony", sans-serif;
+}
+section.here {
+  background: #fc427b;
+}
+section.here ul.row {
+  padding: 50px 0 50px 0;
+}
+section.here ul.row li .thumbnail {
+  background: #fc427b;
+  color: white;
+  text-align: center;
+  border: none;
+}
+section.here ul.row li .thumbnail span {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 24px;
+}
+section.here ul.row li .thumbnail .caption {
+  color: white;
+}
+section.here ul.row li .thumbnail .caption h3 {
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.5em;
+}
+section.here ul.row li .thumbnail .caption p {
+  font-size: 14px;
+  line-height: 2em;
+  font-family: "Sintony", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+section.Blog {
+  padding-top: 60px;
+}
+section.Blog .container ul.row .content {
+  text-align: center;
+}
+section.Blog .container ul.row .content > h3 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.9em;
+}
+section.Blog .container ul.row .content > p {
+  font-family: "Sintony", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999;
+  line-height: 2em;
+}
+section.Blog .container ul.row .thumbnail {
+  margin-top: 30px;
+  padding: 0;
+  border: none;
+}
+section.Blog .container ul.row .thumbnail .img {
+  position: relative;
+}
+section.Blog .container ul.row .thumbnail .img img {
+  width: 100%;
+  cursor: pointer;
+}
+section.Blog .container ul.row .thumbnail .img > h3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white;
+  font-weight: 600;
+  background: #38d2fe;
+  padding: 10px 25px;
+}
+section.Blog .container ul.row .thumbnail .img > h3 > span {
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  padding-top: 5px;
+}
+section.Blog .container ul.row .thumbnail .caption {
+  padding: 0;
+}
+section.Blog .container ul.row .thumbnail .caption > h3 {
+  font-size: 22px;
+  color: #343a40;
+  font-weight: 600;
+  line-height: 2em;
+  margin-top: 10px;
+}
+section.Blog .container ul.row .thumbnail .caption ul.list-unstyled {
+  overflow: hidden;
+}
+section.Blog .container ul.row .thumbnail .caption ul.list-unstyled li {
+  font-size: 16px;
+  color: #999;
+  float: left;
+  margin-right: 14px;
+  letter-spacing: 1px;
+  line-height: 2em;
+}
+section.Blog .container ul.row .thumbnail .caption ul.list-unstyled li span {
+  color: #fc427b;
+}
+section.Blog .container ul.row .thumbnail .caption ul.list-unstyled li a {
+  color: #999;
+}
+section.Blog .container ul.row .thumbnail .caption ul.list-unstyled li a:hover {
+  color: black;
+  text-decoration: none;
+}
+section.Blog .container ul.row .thumbnail .caption p {
+  margin-top: 20px;
+  color: #999;
+  font-size: 16px;
+  line-height: 1.5em;
+  letter-spacing: 0.8px;
+}
+section.fashion {
+  margin-top: 50px;
+  width: 100%;
+  height: 300px;
+  background: url("../images/bg2.jpg") no-repeat center top;
+  background-size: cover;
+}
+section.fashion .row {
+  margin-top: 60px;
+}
+section.fashion .row h5 {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+section.fashion .row h3 {
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 1.8em;
+  color: white;
+  margin: 10px 0;
+}
+section.fashion .row p {
+  font-family: "Sintony", sans-serif;
+  font-size: 10px;
+  color: #eee;
+  letter-spacing: 1px;
+  line-height: 2em;
+  font-weight: 400;
+}
+section.gallery {
+  margin-top: 50px;
+}
+section.gallery .container {
+  text-align: center;
+}
+section.gallery .container > h3 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.9em;
+}
+section.gallery .container > p {
+  font-family: "Sintony", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999;
+  line-height: 2em;
+}
+section.gallery .container ul.row {
+  margin-top: 20px;
+}
+section.gallery .container ul.row li {
+  padding: 15px;
+}
+section.gallery .container ul.row li img {
+  width: 100%;
+  cursor: pointer;
+}
+section.newsletter {
+  margin-top: 50px;
+  width: 100%;
+  height: 450px;
+  background: url("../images/bg3.jpg") no-repeat;
+  background-size: cover;
+}
+section.newsletter .container {
+  text-align: center;
+}
+section.newsletter .container > h3 {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.9em;
+  color: white;
+}
+section.newsletter .container > p {
+  font-family: "Sintony", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #e0e0e0;
+  line-height: 2em;
+}
+section.newsletter .container ul.row {
+  margin-top: 40px;
+}
+section.newsletter .container ul.row li .form-group {
+  width: 100%;
+}
+section.newsletter .container ul.row li .form-group .form-control {
+  height: auto;
+  padding: 15px;
+  letter-spacing: 1px;
+  outline: none;
+  font-size: 16px;
+}
+section.newsletter .container ul.row li .form-group input {
+  outline: none;
+}
+section.newsletter .container ul.row li .form-group .btn {
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  letter-spacing: 2px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #38d2fe;
+  text-transform: uppercase;
+  outline: none;
+}
+#myModal .modal-content .modal-body {
+  padding: 0;
+}
+#myModal .modal-content .modal-body img {
+  width: 100%;
+}
+#myModal .modal-content .modal-header {
+  border: none;
+  padding: 5px;
+}
+#myModal .modal-content .modal-header button.close span {
+  font-size: 28px;
+}
+#myModal .modal-content .modal-footer {
+  border: none;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+section.contact .container {
+  text-align: center;
+}
+section.contact .container > h3 {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.9em;
+}
+section.contact .container > p {
+  font-family: "Sintony", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #999;
+  line-height: 2em;
+}
+section.contact .container .row ul li {
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  margin: 20px 0;
+  box-shadow: 0px 2px 13px -1px rgba(0, 0, 0, 0.15);
+}
+section.contact .container .row ul li > h3 {
+  color: #38d2fe;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 2em;
+}
+section.contact .container .row ul li > p {
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 2em;
+  color: #999;
+  font-family: "Sintony", sans-serif;
+  font-weight: 600;
+}
+section.contact .container .row ul li a {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 2em;
+  color: #999;
+  font-family: "Sintony", sans-serif;
+  font-weight: 600;
+}
+section.contact .container .row ul li a:hover {
+  text-decoration: none;
+  color: #333;
+}
+section.contact .container .row form.form-horizontal {
+  text-align: left;
+  margin: 30px 0;
+  box-shadow: 0px 2px 13px -1px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+}
+section.contact .container .row form.form-horizontal > h3 {
+  color: #38d2fe;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 2em;
+  margin-bottom: 16px;
+}
+section.contact .container .row form.form-horizontal .form-group .form-control {
+  box-shadow: none;
+  height: auto;
+  color: #000;
+  background: none;
+  padding: 11px;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  border: none;
+  font-size: 12px;
+  line-height: 2em;
+  border-radius: 0;
+  border-bottom: solid 1px #828282;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+section.contact .container .row form.form-horizontal .form-group .form-control:focus {
+  outline: 4px solid lightblue;
+}
+section.contact .container .row form.form-horizontal .form-group .form-control textarea {
+  overflow: auto;
+}
+section.contact .container .row form.form-horizontal .form-group .btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  background: #fc427b;
+  font-size: 12px;
+}
+section.about {
+  margin-top: 100px;
+  background: #212529;
+  color: white;
+}
+section.about .container ul.row {
+  padding-bottom: 50px;
+}
+section.about .container ul.row li.gird {
+  padding-top: 30px;
+}
+section.about .container ul.row li.gird h3 {
+  font-weight: 500;
+  line-height: 2em;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+section.about .container ul.row li.gird h5 {
+  font-weight: 500;
+  line-height: 2em;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+section.about .container ul.row li.gird p {
+  font-family: "Sintony", sans-serif;
+  color: #999;
+  line-height: 2em;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+section.about .container ul.row li.gird p a {
+  font-family: "Sintony", sans-serif;
+  color: #999;
+  line-height: 2em;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+section.about .container ul.row li.gird p a:hover {
+  text-decoration: none;
+  color: #e0e0e0;
+}
+section.about .container-fluid {
+  text-align: center;
+  border-top: 1px solid #999;
+}
+section.about .container-fluid .row span {
+  cursor: pointer;
+  color: #fc427b;
+  font-size: 18px;
+  margin-top: 10px;
+}
+section.about .container-fluid .row h3 {
+  padding: 20px 0;
+  color: #999;
+  font-size: 10px;
+}
+section.about .container-fluid .row h3 a {
+  color: #fc427b;
+}
+/* 超小屏幕（手机，小于 768px） */
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） */
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width: 768px) {
+  nav.navbar {
+    padding: 1rem;
+    margin: 0;
+    background: white;
+  }
+  nav.navbar .container-fluid a.navbar-brand {
+    font-family: "Srisakdi", cursive;
+    font-weight: 700;
+    font-size: 50px;
+    color: #fc427b;
+    display: initial;
+  }
+  nav.navbar .navbar-collapse ul.nav li {
+    margin: 15px;
+  }
+  nav.navbar .navbar-collapse ul.nav li a {
+    color: #4c4c4c;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: white;
+    transform: all 0.8s;
+    padding: 0;
+  }
+  nav.navbar .navbar-collapse ul.nav li a:hover {
+    background-color: white;
+    color: #fc427b;
+  }
+  nav.navbar .navbar-collapse ul.nav li a.active {
+    color: #fc427b;
+  }
+  nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu {
+    background: #4c4c4c;
+    color: white;
+    border-radius: 10px;
+  }
+  nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu li a {
+    background: #4c4c4c;
+    color: white;
+    padding: 5px 10px;
+  }
+  nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu li a:hover {
+    background: white;
+    color: black;
+  }
+  section.banner .carousel ol li {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background: #fc427b;
+    border: 4px solid white;
+    margin: 0 2px;
+  }
+  section.banner .carousel ol li:hover {
+    background: white;
+  }
+  section.banner .carousel ol .active {
+    background: white;
+  }
+  section.banner .carousel ul.carousel-inner {
+    width: 100%;
+    height: 720px;
+  }
+  section.banner .carousel ul.carousel-inner li.item {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: black;
+    text-align: right;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content {
+    margin-top: 300px;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    font-family: "Poppins", sans-serif;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content h3 {
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+    color: white;
+    line-height: 1.5em;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content button {
+    border: 2px solid white;
+    background: #fc427b;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    margin-top: 50px;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(1) {
+    background: url("../images/2.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(2) {
+    background: url("../images/1.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(3) {
+    background: url("../images/4.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.fashion {
+    width: 100%;
+    height: 500px;
+    background: url("../images/bg2.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.fashion .row {
+    margin-top: 80px;
+  }
+  section.fashion .row h5 {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  section.fashion .row h3 {
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: 1px;
+    line-height: 2em;
+    color: white;
+  }
+  section.fashion .row p {
+    font-family: "Sintony", sans-serif;
+    font-size: 14px;
+    color: #eee;
+    letter-spacing: 1px;
+    line-height: 2em;
+    font-weight: 600;
+  }
+  section.newsletter {
+    margin-top: 50px;
+    width: 100%;
+    height: 450px;
+    background: url("../images/bg3.jpg") no-repeat;
+    background-attachment: fixed;
+  }
+  section.newsletter .container {
+    text-align: center;
+  }
+  section.newsletter .container > h3 {
+    margin-top: 80px;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.9em;
+    color: white;
+  }
+  section.newsletter .container > p {
+    font-family: "Sintony", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+    line-height: 2em;
+  }
+  section.newsletter .container ul.row {
+    margin-top: 60px;
+  }
+  section.newsletter .container ul.row li .form-group {
+    width: 100%;
+  }
+  section.newsletter .container ul.row li .form-group .form-control {
+    height: auto;
+    padding: 15px;
+    letter-spacing: 1px;
+    outline: none;
+    font-size: 16px;
+  }
+  section.newsletter .container ul.row li .form-group input {
+    outline: none;
+  }
+  section.newsletter .container ul.row li .form-group .btn {
+    width: 100%;
+    cursor: pointer;
+    padding: 15px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #38d2fe;
+    text-transform: uppercase;
+    outline: none;
+  }
+}
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width: 992px) {
+  nav.navbar {
+    padding: 1rem;
+  }
+  nav.navbar .navbar-collapse ul.nav li {
+    margin: 15px;
+  }
+  nav.navbar .navbar-collapse ul.nav li a {
+    font-size: 18px;
+  }
+  nav.navbar .navbar-collapse ul.nav li a:hover {
+    background-color: white;
+    color: #fc427b;
+  }
+  nav.navbar .navbar-collapse ul.nav li a.active {
+    color: #fc427b;
+  }
+  nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu {
+    background: #4c4c4c;
+    color: white;
+    border-radius: 10px;
+  }
+  nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu li a {
+    background: #4c4c4c;
+    color: white;
+    padding: 5px 10px;
+  }
+  nav.navbar .navbar-collapse ul.nav li.dropdown ul.dropdown-menu li a:hover {
+    background: white;
+    color: black;
+  }
+  section.banner .carousel ol li {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background: #fc427b;
+    border: 4px solid white;
+    margin: 0 2px;
+  }
+  section.banner .carousel ol li:hover {
+    background: white;
+  }
+  section.banner .carousel ol .active {
+    background: white;
+  }
+  section.banner .carousel ul.carousel-inner {
+    width: 100%;
+    height: 720px;
+  }
+  section.banner .carousel ul.carousel-inner li.item {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: black;
+    text-align: right;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content {
+    margin-top: 300px;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content p {
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    font-family: "Poppins", sans-serif;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content h3 {
+    font-size: 42px;
+    font-weight: 700;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+    color: white;
+    line-height: 1.5em;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content button {
+    border: 2px solid white;
+    background: #fc427b;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    margin-top: 50px;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(1) {
+    background: url("../images/2.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(2) {
+    background: url("../images/1.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(3) {
+    background: url("../images/4.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.here {
+    background: #fc427b;
+  }
+  section.here ul.row {
+    padding: 100px 0 50px 0;
+  }
+  section.here ul.row li .thumbnail {
+    background: #fc427b;
+    color: white;
+    text-align: center;
+    border: none;
+  }
+  section.here ul.row li .thumbnail span {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 30px;
+    font-size: 32px;
+  }
+  section.here ul.row li .thumbnail .caption {
+    color: white;
+  }
+  section.here ul.row li .thumbnail .caption h3 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+  }
+  section.here ul.row li .thumbnail .caption p {
+    font-size: 16px;
+    line-height: 2em;
+    font-family: "Sintony", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 100;
+  }
+  section.fashion {
+    width: 100%;
+    height: 600px;
+    background: url("../images/bg2.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.fashion .row {
+    margin-top: 100px;
+  }
+  section.fashion .row h5 {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  section.fashion .row h3 {
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 2em;
+    color: white;
+  }
+  section.fashion .row p {
+    font-family: "Sintony", sans-serif;
+    font-size: 16px;
+    color: #eee;
+    letter-spacing: 1px;
+    line-height: 2em;
+    font-weight: 600;
+  }
+  section.gallery {
+    margin-top: 100px;
+  }
+  section.gallery .container {
+    text-align: center;
+  }
+  section.gallery .container > h3 {
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.9em;
+  }
+  section.gallery .container > p {
+    font-family: "Sintony", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #999;
+    line-height: 2em;
+  }
+  section.gallery .container ul.row {
+    margin-top: 30px;
+  }
+  section.gallery .container ul.row li {
+    padding: 15px;
+  }
+  section.gallery .container ul.row li img {
+    width: 100%;
+    cursor: pointer;
+  }
+  section.newsletter {
+    margin-top: 100px;
+    width: 100%;
+    height: 450px;
+    background: url("../images/bg3.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  section.newsletter .container {
+    text-align: center;
+  }
+  section.newsletter .container > h3 {
+    margin-top: 100px;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.9em;
+    color: white;
+  }
+  section.newsletter .container > p {
+    font-family: "Sintony", sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+    line-height: 2em;
+  }
+  section.newsletter .container ul.row {
+    margin-top: 60px;
+  }
+  section.newsletter .container ul.row li .form-group {
+    width: 100%;
+  }
+  section.newsletter .container ul.row li .form-group .form-control {
+    height: auto;
+    padding: 15px;
+    letter-spacing: 1px;
+    outline: none;
+    font-size: 16px;
+  }
+  section.newsletter .container ul.row li .form-group input {
+    outline: none;
+  }
+  section.newsletter .container ul.row li .form-group .btn {
+    width: 100%;
+    cursor: pointer;
+    padding: 15px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #38d2fe;
+    text-transform: uppercase;
+    outline: none;
+  }
+  section.contact .container {
+    text-align: center;
+  }
+  section.contact .container > h3 {
+    margin-top: 80px;
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.9em;
+  }
+  section.contact .container > p {
+    font-family: "Sintony", sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #999;
+    line-height: 2em;
+  }
+  section.contact .container .row ul li {
+    width: 100%;
+    padding: 40px;
+    text-align: left;
+    margin: 30px 0;
+    box-shadow: 0px 2px 13px -1px rgba(0, 0, 0, 0.15);
+  }
+  section.contact .container .row ul li > h3 {
+    color: #38d2fe;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 2em;
+  }
+  section.contact .container .row ul li > p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 2em;
+    color: #999;
+    font-family: "Sintony", sans-serif;
+    font-weight: 600;
+  }
+  section.contact .container .row ul li a {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 2em;
+    color: #999;
+    font-family: "Sintony", sans-serif;
+    font-weight: 600;
+  }
+  section.contact .container .row ul li a:hover {
+    text-decoration: none;
+    color: #333;
+  }
+  section.contact .container .row form.form-horizontal {
+    text-align: left;
+    margin: 30px 0;
+    box-shadow: 0px 2px 13px -1px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+  }
+  section.contact .container .row form.form-horizontal > h3 {
+    color: #38d2fe;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 2em;
+    margin-bottom: 16px;
+  }
+  section.contact .container .row form.form-horizontal .form-group .form-control {
+    height: auto;
+    color: #000;
+    background: none;
+    outline: none;
+    padding: 11px;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+    border: none;
+    font-size: 16px;
+    line-height: 2em;
+    border-radius: 0;
+    border-bottom: solid 1px #828282;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  }
+  section.contact .container .row form.form-horizontal .form-group .form-control textarea {
+    overflow: auto;
+  }
+  section.contact .container .row form.form-horizontal .form-group .btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    letter-spacing: 1px;
+    padding: 12px 0;
+    background: #fc427b;
+    font-size: 16px;
+  }
+  section.about {
+    margin-top: 200px;
+    background: #212529;
+    color: white;
+  }
+  section.about .container ul.row {
+    padding-bottom: 100px;
+  }
+  section.about .container ul.row li.gird {
+    padding-top: 100px;
+  }
+  section.about .container ul.row li.gird h3 {
+    font-weight: 500;
+    line-height: 2em;
+    margin-bottom: 48px;
+    letter-spacing: 1px;
+  }
+  section.about .container ul.row li.gird h5 {
+    font-weight: 500;
+    line-height: 2em;
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+  section.about .container ul.row li.gird p {
+    font-family: "Sintony", sans-serif;
+    color: #999;
+    line-height: 2em;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+  section.about .container ul.row li.gird p a {
+    font-family: "Sintony", sans-serif;
+    color: #999;
+    line-height: 2em;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+  section.about .container ul.row li.gird p a:hover {
+    text-decoration: none;
+    color: #e0e0e0;
+  }
+  section.about .container-fluid {
+    text-align: center;
+    border-top: 1px solid #999;
+  }
+  section.about .container-fluid .row span {
+    cursor: pointer;
+    color: #fc427b;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  section.about .container-fluid .row h3 {
+    padding: 50px 0;
+    color: #999;
+    font-size: 20px;
+  }
+  section.about .container-fluid .row h3 a {
+    color: #fc427b;
+  }
+}
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width: 1200px) {
+  section.banner .carousel ol li {
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    background: #fc427b;
+    border: 4px solid white;
+    margin: 0 2px;
+  }
+  section.banner .carousel ol li:hover {
+    background: white;
+  }
+  section.banner .carousel ol .active {
+    background: white;
+  }
+  section.banner .carousel ul.carousel-inner {
+    width: 100%;
+    height: 720px;
+  }
+  section.banner .carousel ul.carousel-inner li.item {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    color: black;
+    text-align: right;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content {
+    margin-top: 300px;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content p {
+    font-size: 26px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    font-family: "Poppins", sans-serif;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content h3 {
+    font-size: 55px;
+    font-weight: 700;
+    text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
+    color: white;
+    line-height: 1.5em;
+  }
+  section.banner .carousel ul.carousel-inner li.item .content button {
+    border: 2px solid white;
+    background: #fc427b;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    margin-top: 50px;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(1) {
+    background: url("../images/2.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(2) {
+    background: url("../images/1.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.banner .carousel ul.carousel-inner li.item:nth-child(3) {
+    background: url("../images/4.jpg") no-repeat center;
+    background-size: cover;
+  }
+  section.fashion {
+    width: 100%;
+    height: 600px;
+    background: url("../images/bg2.jpg") no-repeat;
+    background-attachment: fixed;
+  }
+  section.fashion .row {
+    margin-top: 100px;
+  }
+  section.fashion .row h5 {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  section.fashion .row h3 {
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: 1px;
+    line-height: 2em;
+    color: white;
+  }
+  section.fashion .row p {
+    font-family: "Sintony", sans-serif;
+    font-size: 16px;
+    color: #eee;
+    letter-spacing: 1px;
+    line-height: 2em;
+    font-weight: 600;
+  }
+}
+/*# sourceMappingURL=./model.css.map */

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="never">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>爱奇艺海贼王搜索</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        @keyframes rotateImg {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding-top: 20px;
+            background: #e9e9e9;
+        }
+        
+        .frame {
+            width: 80%;
+            margin: 0 auto;
+            border-right: 1px solid #999;
+        }
+
+        section.container {
+            margin-top: 10px;
+        }
+
+        a {
+            display: block;
+            overflow: hidden;
+            text-decoration: none;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        a:hover {
+            background: rgb(238, 238, 238);
+            text-decoration: none;
+
+        }
+
+        img {
+            float: left;
+        }
+
+        h3 {
+            color: black;
+        }
+        nav {
+            display: none;
+        }
+
+        span.glyphicon-repeat {
+            animation: rotateImg 1.5s infinite;
+            display: none;
+            font-size: 60px;
+            font-weight: 600;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 缓冲框 -->
+
+    <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+    
+    <div class="frame">
+        
+        <!-- 表单 -->
+        <section class="container">
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="exampleInputNumber" placeholder="请输入页码 (最新更新到13页)">
+                    </div>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <button class="btn ">搜索</button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 媒体素材 -->
+
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                </div>
+
+                <!-- 分页 -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script>
+        var formControl = document.querySelector('.form-control');
+        var content = document.querySelector('.content');
+        var next = document.querySelector('.next');
+        var navigation = document.querySelector('nav');
+        var lis = document.querySelectorAll('ul.pagination li');
+        var span = document.querySelector('span');
+        var current = 0;
+        var node;
+
+
+        //搜索数据 添加script
+        formControl.onchange = function (e) {
+            // console.log(e);
+            content.innerHTML = '';
+
+            document.querySelector('.btn').onclick = function () {
+                // console.log('xx');
+
+                node = document.createElement('script');
+                node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + e.target.valueAsNumber + '/?callback=test';
+                document.body.appendChild(node);
+                current = e.target.valueAsNumber;
+                navigation.style.display = 'block';
+            }
+
+            // AJAX请求
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 1) {
+                    // console.log('waiting...');
+                    span.style.display = 'block';
+                }
+                if (xmlhttp.readyState == 4) {
+                    // console.log('xx');
+                    span.style.display = 'none';
+                }
+            }
+            xmlhttp.open('GET', 'http://cache.video.iqiyi.com/jp/avlist/202861101/' +  e.target.valueAsNumber  +'/?callback=test', true);
+            xmlhttp.send();
+        }
+
+
+        //实现分页
+        lis.forEach(function (li, index, lis) {
+            li.onclick = function () {
+                content.innerHTML = '';
+                if (index == 6) {
+                    current++;
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + current + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = current;
+                } else if (index == 0) {
+                    if (current > 0) {
+                        current--;
+                    }
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + current + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = current;
+                } else if (index == 1) {
+                    current = 1;
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + '1' + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = 1;
+                } else if (index == 2) {
+                    current = 2;
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + '2' + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = 2;
+                } else if (index == 3) {
+                    current = 3;
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + '3' + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = 3;
+                } else if (index == 4) {
+                    current = 4;
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + '4' + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = 4;
+                } else if (index == 5) {
+                    current = 5;
+                    node = document.createElement('script');
+                    node.src = 'http://cache.video.iqiyi.com/jp/avlist/202861101/' + '5' + '/?callback=test';
+                    document.body.appendChild(node);
+                    formControl.valueAsNumber = 5;
+                }
+
+                var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 1) {
+                    // console.log('waiting...');
+                    span.style.display = 'block';
+                }
+                if (xmlhttp.readyState == 4) {
+                    // console.log('xx');
+                    span.style.display = 'none';
+                }
+            }
+            xmlhttp.open('GET', 'http://cache.video.iqiyi.com/jp/avlist/202861101/' +  current  +'/?callback=test', true);
+            xmlhttp.send();
+            }
+        })
+
+        //实现页面添加数据
+        function test(params) {
+            params.data.vlist.forEach(function (p, index, ps) {
+                var nodebox = document.createElement('a');
+                nodebox.href = p.vurl;
+                content.appendChild(nodebox)
+                var nodeimg = document.createElement('img');
+                nodeimg.src = p.vpic;
+                nodebox.appendChild(nodeimg);
+                var nodeh3 = document.createElement('h3');
+                nodeh3.innerHTML = p.shortTitle;
+                nodebox.appendChild(nodeh3);
+                var nodeps = document.createElement('p');
+                nodeps.innerHTML = p.vt;
+                nodebox.appendChild(nodeps);
+            });
+        }
+
+    </script>
+
+    <!-- http://cache.video.iqiyi.com/jp/avlist/202861101/1/?callback=jsonp9 -->
+
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @keyframes myrotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes myrotaterever {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .stage {
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+            position: relative;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        .stage .gear {
+            width: 100px;
+            height: 100px;
+            /* background: pink; */
+            animation: myrotate 5s linear infinite;
+            
+        }
+        .stage .gear.top{
+            margin: 0 auto;
+            /* position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -50px; */
+        }
+        .stage .gear .part {
+            width: 100%;
+            height: 100%;
+            background: pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10%;
+        }
+
+        .stage .gear .part:nth-child(2) {
+            transform: rotate(30deg);
+        }
+
+        .stage .gear .part:nth-child(3) {
+            transform: rotate(60deg);
+        }
+
+        .stage .gear span {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -30px 0 0 -30px;
+        }
+
+        .gear.left .part{
+            background: lightblue;
+        }
+        .stage .gear.left {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            animation: myrotaterever 5s linear infinite;
+        }
+        .stage .gear.left span {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -10px 0 0 -10px;
+        }
+        .gear.left{
+            position: absolute;
+            top: 0;
+            left: 30%;
+        }
+        .gear.right{
+            position: absolute;
+            top: -10%;
+            left: 50%;
+        }
+        .gear.right .part{
+            background: lightcoral;
+            
+        }
+        .stage .gear.right {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            animation: myrotaterever 5s linear infinite;
+        }
+        .stage .gear.right span {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px 0 0 -20px;
+        }
+        .mask{
+            width: 120px;
+            height: 120px;
+            /* background: red; */
+            position: absolute;
+            top: 18%;
+            left: 38%; 
+            z-index: 99;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1000px rgba(255, 255, 255, .7), 0 0 10px 2px rgba(0, 0, 0, .5) inset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="mask"></div>
+        <div class="gear top">
+            <div class="part"></div>
+            <div class="part"></div>
+            <div class="part"></div>
+            <span></span>
+        </div>
+        <div class="gear left">
+            <div class="part"></div>
+            <div class="part"></div>
+            <div class="part"></div>
+            <span></span>
+        </div>
+        <div class="gear right">
+            <div class="part"></div>
+            <div class="part"></div>
+            <div class="part"></div>
+            <span></span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

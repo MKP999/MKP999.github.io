@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D 轮播图</title>
+    <style>
+        @keyframes mychangemain {
+            0% {
+                transform: translate3d(0px, 0px, -10px);
+            }
+
+            25% {}
+
+            40% {
+                transform: rotateY(-45deg) translate3d(350px, 0px, 10px);
+            }
+
+            65% {
+                transform: rotateY(0deg) translate3d(350px, 0px, 10px);
+            }
+
+            100% {
+                transform: translate3d(0px, 0px, 20px);
+            }
+        }
+
+        @keyframes mychangeminor {
+            0% {
+                transform: translate3d(0px, 0px, 20px);
+
+            }
+
+            25% {}
+
+            40% {
+                transform: rotateY(45deg) translate3d(-350px, 0px, 10px);
+            }
+
+            65% {
+                transform: rotateY(0deg) translate3d(-350px, 0px, 10px);
+            }
+
+            100% {
+                transform: translate3d(0px, 0px, 0px);
+            }
+        }
+
+        html,
+        body {
+            /* background: linear-gradient(rgb(243, 4, 151), rgb(252, 130, 151)); */
+            background: url('./img/bg1.jpg') center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 5000px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .stage {
+            width: 700px;
+            height: 500px;
+            /* background: greenyellow; */
+            transform-style: preserve-3d;
+            perspective: 2500px;
+            transform-origin: 50% 50% 100px;
+            border-radius: 15px;
+            /* transform: rotateX(45deg) rotateY(45deg); */
+        }
+
+        ul.swiper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        ul.swiper li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* transform-style: preserve-3d; */
+            transform-origin: 50% 50% 100px;
+            /* opacity: 0; */
+            transition: all 1s;
+            box-shadow: 0 0 40px 0 rgba(0, 0, 0, .3);
+            border-radius: 15px;
+        }
+
+        ul.swiper li:first-child {
+            background: url('./img/home1.jpg') no-repeat center;
+            background-size: cover;
+            /* transform: translate3d(0, 0, 30px); */
+        }
+
+        ul.swiper li:nth-child(2) {
+            background: url('./img/home3.jpg') no-repeat center;
+            background-size: cover;
+            /* transform: translate3d(0, 0, 20px); */
+        }
+
+        ul.swiper li:nth-child(3) {
+            background: url('./img/home4.jpg') no-repeat center;
+            background-size: cover;
+            /* transform: translate3d(0, 0, 10px); */
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -45px;
+            transform: translate3d(0, -10px, 45px);
+        }
+
+        .dots span {
+            width: 20px;
+            height: 20px;
+            background: #999;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 5px;
+            transition: all 1s;
+        }
+
+        span.active {
+            background: white;
+        }
+
+        ul.swiper li.active {
+            animation: mychangemain 1s linear;
+            z-index: 99;
+        }
+
+        ul.swiper li.unactive {
+            animation: mychangeminor 1s linear;
+            /* z-index: 99; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <ul class="swiper">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="dots"></div>
+    </div>
+
+    <script>
+        var stage = document.querySelector('.stage');
+        var dots = document.querySelector('.dots');
+        var swiperlis = document.querySelectorAll('ul.swiper li');
+        var current = 0;
+
+        swiperlis.forEach(function (li, index, lis) {
+            var node = document.createElement('span');
+            dots.appendChild(node);
+        })
+        var spans = document.querySelectorAll('span');
+        spans.forEach(function (span, index, spans) {
+            if (index == 0) {
+                span.classList.add('active');
+            }
+            span.onclick = function () {
+                setTimeout(function () {
+                    // console.log(i);
+                    for (var i = 0; i < spans.length; i++) {
+                        spans[i].classList.remove('active');
+                    }
+                    spans[index].classList.add('active');
+                    showpic(index);
+                  },200)
+                    
+            }
+            current = index;
+        })
+
+        function showpic(index) {
+            for (var i = 0; i < swiperlis.length; i++) {
+                swiperlis[i].classList.remove('active');
+                swiperlis[i].classList.remove('unactive');
+            }
+            if (index == 0) {
+                swiperlis[0].classList.add('active');
+                swiperlis[2].classList.add('unactive');
+            }
+            swiperlis[index].classList.add('active');
+            swiperlis[index - 1].classList.add('unactive');
+        }
+
+
+    </script>
+</body>
+
+</html>

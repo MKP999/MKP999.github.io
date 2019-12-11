@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 400px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 100px auto;
+    .inputbox {
+        position: relative;
+        input[type="text"] {
+            display: inline-block;
+            width: 300px;
+            height: auto;
+            padding: 15px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid #999;
+            box-sizing: border-box;
+        }
+        span {
+            // display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -8px;
+            display: none;
+        }
+    }
+    p {
+        color: red;
+        font-size: 12px;
+        margin-top: 10px;
+        display: none;
+    }
+    .canvasbox {
+        position: relative;
+        margin-top: 15px;
+        .imgbox {
+            width: 300px;
+            height: 80px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            #myCanvas {
+                border-radius: 5px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        button {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            display: inline-block;
+            margin-top: -16px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            span.fa-refresh {
+            }
+        }
+    }
+    button.submit {
+        padding: 10px 20px;
+        border: 0;
+        background-color: green;
+        color: #fff;
+        margin-top: 15px;
+        font-size: 18px;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+    }
+}

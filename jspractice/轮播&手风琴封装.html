@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装轮播图与手风琴</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(rgb(214, 250, 12),pink,#9a6ef1);
+        }
+        .stage {
+            width: 400px;
+            height: 250px;
+            position: relative;
+            display: inline-block;
+            margin: 50px 100px;
+        }
+
+        .stage .swiper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .stage .swiper .slider {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: red;
+        }
+
+        .stage .swiper .slider img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Category {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .Category span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: lightblue;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .active {
+            background: blue;
+        }
+
+        .button {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -8px;
+        }
+
+        .button .next {
+            float: right;
+        }
+
+        .button .prev {
+            float: left;
+        }
+
+        /* 手风琴 */
+        .content {
+            width: 800px;
+            margin: 100px auto;
+            background: red;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .content img {
+            width: 70%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            vertical-align: middle;
+            transition: all 1s;
+            border-radius: 8px;
+        }
+
+        .content img:first-child {
+            position: static;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage aaa">
+        <div class="swiper">
+            <div class="slider"><img src="./img/a1.png" alt=""></div>
+            <div class="slider"><img src="./img/a2.png" alt=""></div>
+            <div class="slider"><img src="./img/a3.png" alt=""></div>
+            <div class="slider"><img src="./img/a4.png" alt=""></div>
+
+        </div>
+
+        <!-- 分类页 -->
+        <div class="Category"></div>
+
+        <!-- 按钮键 -->
+        <div class="button">
+            <div class="next"></div>
+            <div class="prev"></div>
+        </div>
+    </div>
+
+    <div class="stage bbb">
+        <div class="swiper">
+            <div class="slider"><img src="./img/a4.png" alt=""></div>
+            <div class="slider"><img src="./img/a2.png" alt=""></div>
+            <div class="slider"><img src="./img/a3.png" alt=""></div>
+            <div class="slider"><img src="./img/a1.png" alt=""></div>
+        </div>
+
+        <!-- 分类页 -->
+        <div class="Category"></div>
+
+        <!-- 按钮键 -->
+        <div class="button">
+            <div class="next"></div>
+            <div class="prev"></div>
+        </div>
+    </div>
+
+
+    <div class="stage ccc">
+        <div class="swiper">
+            <div class="slider"><img src="./img/a1.png" alt=""></div>
+            <div class="slider"><img src="./img/a2.png" alt=""></div>
+            <div class="slider"><img src="./img/a3.png" alt=""></div>
+            <div class="slider"><img src="./img/a4.png" alt=""></div>
+        </div>
+
+        <!-- 分类页 -->
+        <div class="Category"></div>
+
+        <!-- 按钮键 -->
+        <div class="button">
+            <div class="next"></div>
+            <div class="prev"></div>
+        </div>
+    </div>
+
+
+    <!-- 手风琴 -->
+    <div class="content">
+        <img src="./img/a1.png" alt="">
+        <img src="./img/a2.png" alt="">
+        <img src="./img/a3.png" alt="">
+        <img src="./img/a4.png" alt="">
+        <img src="./img/a1.png" alt="">
+        <img src="./img/a2.png" alt="">
+        <!-- <img src="./img/a3.png" alt=""> -->
+    </div>
+
+    <script>
+        function Myswiper(className, obj) {
+            this.obj = obj;
+            this.stage = document.querySelector(className);
+            this.swiper = this.stage.querySelector('.swiper');
+            this.sliders = this.swiper.querySelectorAll('.swiper .slider');
+            this.Category = this.stage.querySelector('.Category');
+            this.CatSpans = this.Category.getElementsByTagName('span');
+            this.button = this.stage.querySelector('.button');
+            this.next = this.button.querySelector('.button .next');
+            this.prev = this.button.querySelector('.button .prev');
+            this.dots = []
+            this.current = -1;
+            this.init();
+        }
+
+        //初始化功能
+        Myswiper.prototype.init = function () {
+            var _this = this;
+            if (this.obj.createDots) {
+                this.createDots();
+            }
+            if (this.obj.createButton) {
+                this.createButton();
+            }
+            if (this.obj.setTime) {
+                if (this.obj.setTime instanceof Object) {
+                    _this.setTime(function () {
+                        // console.log('xx');
+
+                        _this.current++;
+                        _this.current = _this.current > _this.sliders.length - 1 ? 0 : _this.current;
+                        _this.activeCurrent(_this.current);
+                    }, _this.obj.setTime.delay);
+                } else {
+                    _this.setTime(function () {
+                        _this.current++;
+                        _this.current = _this.current > _this.sliders.length - 1 ? 0 : _this.current;
+                        _this.activeCurrent(_this.current);
+                    }, 1000);
+                }
+            }
+
+        }
+
+
+        //创建分类页
+        Myswiper.prototype.createDots = function () {
+            var _this = this;
+            _this.sliders.forEach(function (slider, index, sliders) {
+                _this.node = document.createElement('span');
+                _this.Category.appendChild(_this.node);
+                _this.dots.push(_this.node)
+
+            });
+            _this.dots.forEach(function (dot, index, dots) {
+                dot.addEventListener('click', function () {
+                    console.log(index);
+
+                    _this.current = index;
+                    _this.activeCurrent(_this.current);
+                })
+            });
+        }
+
+        //切换图片 实现高亮点点
+        Myswiper.prototype.activeCurrent = function (current) {
+            var _this = this;
+            _this.sliders.forEach(function (slider, index, sliders) {
+                if (current == index) {
+                    slider.style.opacity = '1';
+                } else {
+                    slider.style.opacity = '0';
+
+                }
+            });
+
+            for (var i = 0; i < this.CatSpans.length; i++) {
+                this.CatSpans[i].style.background = 'lightblue';
+                this.CatSpans[i].style.padding = '0';
+
+                if (current == i) {
+                    this.CatSpans[current].style.background = 'blue';
+                    this.CatSpans[i].style.padding = '2px';
+
+                }
+            }
+        }
+
+
+        //创建按钮
+        Myswiper.prototype.createButton = function (current) {
+            var _this = this;
+            _this.nextBt = document.createElement('img');
+            _this.nextBt.src = './img/next.png';
+            _this.nextBt.style.cursor = 'pointer';
+            _this.next.appendChild(this.nextBt);
+            _this.next.addEventListener('click', function () {
+                _this.current++;
+                _this.current = _this.current > _this.sliders.length - 1 ? 0 : _this.current;
+                _this.activeCurrent(_this.current);
+            });
+
+            _this.prevBt = document.createElement('img');
+            _this.prevBt.src = './img/back.png';
+            _this.prevBt.style.cursor = 'pointer';
+            _this.prev.appendChild(this.prevBt);
+            _this.prev.addEventListener('click', function () {
+                _this.current--;
+                _this.current = _this.current < 0 ? _this.sliders.length - 1 : _this.current;
+                _this.activeCurrent(_this.current);
+            });
+        }
+
+        //定时器
+        Myswiper.prototype.setTime = function () {
+            var _this = this;
+            _this.x = setInterval(function () {
+                _this.current++;
+                _this.current = _this.current > _this.sliders.length - 1 ? 0 : _this.current;
+                _this.activeCurrent(_this.current);
+            }, 1000);
+        }
+        var myswiper = new Myswiper('.aaa', {
+            createDots: true,
+            createButton: true,
+            setTime: true
+        });
+        var myswiperB = new Myswiper('.bbb', {
+            createDots: true,
+            createButton: false,
+            setTime: false
+        });
+        var myswiperC = new Myswiper('.ccc', {
+            createDots: true,
+            createButton: false,
+            setTime: {
+                delay: 3000
+            }
+        });
+
+        // myswiper.createDots();
+        // myswiper.createButton(this.current);
+        // myswiper.setTime(this.current);
+
+
+        // 手风琴
+        var content = document.querySelector('.content');
+        var imgs = document.querySelectorAll('.content img');
+
+        imgs.forEach(function (e, i) {
+            imgs[i].style.left = (content.offsetWidth / imgs.length) * i + 'px';
+
+            imgs[i].onmouseover = function () {
+
+                console.log(i);
+                for (var j = 0; j < imgs.length; j++) {
+
+                    if (j <= i) {
+                        imgs[j].style.left = ((content.offsetWidth - imgs[0].offsetWidth) / (imgs.length - 1) * j) + 'px';
+                    } else {
+                        imgs[j].style.left = (j - 1) * ((content.offsetWidth - imgs[0].offsetWidth) / (imgs.length - 1)) + imgs[0].offsetWidth + 'px';
+                    }
+
+                }
+            }
+            imgs[i].onmouseout = function () {
+                for (var j = 0; j < imgs.length; j++) {
+                    imgs[j].style.left = (content.offsetWidth / imgs.length) * j + 'px';
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

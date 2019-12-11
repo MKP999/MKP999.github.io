@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>K.P全面屏动漫网</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.min.css">
+    <style>
+        @keyframes rotateImg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes rotateImg {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes scaleDraw {
+
+            /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+            0% {
+                transform: scale(0.7);
+                /*开始为原始大小*/
+            }
+
+            25% {
+                transform: scale(1.1);
+                /*放大1.1倍*/
+            }
+
+            50% {
+                transform: scale(0.7);
+            }
+
+            75% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(0.7);
+            }
+        }
+
+        @keyframes shake {
+
+            /* 抖动效果*/
+            0% {
+                transform: rotateZ(10deg);
+            }
+
+            25% {
+                transform: rotateZ(-10deg);
+            }
+
+            50% {
+                transform: rotateZ(-10deg);
+            }
+
+            75% {
+                transform: rotateZ(10deg);
+            }
+
+            100% {
+                transform: rotateZ(0deg);
+            }
+        }
+
+        /* header */
+        header {
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            background: rgba(0, 0, 0, .5);
+            z-index: 99;
+        }
+
+        .head {
+            width: 80%;
+            height: 100%;
+            /* background: yellow; */
+            margin: 0 auto;
+            line-height: 80px;
+        }
+
+        header .logo {
+            float: left;
+            margin: 20px;
+        }
+
+        header .menu {
+            float: right;
+            width: 55%;
+
+        }
+
+        header .menu ul.submenu {
+            overflow: hidden;
+            position: relative;
+        }
+
+        header .menu ul.submenu li {
+            float: left;
+            /* padding: 0 30px; */
+            /* border: 1px solid white; */
+            text-transform: capitalize;
+            font-size: 20px;
+            cursor: pointer;
+            width: 20%;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            /* transition: all 1s; */
+            color: white;
+
+        }
+
+        header .menu ul.submenu li .before {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: all 650ms;
+            background: linear-gradient(120deg, transparent, rgba(251, 255, 0, 0.4), transparent);
+        }
+
+        header .menu ul.submenu li.active {
+            background: black;
+            color: white;
+
+        }
+
+        header .menu ul.submenu .mask {
+            width: 150.18px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: black;
+            border-radius: 20px;
+
+        }
+
+
+        /* container */
+        ul.gird {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        ul.gird li {
+            width: 100%;
+            height: 100vh;
+            /* background: orangered; */
+            position: relative;
+        }
+
+        ul.gird>li:nth-child(1) {
+            background: url('./images/bg1.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        ul.gird>li:nth-child(2) {
+            background: url('./images/bg2.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        ul.gird>li:nth-child(3) {
+            background: url('./images/bg3.jpg') no-repeat;
+            background-size: cover;
+
+        }
+
+        ul.gird>li:nth-child(4) {
+            background: url('./images/yq.jpg') no-repeat;
+            background-size: cover;
+
+        }
+
+        ul.gird>li:nth-child(5) {
+            background: url('./images/hzxsl.jpg') no-repeat center;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        ul.gird li .box1,
+        ul.gird li .box2 {
+            width: 100px;
+            height: 100px;
+            /* background: blue; */
+            position: absolute;
+            top: 50%;
+            margin-top: -240px;
+            transition: all 2s;
+        }
+
+        ul.gird li .box1 {
+            left: 0;
+        }
+
+        ul.gird li .box2 {
+            right: 0;
+        }
+
+        ul.gird li.active .box1 {
+            left: 100px;
+        }
+
+        ul.gird li.active .box2 {
+            right: 100px;
+        }
+
+        .Category {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30px;
+            margin-bottom: 50px;
+            margin-right: 20px;
+            z-index: 10;
+        }
+
+        .Category span {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            display: inline-block;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .Category span.active {
+            box-shadow: 0 0 10px 5px black;
+            border: 5px solid black;
+        }
+
+
+        /* 首页图 */
+        ul.gird li .titlename {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            width: 60%;
+            margin: 0 auto;
+            margin-top: -55px;
+            /* transform: scale(0); */
+            transition: all 1s;
+        }
+
+        ul.gird li.active .titlename {
+            transform: scale(1.2);
+
+        }
+
+        ul.gird li .titlename h1 {
+            font-weight: bolder;
+            font-size: 80px;
+            color: white;
+            text-transform: capitalize;
+            text-shadow: 10px 10px 5px black;
+            position: relative;
+            left: 100px;
+            animation: shake .2s 3;
+        }
+
+        ul.gird li .corner {
+            position: absolute;
+        }
+
+        ul.gird li .corner1.corner {
+            top: 100px;
+            left: 100px;
+        }
+
+        ul.gird li .corner2.corner {
+            bottom: 100px;
+            left: 100px;
+        }
+
+        ul.gird li .corner3.corner {
+            top: 100px;
+            right: 100px;
+        }
+
+        ul.gird li .corner4.corner {
+            bottom: 100px;
+            right: 100px;
+        }
+
+        ul.gird li .downbutton {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid gray;
+            overflow: hidden;
+            cursor: pointer;
+
+        }
+
+        ul.gird li .downbutton .nextarrows {
+            background: url('./images/following.png') no-repeat center;
+            background-size: cover;
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: -32px;
+            left: 50%;
+            margin-left: -16px;
+        }
+
+
+        /* 第二张 */
+        ul.gird li:nth-child(2) a.vplay {
+            animation: scaleDraw 5s ease-in-out infinite;
+            position: sticky;
+            top: 250px;
+            left: 900px;
+            width: 109px;
+            height: 109px;
+            background: url('./images/vplay.png') no-repeat center;
+            background-size: 100%;
+            display: block;
+            z-index: 10;
+        }
+
+        ul.gird li:nth-child(2) .fourin1,
+        ul.gird li:nth-child(2) .fourin2 {
+            width: 300px;
+            height: 200px;
+            background: white;
+            position: absolute;
+            bottom: 50px;
+            padding: 5px;
+            border-radius: 5px;
+            transition: transform 2s;
+        }
+
+        ul.gird li:nth-child(2) .fourin1 {
+            left: 200px;
+            transform: rotateZ(45deg);
+        }
+
+        ul.gird li:nth-child(2) .fourin2 {
+            right: 200px;
+            transform: rotateZ(-45deg);
+
+        }
+
+        ul.gird li:nth-child(2).active .fourin1,
+        ul.gird li:nth-child(2).active .fourin2 {
+            transform: rotateZ(0);
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph,
+        ul.gird li:nth-child(2) .fourin2 ul.graph {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph {
+            background: url('./images/lz1.jpg') no-repeat center left;
+            background-size: 150%;
+
+        }
+
+        ul.gird li:nth-child(2) .fourin2 ul.graph {
+            background: url('./images/lz2.jpg') no-repeat top right;
+            background-size: 150%;
+
+
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph li,
+        ul.gird li:nth-child(2) .fourin2 ul.graph li {
+            width: 50%;
+            height: 50%;
+            float: left;
+            position: relative;
+            background: chocolate;
+            transition: all .5s;
+
+        }
+
+        /* 龙珠四合一 图一 */
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.one,
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.two,
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.three,
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.four {
+            background: url('./images/lz3.jpeg') no-repeat;
+            background-size: 250%;
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.one {
+            background-position: -45px 0;
+            top: -50%;
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.two {
+            background-position: -189px 0;
+            right: -50%;
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.three {
+            background-position: -45px -95px;
+            left: -50%;
+        }
+
+        ul.gird li:nth-child(2) .fourin1 ul.graph li.four {
+            background-position: -189px -95px;
+            bottom: -50%;
+        }
+
+
+        /* 龙珠四合一 图二 */
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.one,
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.two,
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.three,
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.four {
+            background: url('./images/lz4.jpg') no-repeat;
+            background-size: 250%;
+        }
+
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.one {
+            background-position: -45px 0;
+            top: -50%;
+        }
+
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.two {
+            background-position: -189px 0;
+            right: -50%;
+        }
+
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.three {
+            background-position: -45px -95px;
+            left: -50%;
+        }
+
+        ul.gird li:nth-child(2) .fourin2 ul.graph li.four {
+            background-position: -189px -95px;
+            bottom: -50%;
+        }
+
+
+
+        /* 第三页 */
+
+        /* 螺旋丸 */
+        ul.gird li:nth-child(3) .vplay-warpper {
+            width: 163px;
+            height: 163px;
+            top: 520px;
+            left: 1050px;
+            position: sticky;
+            transition: all 3s;
+            transform: scale(0);
+        }
+
+        ul.gird li:nth-child(3).active .vplay-warpper {
+            transform: scale(1);
+        }
+
+        ul.gird li:nth-child(3) .vplay-warpper a.vplay {
+            position: absolute;
+            top: 26px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 109px;
+            height: 109px;
+            border-radius: 50%;
+            background: url('./images/lxw.jpg') no-repeat center;
+            background-size: 500%;
+            display: block;
+            z-index: 10;
+            perspective-origin: center;
+        }
+
+        ul.gird li:nth-child(3) .vplay-warpper .lights {
+            animation: rotateImg 1.5s linear infinite;
+            position: absolute;
+            width: 163px;
+            height: 163px;
+            background: url('./images/light.png') no-repeat center;
+            background-size: 100%;
+            display: block;
+        }
+
+
+        /* LOGO */
+        ul.gird>li:nth-child(3) .box1,
+        ul.gird>li:nth-child(3) .box2 {
+            width: 120px;
+            height: 528px;
+            /* background: yellow; */
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo,
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo {
+            width: 100%;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li,
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li {
+            width: 100%;
+            height: 25%;
+            float: left;
+            /* border: 1px solid red; */
+            position: relative;
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li .coursebefore,
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li .coursebefore {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: all .5s;
+            perspective: 100;
+            transform-style: preserve-3d;
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li .courseafter,
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li .courseafter {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            text-align: center;
+            line-height: 130px;
+            color: white;
+            font-size: 20px;
+            /* visibility: hidden; */
+            transform: rotateY(-90deg);
+            transition: all .5s;
+            perspective: 100;
+            transform-style: preserve-3d;
+
+
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li:hover .courseafter,
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li:hover .courseafter {
+            transform: rotateY(0);
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li:hover .coursebefore,
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li:hover .coursebefore {
+            transform: rotateY(90deg);
+
+        }
+
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li:nth-child(1) .coursebefore {
+            background: url('./images/ea.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li:nth-child(2) .coursebefore {
+            background: url('./images/ps4.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li:nth-child(3) .coursebefore {
+            background: url('./images/blizzard.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box1 ul.courseLogo li:nth-child(4) .coursebefore {
+            background: url('./images/sony.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li:nth-child(1) .coursebefore {
+            background: url('./images/steam.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li:nth-child(2) .coursebefore {
+            background: url('./images/tencent.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li:nth-child(3) .coursebefore {
+            background: url('./images/ubisoft.png') no-repeat center;
+        }
+
+        ul.gird>li:nth-child(3) .box2 ul.courseLogo li:nth-child(4) .coursebefore {
+            background: url('./images/xbox.png') no-repeat center;
+        }
+
+
+
+        /* 第四张 */
+        ul.gird>li:nth-child(4) .worksmark {
+            width: 80%;
+            /* background: chartreuse; */
+            margin: 0 auto;
+            height: 150px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 100px;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li {
+            height: 100%;
+            width: 23.5%;
+            margin: 0 2px;
+            background: chocolate;
+            float: left;
+            transition: all .5s;
+            cursor: pointer;
+
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li.first {
+            background: url('./images/sp1.jpg') no-repeat;
+            background-size: 100%;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li.second {
+            background: url('./images/sp2.jpg') no-repeat;
+            background-size: 100%;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li.third {
+            background: url('./images/sp3.jpg') no-repeat;
+            background-size: 100%;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li.forth {
+            width: 27.5%;
+            background: url('./images/sp4.jpg') no-repeat;
+            background-size: 100%;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li span {
+            width: 100%;
+            height: 100%;
+            color: white;
+            font-size: 16px;
+            background: rgba(0, 0, 0, .6);
+            opacity: 0;
+            display: block;
+            transition: all .5s;
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li.change {
+            background-size: 120%;
+            background-position: top;
+            animation: shake .3s;
+
+        }
+
+        ul.gird>li:nth-child(4) .worksmark ul.markfour li span div {
+            width: 32px;
+            height: 34px;
+            background: url('./images/zoomico.png') no-repeat top;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -17px 0 0 -16px;
+            transition: all .5s;
+        }
+
+
+
+
+
+        /* 第五张 */
+        ul.gird>li:nth-child(5) ul.content {
+            width: 64%;
+            height: 95.5%;
+            margin: 0 auto;
+            position: relative;
+            top: 20px;
+        }
+
+        ul.gird>li:nth-child(5) ul.content li {
+            width: 25%;
+            height: 50%;
+            float: left;
+            transition: all 0.3s;
+            cursor: pointer;
+            /* border: 1px solid red; */
+
+        }
+
+        ul.gird>li:nth-child(5) ul.content li.mask {
+            background: rgba(0, 0, 0, .6);
+        }
+
+        ul.gird>li:nth-child(5) ul.content li.mouseon {
+            border: 5px solid white;
+        }
+
+        ul.gird>li:nth-child(5) .mask-lg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .6);
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        ul.gird>li:nth-child(5) span {
+            /* border: 2px solid white;
+            border-radius: 10px; */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* width: 310px;
+            height: 430px;
+            margin: -215px -155px; */
+            width: 460px;
+            height: 645px;
+            margin: -322.5px -232px;
+            z-index: 100;
+            background: url('./images/hzxsl.jpg') no-repeat;
+            background-size: 395%;
+            background-position-x: 0px;
+            background-position-y: 0px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- -----  header  -----  -->
+    <header>
+        <div class="head">
+            <div class="logo"><img src="./images/logo.png" alt=""></div>
+            <div class="menu">
+                <ul class="submenu">
+                    <div class="mask"></div>
+                    <li>home
+                        <div class="before"></div>
+                    </li>
+                    <li>Dragon Ball
+                        <div class="before"></div>
+                    </li>
+                    <li>Naruto
+                        <div class="before"></div>
+                    </li>
+                    <li>Superman
+                        <div class="before"></div>
+                    </li>
+                    <li>One Piece
+                        <div class="before"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- -----  container ----- -->
+    <div class="container">
+        <div class="Category"></div>
+        <ul class="gird">
+
+            <!-- 第一张 -->
+            <li>
+                <!-- <div class="box1"></div>
+                <div class="box2"></div> -->
+                <div class="titlename">
+                    <h1>Welcome to K.P world</h1>
+                </div>
+                <div class="corner1 corner"><img src="./images/1.png" alt=""></div>
+                <div class="corner2 corner"><img src="./images/2.png" alt=""></div>
+                <div class="corner3 corner"><img src="./images/3.png" alt=""></div>
+                <div class="corner4 corner"><img src="./images/4.png" alt=""></div>
+
+                <div class="downbutton">
+                    <div class="nextarrows"></div>
+                </div>
+
+            </li>
+
+            <!-- 第二张 -->
+            <li>
+                <!-- <div class="box1"></div>
+                <div class="box2"></div> -->
+                <!-- <div class="vplay-warpper">
+                    <a href="#" class="vplay"></a>
+                    <div class="lights"></div>
+                </div> -->
+
+                <a href="#" class="vplay"></a>
+
+                <div class="fourin1">
+                    <ul class="graph">
+
+                        <li class="one"></li>
+                        <li class="two"></li>
+                        <li class="three"></li>
+                        <li class="four"></li>
+                    </ul>
+                </div>
+
+                <div class="fourin2">
+                    <ul class="graph">
+
+                        <li class="one"></li>
+                        <li class="two"></li>
+                        <li class="three"></li>
+                        <li class="four"></li>
+                    </ul>
+                </div>
+
+            </li>
+
+            <!-- 第三张 -->
+            <li>
+                <div class="vplay-warpper">
+                    <a href="#" class="vplay"></a>
+                    <div class="lights"></div>
+                </div>
+
+                <div class="box1">
+                    <ul class="courseLogo">
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">EA</div>
+                        </li>
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">PS4</div>
+                        </li>
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">暴雪游戏</div>
+                        </li>
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">Sony</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box2">
+                    <ul class="courseLogo">
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">STEAM官方</div>
+                        </li>
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">Tencent</div>
+                        </li>
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">育碧游戏</div>
+                        </li>
+                        <li>
+                            <div class="coursebefore"></div>
+                            <div class="courseafter">xbox360</div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- 第四张 -->
+            <li>
+
+                <!-- <div class="box1"></div>
+                <div class="box2"></div> -->
+
+                <div class="worksmark">
+                    <ul class="markfour">
+                        <li class="first">
+                            <span>与友抗敌
+                                <div></div>
+                            </span>
+                        </li>
+                        <li class="second">
+                            <span>最强BOSS
+                                <div></div>
+                            </span>
+                        </li>
+                        <li class="third">
+                            <span>拯救队友
+                                <div></div>
+                            </span>
+                        </li>
+                        <li class="forth">
+                            <span>更多人物
+                                <div></div>
+                            </span>
+                        </li>
+                    </ul>
+
+                </div>
+            </li>
+
+            <!-- 第五张 -->
+            <li>
+
+                <!-- <div class="box1"></div>
+                <div class="box2"></div> -->
+                <div class="mask-lg"></div>
+                <span></span>
+                <ul class="content">
+                    <!-- <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li>
+                        <li><div class="mask"></div></li> -->
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                    <li class="mask">
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        var y = 0;
+        var current = 0;
+        var canwheel = true;
+        //滚轮事件
+        $('ul.gird').on('wheel', function (e) {
+            console.log(e.originalEvent.deltaY);
+            //防止手抖 节流
+            y += e.originalEvent.deltaY;
+            setTimeout(function () {
+                if (canwheel) {
+                    canwheel = false;
+                    if (y > 0) {
+                        nextPic();
+                    } else {
+                        prevPic();
+                    }
+
+                    //防抖动事件
+                    setTimeout(function () {
+                        canwheel = true;
+                    }, 500);
+                    y = 0;
+                }
+            }, 300);
+
+        })
+        createDots();
+
+        //创建圈圈
+        function createDots() {
+
+            $('ul.gird>li').each(function (index, element) {
+                $('.Category').append('<span></span>');
+                $('.Category span').eq(0).addClass('active');
+                // $('header .menu ul.submenu li').eq(0).addClass('active');
+
+            })
+            $('.Category span').click(function () {
+                // console.log($(this).index());
+                //   $('ul.gird li').eq($(this).index() -1).animate({ 'margin-top': (-100 * current) + 'vh' });
+                //   $('.Category span').eq($(this).index()).addClass('active').siblings().removeClass('active');
+                current = $(this).index();
+                showPic();
+
+            })
+        }
+
+        //展示图片
+        function showPic() {
+            $('ul.gird>li').eq(0).animate({ 'margin-top': (-100 * current) + 'vh' }).end().eq(current).addClass('active').siblings().removeClass('active');
+            $('.Category span').eq(current).addClass('active').siblings().removeClass('active')
+            // $('header .menu ul.submenu li').eq(current).addClass('active').siblings().removeClass('active');
+            $('header .menu ul.submenu .mask').animate({ left: (current * 170) + 'px' })
+
+        }
+
+        //下一张图片
+        function nextPic() {
+            // console.log('next');
+            current = current >= $('ul.gird>li').length - 1 ? current : ++current;
+            showPic();
+        }
+
+        //上一张图片
+        function prevPic() {
+            // console.log('prev');
+            current = current <= 0 ? 0 : --current;
+            showPic();
+        }
+
+
+        // -------header----------
+        //创建闪光按钮鼠标经过事件
+        $('header .menu ul.submenu>li').mouseover(function (e) {
+            // console.log($(this).index());
+            $('header .menu ul.submenu>li').eq($(this).index() - 1).children('.before').css({ left: 100 + '%' });
+            $('header .menu ul.submenu>li').eq($(this).index() - 1).css({ color: 'white' });
+        })
+
+        $('header .menu ul.submenu>li').mouseleave(function (e) {
+            // console.log($(this).index());
+            $('header .menu ul.submenu>li').eq($(this).index() - 1).children('.before').css({ left: -100 + '%' });
+
+        })
+
+        //创建导航栏点击跳转事件
+        $('header .menu ul.submenu>li').click(function () {
+            // console.log($(this).index());
+            //   $('ul.gird li').eq($(this).index() -1).animate({ 'margin-top': (-100 * current) + 'vh' });
+            //   $('.Category span').eq($(this).index()).addClass('active').siblings().removeClass('active');
+
+
+            current = $(this).index() - 1;
+            showPic();
+        })
+
+        //首页向下小图标
+        //实现循环向下移动
+        function nextButton() {
+            $('ul.gird li .downbutton .nextarrows').animate({ top: 90 + 'px' }, 3000);
+            $('ul.gird li .downbutton .nextarrows').animate({ top: -32 + 'px' }, 0, nextButton);
+        }
+        $(document).ready(function () {
+            nextButton();
+        })
+
+        //点击下一页
+        $('ul.gird li .downbutton').click(function () {
+            nextPic();
+        })
+
+        //第二页
+        $('ul.gird li a.vplay').click(function () {
+            nextPic();
+        })
+        //图一
+        $('ul.gird>li .fourin1 ul.graph').mouseover(function () {
+            $('ul.gird>li .fourin1 ul.graph li.one').css({ top: 0 });
+            $('ul.gird>li .fourin1 ul.graph li.two').css({ right: 0 });
+            $('ul.gird>li .fourin1 ul.graph li.three').css({ left: 0 });
+            $('ul.gird>li .fourin1 ul.graph li.four').css({ bottom: 0 });
+        })
+        $('ul.gird>li .fourin1 ul.graph').mouseleave(function () {
+            $('ul.gird>li .fourin1 ul.graph li.one').css({ top: -50 + '%' });
+            $('ul.gird>li .fourin1 ul.graph li.two').css({ right: -50 + '%' });
+            $('ul.gird>li .fourin1 ul.graph li.three').css({ left: -50 + '%' });
+            $('ul.gird>li .fourin1 ul.graph li.four').css({ bottom: -50 + '%' });
+        })
+
+        //图二
+        $('ul.gird>li .fourin2 ul.graph').mouseover(function () {
+            $('ul.gird>li .fourin2 ul.graph li.one').css({ top: 0 });
+            $('ul.gird>li .fourin2 ul.graph li.two').css({ right: 0 });
+            $('ul.gird>li .fourin2 ul.graph li.three').css({ left: 0 });
+            $('ul.gird>li .fourin2 ul.graph li.four').css({ bottom: 0 });
+        })
+        $('ul.gird>li .fourin2 ul.graph').mouseleave(function () {
+            $('ul.gird>li .fourin2 ul.graph li.one').css({ top: -50 + '%' });
+            $('ul.gird>li .fourin2 ul.graph li.two').css({ right: -50 + '%' });
+            $('ul.gird>li .fourin2 ul.graph li.three').css({ left: -50 + '%' });
+            $('ul.gird>li .fourin2 ul.graph li.four').css({ bottom: -50 + '%' });
+        })
+
+        //第三页
+        // $('ul.gird>li .box1 ul.courseLogo li').mousemove(function () {
+        //     console.log($(this).index());
+        //     $('ul.gird>li .box1 ul.courseLogo li').eq($(this).index()).children('img').attr('src','./images/sony.png');
+        //   })
+
+
+        // 第四页
+        $('ul.gird>li .worksmark ul.markfour li').mousemove(function () {
+            // console.log($(this).index());
+            $('ul.gird>li .worksmark ul.markfour li').eq($(this).index()).children('span').css({ opacity: 1 });
+            $('ul.gird>li .worksmark ul.markfour li').eq($(this).index()).addClass('change').siblings().removeClass('change');
+            $('ul.gird>li .worksmark ul.markfour li').find('div').mouseover(function () {
+                $(this).css({ 'background-position-y': -34 + 'px' });
+            })
+            $('ul.gird>li .worksmark ul.markfour li').find('div').mouseleave(function () {
+                $(this).css({ 'background-position-y': 0 });
+            })
+        })
+
+        $('ul.gird>li .worksmark ul.markfour li').mouseleave(function () {
+            // console.log($(this).index());
+            $('ul.gird>li .worksmark ul.markfour li').eq($(this).index()).children('span').css({ opacity: 0 });
+            $('ul.gird>li .worksmark ul.markfour li').eq($(this).index()).removeClass('change');
+        })
+
+
+        //第五页
+        // $('ul.gird>li ul.content').mouseenter(function () { 
+        // })
+
+
+        function liMouseover() {
+            $('ul.gird>li ul.content li').eq($(this).index()).addClass('mouseon').siblings().removeClass('mouseon');
+            $('ul.gird>li ul.content li').eq($(this).index()).removeClass('mask').siblings().addClass('mask');
+        }
+
+        function contentMouseout() {
+            $('ul.gird>li ul.content li').removeClass('mouseon').addClass('mask');
+        }
+
+        function liClick() {
+            var showAt = $(this).index();
+            // console.log(showAt);
+            $('ul.gird>li:nth-child(5) .mask-lg').css({ display: 'block' });
+            $('ul.gird>li ul.content li').off();
+            if (showAt <= 3) {
+                $('ul.gird>li:nth-child(5) span').css({
+                    'background-position-x': (showAt * -455) + 'px',
+                    'background-position-y': 0,
+                    display: 'block'
+                })
+            } else {
+                $('ul.gird>li:nth-child(5) span').css({
+                    'background-position-x': ((showAt - 4) * -455) + 'px',
+                    'background-position-y': -670 + 'px',
+                    display: 'block'
+
+                })
+            }
+            $('ul.gird>li:nth-child(5) span').on('click', spanClick);
+            $('ul.gird>li ul.content').on('mouseout', contentMouseout);
+        }
+
+        function spanClick() {
+            $('ul.gird>li:nth-child(5) .mask-lg').css({ display: 'none' });
+            $('ul.gird>li:nth-child(5) span').css({ display: 'none' });
+            $('ul.gird>li ul.content li').on('mouseover', liMouseover);
+            $('ul.gird>li ul.content li').on('click', liClick);
+        }
+
+        //鼠标进去高光图片
+        $('ul.gird>li ul.content li').on('mouseover', liMouseover);
+
+        //鼠标出来 取消全部高光
+        $('ul.gird>li ul.content').on('mouseout', contentMouseout);
+
+        //弹出个人悬赏令
+        // 当current <=3  x= (current * -300)px         y =0
+        // 当current >3   x= ((current -4) * -300)px    y =-430px
+        $('ul.gird>li:nth-child(5) ul.content li').on('click', liClick);
+
+    </script>
+</body>
+
+</html>

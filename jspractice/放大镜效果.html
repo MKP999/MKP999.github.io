@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜效果</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            background: url('./img/sence.png') no-repeat center;
+            background-size: cover;
+            
+        }
+        .bigmask{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .7);
+        }
+        .content {
+            width: 800px;
+            height: 800px;
+            margin: 200px auto;
+        }
+
+        .content::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .content .master {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+
+        }
+
+        .content .master img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .content .mask {
+            width: 200px;
+            height: 200px;
+            /* background: rgba(0, 0, 0, .5); */
+            background: url('./img/mask-bg.png');
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            /* 让指到的元素 没有指到的效果 */
+        }
+
+        .bigMaster {
+            width: 400px;
+            height: 400px;
+            background: url('./img/sence.png') no-repeat center;
+            background-size: 200%;
+            float: left;
+            display: none;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigmask"></div>
+    <div class="content">
+        <div class="master">
+            <img src="./img/sence.png" alt="">
+            <div class="mask"></div>
+        </div>
+
+        <div class="bigMaster"></div>
+
+    </div>
+
+    <script>
+        var master = document.querySelector('.master');
+        var mask = document.querySelector('.mask');
+        var bigMaster = document.querySelector('.bigMaster');
+
+        master.onmousemove = function (e) {
+            console.log(e.offsetX, e.offsetY);
+            //限制距离
+            var x = e.offsetX - 100;
+            var y = e.offsetY - 100
+
+            x = x < 0 ? 0 : x;
+            x = x > 200 ? 200 : x;
+            y = y < 0 ? 0 : y;
+            y = y > 200 ? 200 : y;
+            //原图
+            mask.style.top = y + 'px';
+            mask.style.left = x + 'px';
+            //放大图
+            bigMaster.style.backgroundPositionX = x * -2 + 'px';
+            bigMaster.style.backgroundPositionY = y * -2 + 'px';
+        }
+        master.onmouseout = function () {
+            mask.style.display = 'none';
+            bigMaster.style.display = 'none';
+        }
+        master.onmouseenter = function () {
+            mask.style.display = 'block';
+            bigMaster.style.display = 'block';
+        }
+
+    </script>
+</body>
+
+</html>

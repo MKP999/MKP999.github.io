@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左侧选择框</title>
+    <style>
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .stage {
+            position: fixed;
+            top: 100px;
+            left: 0;
+            /* background: orange; */
+            cursor: pointer;
+        }
+
+        .stage .title {
+            position: relative;
+            top: 0;
+            left: 0;
+            background: #62778d;
+            border-radius: 0 20px 20px 0;
+            width: 50px;
+            height: 150px;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+            float: right;
+        }
+
+        .stage .title p {
+            /* margin: 0 auto; */
+            font-size: 20px;
+            font-family: '宋体';
+            width: 20px;
+            margin-left: 15px;
+            margin-top: 40px;
+        }
+
+        .stage .choice {
+            position: relative;
+            top: 0;
+            left: 0;
+            /* background: red; */
+            float: left;
+            box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .stage .choice ul.grid li {
+            height: 40px;
+            width: 100px;
+            padding-left: 30px;
+            line-height: 40px;
+            position: relative;
+
+        }
+
+        .stage .choice ul.grid li a {
+            text-decoration: none;
+            color: black;
+            position: relative;
+            z-index: 10;
+
+        }
+
+        .stage .choice ul.grid li span {
+            height: 40px;
+            width: 130px;
+            /* background: red; */
+            position: absolute;
+            top: 0;
+            left: -130px;
+        }
+
+        .stage .choice ul.grid li span.active {
+            left: 0;
+            background: red;
+            box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.5);
+            transition: all .5s;
+        }
+        .stage .choice ul.grid li:nth-child(2) span{
+            background: orange;
+        }
+        .stage .choice ul.grid li:nth-child(3) span{
+            background: yellow;
+        }
+        .stage .choice ul.grid li:nth-child(4) span{
+            background: green;
+        }
+        .stage .choice ul.grid li:nth-child(5) span{
+            background: blue;
+        }
+        .stage .choice ul.grid li:nth-child(6) span{
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="title">
+            <p>选择框</p>
+        </div>
+        <div class="choice">
+            <ul class="grid">
+                <li>
+                    <a href="#">选择 1</a>
+                    <span class="active"></span>
+                </li>
+                <li>
+                    <a href="#">选择 2</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">选择 3</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">选择 4</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">选择 5</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">选择 6</a>
+                    <span></span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+    <script>
+        $('.stage .title').click(function (e) {
+            e.preventDefault();
+            $('.stage .choice').toggle('slow');
+            $('.stage .choice ul.grid li').mouseover(function () {
+                // console.log($(this).index());
+                $('.stage .choice ul.grid li span').eq($(this).index()).addClass('active').parent('li').siblings().children('span').removeClass('active');
+
+            })
+        });
+
+    </script>
+</body>
+
+</html>

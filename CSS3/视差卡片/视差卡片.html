@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title> 3D视差卡片</title>
+</head>
+
+<body>
+    <div class="stage">
+        <p>Movies</p>
+        <h3>Popular</h3>
+        <div class="card">
+            <div class="hole"></div>
+            <div class="hole"></div>
+            <div class="hole"></div>
+        </div>
+    </div>
+
+    <script>
+        var stage = document.querySelector('.stage');
+        var holes = document.querySelectorAll('.card .hole');
+        document.body.onmousemove = function (e) {
+            // console.log(e.clientX);
+            var x = e.clientX - stage.offsetLeft - stage.offsetWidth / 2;
+            var y = e.clientY - stage.offsetTop - stage.offsetHeight / 2;
+            // console.log(x,y);
+            // transform: rotateX(15deg) rotateY(15deg)
+            stage.style.transform = 'rotateX(' + y / 30 + 'deg) rotateY(' + x / 30 + 'deg)';
+
+            holes.forEach(function (hole,index) {
+                hole.style.backgroundPosition =  x/40 +'px ' + (y/40 +30) + 'px,' +  (-x/100-5) +'px '+ (-y/100-5)  + 'px';
+                if(index == 1){
+                    hole.style.backgroundPosition =  (x/40 +20) +'px ' + (y/40 +30) + 'px,' +  (-x/100-5) +'px '+ (-y/100-5)  + 'px';
+                }
+              });
+
+        }
+
+    </script>
+</body>
+
+</html>
