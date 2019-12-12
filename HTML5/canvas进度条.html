@@ -13,6 +13,17 @@
             margin: 0;
             background: linear-gradient(#020a5a,#00060f);
         }
+        .title{
+            width: 400px;
+            font-size: 60px;
+            color: #fff;
+            font-weight: 700;
+            font-family: '楷书';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-200%);
+        }
         .stage {
             position: absolute;
             width: 1000px;
@@ -27,6 +38,7 @@
 </head>
 
 <body>
+    <div class="title">冒泡进度条</div>
     <div class="stage">
         <canvas id="canvas" width="1000" height="400" "></canvas>
     </div>

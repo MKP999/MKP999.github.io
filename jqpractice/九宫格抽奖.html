@@ -172,9 +172,7 @@
                     current = 0;
                     quee++;
                 }
-
                 if (quee >= 3 && current == n) {
-                    console.log(n);
                     clearInterval(id);
                 }
                 $('ul.plate li').eq(arr[current] - 1).addClass('active').siblings().removeClass('active');
@@ -188,12 +186,10 @@
         //点击事件
         function clickDOM() {
             //防抖动 点击后失去点击效果
-            $('ul.plate li').eq(4).unbind();
+            $('ul.plate li').eq(4).off();
             var num = Math.floor(Math.random() * 8);
             start(num);
             setTimeout(function () {
-                // alert(num)
-                // alert('恭喜您！获得' + prize(num).text);
                 $('.popbox').css('display', 'block');
                 $('.mask').css('display', 'block');
                 var result = document.querySelector('.popbox .result');
@@ -205,13 +201,13 @@
                     $('.mask').css('display', 'none');
                 })
             }, 3000)
-        }
-        
-        //3500ms后 恢复点击效果
-        setTimeout(function () {
-            $('ul.plate li').eq(4).on('click', clickDOM);
+            //3500ms后 恢复点击效果
+            setTimeout(function () {
+                $('ul.plate li').eq(4).on('click', clickDOM);
+            }, 3500)
 
-        }, 3500)
+        }
+
 
         //创建获奖函数
         function prize(obj) {

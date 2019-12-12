@@ -9,13 +9,17 @@ body {
   height: 100%;
   background: red;
   margin-left: 0%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
 .stage .game-start {
   width: 50%;
   height: 100%;
   float: left;
-  background-size: cover;
+  -moz-background-size: cover;
+       background-size: cover;
   background-position: center 0px;
   background-repeat: repeat-y;
   position: relative;
@@ -30,7 +34,9 @@ body {
   background: #c4c9ca;
   outline: none;
   border: 1px solid black;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+     -moz-border-radius: 30px;
+          border-radius: 30px;
   display: block;
   bottom: 100px;
 }
@@ -38,7 +44,8 @@ body {
   width: 50%;
   height: 100%;
   float: left;
-  background-size: cover;
+  -moz-background-size: cover;
+       background-size: cover;
   background-position: center 0px;
   background-repeat: repeat-y;
   position: relative;
@@ -61,13 +68,20 @@ body {
   float: left;
 }
 .stage .game .score span:nth-child(2) {
+  border: 2px solid #333333;
+  padding: 1px;
   float: right;
 }
 .stage .game .ranking {
   width: 60%;
   margin: 0 auto;
-  border-radius: 5px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
   border: 1px solid black;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
   z-index: 9;
@@ -84,6 +98,9 @@ body {
   line-height: 24px;
 }
 .stage .game .dead {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
   transition: all 0.3s;
   position: absolute;
   width: 100%;
@@ -99,11 +116,18 @@ body {
   background: #c4c9ca;
   outline: none;
   border: 1px solid black;
-  border-radius: 30px;
+  -webkit-border-radius: 30px;
+     -moz-border-radius: 30px;
+          border-radius: 30px;
   display: block;
   position: static;
   margin: 10px auto;
   z-index: 9;
   background: #c3c8c9;
+}
+@media (min-width: 768px) {
+  .stage .game .dead button:first-child {
+    display: none;
+  }
 }
 /*# sourceMappingURL=./style.css.map */

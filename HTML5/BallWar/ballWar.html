@@ -396,6 +396,8 @@
             ctx.drawImage(img, balance_base_bg_png.sx, balance_base_bg_png.sy, balance_base_bg_png.sw, balance_base_bg_png.sh, balance_base_bg_png.x, balance_base_bg_png.y, 300, ((300 * game.stageW) / balance_base_bg_png.sh) / 1.5);
             //添加得分
             drawWord('white', game.score, game.center.x - 22, game.center.y - 55);
+            //添加排行
+            drawWord('white', 1, game.center.x , game.center.y -5);
             //添加不服来再战
             ctx.drawImage(img, again_btn_png.sx, again_btn_png.sy, again_btn_png.sw, again_btn_png.sh, again_btn_png.x, again_btn_png.y, 200, ((200 * game.stageW) / game.stageH) / 1.5);
             // createTitle(200,again_btn_png);
@@ -486,7 +488,6 @@
                         }
                     }
                 }
-
 
                 // 移动端
                 if (navigator.maxTouchPoints == 1) {

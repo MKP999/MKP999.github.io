@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>分割线对比图</title>
+    <title>图片分割器</title>
     <style>
         body {
             margin: 0;
@@ -112,8 +112,8 @@
 
 
         //鼠标拖拽移动
-        $('.stage span').mousedown(function () {
-            // console.log('bbb');
+        $('.stage span').mousedown(function (event) {
+            event.preventDefault();
             $('.stage ul.covered li').on('mousemove',function (e) {
                 $('.stage ul.covered li:last-child').css({ height: e.offsetY + 'px' });
                 $('.stage span').css({ top: (e.offsetY + 25) + 'px', background: '#555'});

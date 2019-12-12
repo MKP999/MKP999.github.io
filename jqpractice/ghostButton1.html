@@ -13,6 +13,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./images/1.jpg') no-repeat top center;
+            overflow: hidden;
         }
 
         /* 第一个 */
@@ -21,7 +22,7 @@
             height: 100px;
             background: orange;
             position: relative;
-            margin: 20px auto;
+            margin: 40px 300px;
             line-height: 100px;
             text-align: center;
             border-radius: 10px;
@@ -46,7 +47,7 @@
         .box .circle.active {
             transform: scale(1);
             background: lightgreen;
-            
+
 
         }
 
@@ -56,7 +57,7 @@
             height: 100px;
             background: orange;
             position: relative;
-            margin: 0 auto;
+            margin: 0 300px;
             line-height: 100px;
             text-align: center;
             border-radius: 10px;
@@ -81,17 +82,18 @@
         .xxx .circle.active {
             transform: scale(1);
             background: lightgreen;
-            
+
 
         }
+
         /* 第二个 */
         .stage {
             width: 200px;
             height: 100px;
             background: orangered;
             position: relative;
-            top: 45px;
-            left: 50%;
+            top: 50px;
+            left: 400px;
             margin-left: -100px;
             border-radius: 10px;
             cursor: pointer;
@@ -133,10 +135,10 @@
         }
 
         /* 第三个 */
-        .lighterBt{
+        .lighterBt {
             position: absolute;
-            top: 450px;
-            left: 50%;
+            top: 500px;
+            left: 400px;
             margin-left: -100px;
             width: 200px;
             height: 100px;
@@ -148,7 +150,8 @@
             cursor: pointer;
             border-radius: 10px;
         }
-        .lighterBt .before{
+
+        .lighterBt .before {
             content: '';
             width: 100%;
             height: 100%;
@@ -156,14 +159,14 @@
             top: 0;
             left: -100%;
             transition: all 650ms;
-            background: linear-gradient( 120deg, transparent, rgba(146, 148, 248, 0.4), transparent );
+            background: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4), transparent);
         }
 
         /* 第四个 */
-        .bigbt{
+        .bigbt {
             position: absolute;
-            bottom: 230px;
-            left: 50%;
+            bottom: 100px;
+            left: 400px;
             margin-left: -95px;
             padding: 30px 72px;
             font-size: 24px;
@@ -173,14 +176,227 @@
             box-shadow: 0 10px #999;
             cursor: pointer;
         }
-        .bigbt:active{
+
+        .bigbt:active {
             box-shadow: 0 6px #666;
             transform: translateY(4px);
             background: orangered;
 
         }
-        .bigbt:hover{
+
+        .bigbt:hover {
             background: orangered;
+        }
+
+
+        /* 第一个 */
+        .border {
+            position: relative;
+            top: 90px;
+            /* left: 1000px; */
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border-left: 10px solid greenyellow;
+            border-top: 10px solid greenyellow;
+            border-right: 10px solid lightsalmon;
+            border-bottom: 10px solid lightsalmon;
+            transition: all 1s;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: absolute;
+            left: 1000px;
+        }
+
+        .container .content {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            overflow: hidden;
+        }
+
+        .container .content img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+
+        }
+
+        .container:hover .border {
+            transform: rotate(180deg);
+        }
+
+        .container:hover .mask {
+            opacity: 1;
+        }
+
+        .content .mask {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1s;
+            opacity: 0;
+        }
+
+        .content .mask h3 {
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .content .mask p {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+        }
+
+
+        /* 第二个 */
+        .btn-2 {
+            position: absolute;
+            top: 100px;
+            left: 40%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            transition: all 1.5s;
+
+        }
+
+        .btn-2 .shift {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url('./img/images/5.jpg') no-repeat center;
+            background-size: 120%;
+            transition: all 1.5s;
+            margin: 0 auto;
+            border: 20px solid rgba(255, 255, 255, .5);
+            box-sizing: border-box;
+        }
+
+        .btn-2 .btn-mask {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1.5s;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .btn-2 .btn-mask h3 {
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .btn-2 .btn-mask p {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+        }
+
+        .btn-2:hover .btn-mask {
+            opacity: 1;
+            left: 0;
+        }
+
+        .btn-2:hover .shift {
+            transform: rotate(-90deg);
+        }
+
+
+        /* 第三个 */
+        .btn-3 {
+            position: absolute;
+            top: 100px;
+            left: 75%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            transition: all .5s;
+            text-align: center;
+            background: rgba(0, 0, 0, .6);
+            transition: all 1.5s;
+            border-radius: 50%;
+            perspective: 800px;
+        }
+
+        .btn-3 .shrink {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url('./img/images/4.jpg') no-repeat center;
+            background-size: 120%;
+            transition: all .5s;
+            margin: 0 auto;
+            border: 20px solid rgba(255, 255, 255, .5);
+            box-sizing: border-box;
+            transform-origin: left;
+        }
+
+        .btn-3 .mask {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        .btn-3 h3 {
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .btn-3 p {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+
+        }
+
+        .btn-3:hover .shrink {
+            transform: rotateY(-180deg);
+        }
+
+        .btn-3:hover .mask {
+            opacity: 1;
         }
     </style>
 </head>
@@ -193,13 +409,13 @@
     </div><br>
 
     <div class="xxx">
-            BUTTON
-            <div class="circle"></div>
-        </div>
+        BUTTON
+        <div class="circle"></div>
+    </div>
 
     <!-- 第二个按钮  -->
     <div class="stage">
-            BUTTON
+        BUTTON
         <span class="top"></span>
         <span class="right"></span>
         <span class="bottom"></span>
@@ -213,6 +429,42 @@
 
     <!-- 第四个按钮 -->
     <div class="bigbt">click</div>
+
+    <!-- 第一个 -->
+    <div class="container">
+        <div class="border"></div>
+        <div class="content">
+            <img src="./img/images/2.jpg" alt="">
+            <div class="mask">
+                <h3>Heading <br> here</h3>
+
+                <p>Description goes here</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二个 -->
+    <div class="btn-2">
+        <div class="shift">
+        </div>
+
+        <div class="btn-mask">
+            <h3>Heading <br> here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
+
+    <!-- 第三个 -->
+    <div class="btn-3">
+        <span></span>
+        <div class="shrink">
+
+        </div>
+        <div class="mask">
+            <h3>Heading <br> here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
 
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>
@@ -272,11 +524,11 @@
 
         //盘旋发光按钮
         $('.lighterBt').mouseenter(function () {
-            $('.lighterBt .before').css({left : 100 + '%'});
-          })
-          $('.lighterBt').mouseleave(function () {
-            $('.lighterBt .before').css({left : -100 + '%'});
-          })
+            $('.lighterBt .before').css({ left: 100 + '%' });
+        })
+        $('.lighterBt').mouseleave(function () {
+            $('.lighterBt .before').css({ left: -100 + '%' });
+        })
     </script>
 </body>
 

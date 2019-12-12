@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>淘宝放大镜特效</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: url('../../assets/img/bg-2.png');
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      position: relative;
+    }
+
+    .container {}
+
+    .origin {
+      width: 400px;
+      float: left;
+    }
+
+    .auto-img {
+      width: 100%;
+      display: block;
+      /* vertical-align: top; */
+    }
+
+    .mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, .3);
+      display: none;
+    }
+
+    .layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .thumbnail {
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .thumbnail>div {
+      float: left;
+      width: 81px;
+      margin-right: 20px;
+      border: 2px solid transparent;
+    }
+
+    .thumbnail>div.active {
+      border-color: #e4393c;
+    }
+
+    .thumbnail>div:last-child {
+      margin-right: 0;
+    }
+
+    .large {
+      float: left;
+      margin-left: 20px;
+      width: 520px;
+      height: 520px;
+      border: 2px solid #e4933c;
+      background-repeat: no-repeat;
+    }
+
+    select {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <select>
+    <option value="1">1倍</option>
+    <option value="2" selected>2倍</option>
+  </select>
+
+  <div class="container">
+    <div class="origin">
+      <div class="box">
+        <img class="auto-img" src="./food2.png" alt="">
+
+        <!-- 滑块 -->
+        <div class="mask"></div>
+
+        <!-- 绑定事件层 -->
+        <div class="layer"></div>
+      </div>
+      <div class="thumbnail">
+        <div class="active" data-url="./food2.png">
+          <img class="auto-img" src="./food2.png" alt="">
+        </div>
+        <div data-url="./food3.png">
+          <img class="auto-img" src="./food3.png" alt="">
+        </div>
+        <div data-url="./food4.png">
+          <img class="auto-img" src="./food4.png" alt="">
+        </div>
+        <div data-url="./food5.png">
+          <img class="auto-img" src="./food5.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="large"></div>
+  </div>
+
+
+  <script src="./jquery-3.4.1.js"></script>
+  <script>
+
+    $(function () {
+
+      function selectScale(s) {
+        //mask放大倍数
+        var sc = $(s).val();
+
+        //获取原图的宽度和高度
+        var oWidth = $('.layer').width();
+        var oHeight = $('.layer').height();
+
+        //设置mask宽度和高度
+        $('.mask').css({
+          width: oWidth / sc + 'px',
+          height: oHeight / sc + 'px'
+        })
+
+        var $large = $('.large');
+
+        //放大图片
+        var scaleW = $large.width() / (oWidth / sc);
+        var scaleH = $large.height() / (oHeight / sc);
+
+        $large.css({
+          backgroundSize: scaleW * oWidth + 'px ' + scaleH * oHeight + 'px'
+        })
+
+      }
+
+      selectScale('select');
+
+      //选择放大倍数
+      $('select').on('change', function () {
+        selectScale(this);
+      })
+
+
+      $('.layer').hover(function (e) {
+        $('.mask').css({
+          display: 'block'
+        })
+      }, function () {
+        $('.mask').css({
+          display: 'none'
+        })
+      })
+
+      // 鼠标移动事件
+      $('.layer').on('mousemove', function (e) {
+        //e: 事件对象
+        var x = e.offsetX;
+        var y = e.offsetY;
+
+        //获取layer宽度和高度
+        var width = $(this).width();
+        var height = $(this).height();
+
+        var $mask = $('.mask');
+        //获取滑块宽度
+        var w = $mask.width();
+        var h = $mask.height();
+
+        //滑块移动的范围
+        //X轴
+        var minLeft = 0;
+        var maxLeft = width - w;
+
+        //Y轴
+        var minTop = 0;
+        var maxTop = height - h;
+
+        //滑块移动坐标
+        var left = x - w / 2;
+        var top = y - h / 2;
+
+        //控制滑块的移动范围
+        left = left <= minLeft ? minLeft : left >= maxLeft ? maxLeft : left;
+        top = top <= minTop ? minTop : top >= maxTop ? maxTop : top;
+
+        //设置滑块的坐标
+        $mask.css({
+          left: left + 'px',
+          top: top + 'px'
+        })
+
+        //移动放大图片的背景
+        //获取放大比例
+        var scaleLeft = $('.large').width() / $('.mask').width();
+        var scaleTop = $('.large').height() / $('.mask').height();
+
+        $('.large').css({
+          backgroundPosition: -scaleLeft * left + 'px ' + -scaleTop * top + 'px'
+        })
+      })
+
+
+      //放大图片
+      function scaleImg(url) {
+        //获取放大比例
+        var scaleW = $('.large').width() / $('.mask').width();
+        var scaleH = $('.large').height() / $('.mask').height();
+
+        //获取原图的宽度
+        var originWidth = $('.layer').width();
+        var originHeight = $('.layer').height();
+
+        //设置放大图片路径
+        $('.large').css({
+          backgroundImage: 'url(' + url + ')',
+          backgroundSize: scaleW * originWidth + 'px ' + scaleH * originHeight + 'px'
+        })
+      }
+
+      //获取默认的图片url
+      var activeUrl = $('.thumbnail>.active').data('url');
+      scaleImg(activeUrl);
+
+      //缩略图
+      $('.thumbnail>div').on('mouseenter', function () {
+
+        if ($(this).hasClass('active')) {
+          return;
+        }
+
+        //获取当前缩略的图片链接
+        var url = $(this).data('url');
+
+        //将当前缩略图的图片链接赋值给.box的图片的src属性
+        $('.box').find('img').attr('src', url);
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        //放大图片
+        scaleImg(url);
+      })
+    })
+  </script>
+</body>
+
+</html>
