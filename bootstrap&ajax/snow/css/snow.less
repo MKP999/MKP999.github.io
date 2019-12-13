@@ -30,11 +30,11 @@ header {
             border-color: transparent;
             border-radius: 0;
             border: 0;
-            // background-color: transparent;
             .container-fluid {
-                padding: 20px 140px;
+                padding: 0 140px;
                 border-radius: 0;
                 .navbar-header {
+                    padding-top: 30px;
                     button.navbar-toggle{
                         margin-right: -50px;
                     }
@@ -43,8 +43,7 @@ header {
                         img {
                             width: 85px;
                             margin-top: 10px;
-                            margin-left: -10px;
-                            // text-align: center;
+                            margin-left: 10px;
                             vertical-align: middle;
                         }
                     }
@@ -211,12 +210,11 @@ section.projects {
         ul.row {
             margin-top: 30px;
             li.scenery {
-                // width: 100%;
                 height: 1110/3px;
                 padding: 0;
                 position: relative;
                 cursor: pointer;
-                padding: 0 15px;
+                padding: 10px 15px;
                 &:hover {
                     .scen-mask {
                         transition: opacity 0.5s;
@@ -316,16 +314,15 @@ section.rolling {
     overflow: hidden;
     .container {
         width: 80%;
-        // background: red;
         margin: 0 auto;
         overflow: hidden;
         cursor: move;
-        ul.picture {
-            width: 300%;
-            // height: 200px;
+        ul.row {
+            width: 100%;
             position: relative;
-            // margin-left: -180px;    
-            // transition: all .3s;
+            margin: 0;
+            text-align: center;
+            padding: 0 10px;
             &::after {
                 clear: both;
                 content: "";
@@ -334,13 +331,9 @@ section.rolling {
             li {
                 width: 200px;
                 height: 150px;
-                float: left;
-                margin: 20px 25px;
-                position: relative;
-                top: 0;
-                left: 0;
+                margin: 15px 15px;
                 transition: all 0.5s;
-                // pointer-events: none;
+                padding: 0;
                 img {
                     width: 100%;
                     height: 100%;
@@ -636,6 +629,88 @@ footer.Sprite{
 
 /* 小屏幕（平板，大于等于 768px） */
 @media (min-width: 768px) {
+    header {
+        .bg-mask {
+            nav.navbar-default {
+                .container-fluid {
+                    .navbar-header {
+                        button.navbar-toggle{
+                        a.navbar-brand {
+                            img {
+                                width: 85px;
+                                margin-top: -20px;
+                                margin-left: 10px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                    .navbar-collapse {
+                        ul.navbar-nav {
+                            li {
+                                a {
+                                    
+                                    &:hover {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .container {
+                .row {
+                    .title {
+                        z-index: 10;
+                        text-align: center;
+                        // padding: 100px 0;
+                        margin-top: 150px;
+                        position: relative;
+                        h3 {
+                            color: white;
+                            text-transform: uppercase;
+                            font-size: 10px;
+                            font-weight: 800;
+                            letter-spacing: 3px;
+                            line-height: 1.8em;
+                            margin-bottom: 10px;
+                        }
+                        h1 {
+                            color: white;
+                            font-size: 36px;
+                            font-weight: bolder;
+                            // letter-spacing: 2px;
+                            font-family: Playfair Display, serif;
+    
+                            em {
+                                font-weight: 400;
+                                line-height: 1.5em;
+                            }
+                        }
+                        span {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            border: 1px solid #999;
+                            color: #999;
+                            line-height: 40px;
+                            text-align: center;
+                            cursor: pointer;
+                            position: relative;
+                            top: 100px;
+                            // left: 50%;
+                            z-index: 10;
+                            transition: color 0.3s;
+                            &:hover {
+                                color: white;
+                                border-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     section.projects {
         .container {
             text-align: center;

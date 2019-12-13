@@ -131,7 +131,7 @@
 
 
 
-        
+
         //封装画出小球
         function drawBall(x, y, r, color, fill) {
             ctx.beginPath();
@@ -158,9 +158,9 @@
             var randomNum = Math.round(Math.random() * (n - m) + m);
             return randomNum;
         }
-        
+
         //封装随机浮点数
-    
+
         function randomFloat(m, n) {
             var randomFloat = Math.random() * (n - m) + m;
             return randomFloat;
@@ -396,8 +396,8 @@
             ctx.drawImage(img, balance_base_bg_png.sx, balance_base_bg_png.sy, balance_base_bg_png.sw, balance_base_bg_png.sh, balance_base_bg_png.x, balance_base_bg_png.y, 300, ((300 * game.stageW) / balance_base_bg_png.sh) / 1.5);
             //添加得分
             drawWord('white', game.score, game.center.x - 22, game.center.y - 55);
-            //添加排行
-            drawWord('white', 1, game.center.x , game.center.y -5);
+            //添加排名
+            drawWord('white', randomNumber(0, 50), game.center.x -8, game.center.y - 5);
             //添加不服来再战
             ctx.drawImage(img, again_btn_png.sx, again_btn_png.sy, again_btn_png.sw, again_btn_png.sh, again_btn_png.x, again_btn_png.y, 200, ((200 * game.stageW) / game.stageH) / 1.5);
             // createTitle(200,again_btn_png);
@@ -432,7 +432,7 @@
                 localStorage.score = JSON.stringify([newScore]);
             }
         }
-        
+
 
 
         //游戏主体
@@ -453,63 +453,52 @@
 
         }, 30)
 
-
-        //点击进入游戏事件
-        function enterGame(e) {
-            // console.log(e.pageX, e.pageY);
-            var coordx = e.offsetX >= start_btn_png.x && e.offsetX <= (start_btn_png.x + start_btn_png.sw / 2);
-            var coordy = e.offsetY >= start_btn_png.y && e.offsetY <= (start_btn_png.y + start_btn_png.sh);
-            // console.log(coordx, coordy);
-
-            //当点击到按钮 标题 进入游戏 并删去点击事件
-            if (coordx && coordy) {
-                game.start = true;
-                canvas.removeEventListener('click', enterGame);
-
-                //画布添加点击事件
-                // PC端  判断是否为pc端
-                if (navigator.maxTouchPoints == 0) {
-                    canvas.onclick = function (event) {
-                        event.preventDefault();
-                        // console.log(event);
-                        //当点击我方小球 处罚鼠标移动事件 小球跟随鼠标移动
-                        var myx = event.offsetX <= (myball.x + myball.r) && event.offsetX >= (myball.x - myball.r);
-                        var myy = event.offsetY <= (myball.y + myball.r) && event.offsetY >= (myball.y - myball.r);
-                        if (myx && myy) {
-                            // console.log('点到了');
-                            canvas.onmousemove = function (ev) {
-                                // console.log(ev.offsetX,ev.offsetY);
-                                ev.preventDefault();
-                                myball.x = ev.offsetX;
-                                myball.y = ev.offsetY;
-                                loop.x = ev.offsetX;
-                                loop.y = ev.offsetY;
-                            }
-                        }
-                    }
-                }
-
-                // 移动端
-                if (navigator.maxTouchPoints == 1) {
-                    // console.log(event);
-
-                    canvas.ontouchmove = function (ev) {
-                        ev.preventDefault();
-                        // console.log(ev.changedTouches[0].clientX);
-                        var x = ev.changedTouches[0].clientX;
-                        var y = ev.changedTouches[0].clientY;
-                        myball.x = x;
-                        myball.y = y;
-                        loop.x = x;
-                        loop.y = y;
-                    }
-                }
-
-            }
+        //PC端移动事件触发
+        function moveOurPC(e) {
+            e.preventDefault();
+            myball.x = e.offsetX;
+            myball.y = e.offsetY;
+            loop.x = e.offsetX;
+            loop.y = e.offsetY;
+        }
+        //移动端移动事件触发
+        function moveOur(e) {
+            e.preventDefault();
+            myball.x = e.touches[0].pageX;
+            myball.y = e.touches[0].pageY;
+            loop.x = e.touches[0].pageX;
+            loop.y = e.touches[0].pageY;
         }
 
-        //点击按钮进入游戏
-        canvas.addEventListener('click', enterGame);
+        //球球移动事件
+        canvas.onclick = function (e) {
+            e.preventDefault();
+            if (
+                e.offsetX >= start_btn_png.x &&
+                e.offsetX <=
+                (start_btn_png.x + start_btn_png.sw / 2) &&
+                e.offsetY >= start_btn_png.y &&
+                e.offsetY <=
+                (start_btn_png.y + start_btn_png.sh)
+            ) {
+                game.start = true;
+                if (!navigator.maxTouchPoints) {
+                    canvas.onclick = function (e) {
+                        e.preventDefault();
+                        if (
+                            e.offsetX <= (myball.x + myball.r) && e.offsetX >= (myball.x - myball.r) &&
+                            e.offsetY <= (myball.y + myball.r) && e.offsetY >= (myball.y - myball.r)
+                        ) {
+                            //navigator.maxTouchPoints为0时，PC端 为1移动端
+                            canvas.addEventListener("mousemove", moveOurPC);
+                        }
+                    };
+                } else {
+                    canvas.addEventListener("touchmove", moveOur);
+                }
+            }
+        };
+
 
         //当游戏结束时 点击再战
         function againOne() {

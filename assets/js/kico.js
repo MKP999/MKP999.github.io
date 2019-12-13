@@ -121,7 +121,14 @@ function bk_image(selector) {
     });
 }
 
-// 璇蜂繚鐣欑増鏉冭鏄�
+
 if (window.console && window.console.log) {
     console.log("\n %c Kico Style %c https://www.binkic.com \n\n", "color: #fff; background: #3498db; padding: 5px 0;", "background: #efefef; padding: 5px 0; text-decoration: none;");
 }
+
+$('a').click(function () {
+        //根据a标签的href转换为id选择器，获取id元素所处的位置，并高度减50px（这里根据需要自由设置）
+        $('html,body').animate({
+            scrollTop: ($($(this).attr('path')).offset().top)
+        }, 1000);
+    });

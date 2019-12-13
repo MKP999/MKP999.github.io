@@ -1,11 +1,6 @@
 //header
-// window.onscroll = function (e) {
-//     $('nav.navbar-default').css({'background-color': 'white'});
-//     $('a.navbar-brand img').attr('src','./images/logo.svg') ;
-//     $('ul.navbar-nav li a').css({color : 'black'});
-//   }
 window.onscroll = function(e) {
-    if (window.pageYOffset == 0) {
+    if (window.pageYOffset <= 100) {
         $("nav.navbar-default").css({ "background-color": "transparent" });
         $("a.navbar-brand img").attr("src", "./images/logo-light.svg");
         $("ul.navbar-nav li a").css({ color: "white" });
@@ -66,7 +61,6 @@ if (window.innerWidth >= 578 && window.innerWidth < 768) {
 
 if (window.innerWidth < 578) {
     $("header .bg-mask span").click(function() {
-        // console.log('xxx');
         var y = 0;
         var id = setInterval(function() {
             if (y < 400) {
@@ -92,10 +86,6 @@ $("section.projects li.scenery").mouseenter(function() {
         .slideDown();
 });
 $("section.projects li.scenery").mouseleave(function() {
-    // $('.scen-mask').each(function (con) {
-    //     con.find('h3').css('display','none');
-    //     con.find('h5').css('display','none');
-    //   });
     $(".scen-mask")
         .eq($(this).index())
         .find("h3")
@@ -106,63 +96,18 @@ $("section.projects li.scenery").mouseleave(function() {
         .css("display", "none");
 });
 
-//滚动图
-// $("section.rolling ul.picture li").mousedown(function () {
-
-//     $(document).mousemove(function (e) {
-//         // values: e.clientX, e.clientY, e.pageX, e.pageY
-//         e.preventDefault();
-
-//     });
-// });
-
-// $("section.rolling ul.picture li").mousedown(function(e){
-//     e.pageX
-//     var positionDiv = $(this).offset();
-//     var distenceX = e.pageX - positionDiv.left;
-//     var distenceY = e.pageY - positionDiv.top;
-//     alert(distenceX)
-//     alert(positionDiv.left);
-//     $("section.rolling ul.picture li").mousemove(function(e){
-//       var x = e.pageX - distenceX;
-//     //   var y = e.pageY - distenceY;
-//       if(x<0){
-//         x=0;
-//       }else if(x>$(document).width()-$("section.rolling ul.picture li").outerWidth(true)){
-//         x = $(document).width()-$("section.rolling ul.picture li").outerWidth(true);
-//       }
-//       if(y<0){
-//         y=0;
-//       }else if(y>$(document).height()-$("section.rolling ul.picture li").outerHeight(true)){
-//         y = $(document).height()-$("section.rolling ul.picture li").outerHeight(true);
-//       }
-//       $("section.rolling ul.picture li").eq($(this).index()).css({
-//         'left':x+'px',
-//         'top':y+'px'
-//       });
-//     });
-//     $("section.rolling ul.picture li").mouseup(function(){
-//         $("section.rolling ul.picture li").off('mousemove');
-//     });
-//   });
-
 var piclis = document.querySelectorAll("section.rolling ul.picture>li");
-var pic = document.querySelector("section.rolling ul.picture");
+var pic = document.querySelector("section.rolling ul");
 
 function picmove(e) {
     e.preventDefault();
     var x = e.clientX - this.offsetLeft - this.offsetWidth/2;
-    // var y = e.clientY - this.offsetTop - this.offsetHeight /2 ;
-    // console.log(x);
-    // var ComputedStyleml = getComputedStyle(pic);
     var oriValue = parseInt(pic.style.marginLeft);
-    // console.log(oriValue,x);
     
     pic.style.marginLeft =x + "px";
 }
 pic.onmousedown = function(event) {
     event.preventDefault();
-    // console.log(this);
     document.body.addEventListener("mousemove", picmove);
 
 };

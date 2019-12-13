@@ -339,7 +339,8 @@ Game.prototype.start = function() {
         game.moveAllBullets();
         // 每一帧都更新一下所有敌方飞机的位置
         game.moveAllEnemys();
-
+        //更新我方飞机位置
+        game.players[0].updataView();
         // 检测所有碰撞
         game.checkAllCrash();
         // 检测血条 标记死亡
@@ -399,34 +400,41 @@ buttonStart.onclick = function() {
     game.start();
 };
 
-// 手指拖动的时候 更新我方飞机位置
-if (navigator.maxTouchPoints == 1) {
-    scenceGame.ontouchmove = function(event) {
-        // console.log('xxx');
-        game.players[0].x = event.touches[0].pageX;
-        game.players[0].y = event.touches[0].pageY;
-
-        // 我方飞机移动  根据自身对象的xy重设定位
-        game.players.forEach(function(player) {
-            player.updataView();
-        });
-    };
+//PC端移动事件触发
+function moveOurPC(e) {
+    e.preventDefault();
+    game.players[0].x = event.pageX;
+    game.players[0].y = event.pageY;
 }
-//鼠标移动，更新飞机位置
-if (navigator.maxTouchPoints == 0) {
-    scenceGame.onmousedown = function() {
-        scenceGame.onmousemove = function(event) {
-            event.preventDefault();
-            game.players[0].x = event.pageX;
-            game.players[0].y = event.pageY;
 
-            // 我方飞机移动  根据自身对象的xy重设定位
-            game.players.forEach(function(player) {
-                player.updataView();
-            });
-        };
-    };
+//移动端移动事件触发
+function moveOur(e) {
+    e.preventDefault();
+    game.players[0].x = e.touches[0].pageX;
+    game.players[0].y = e.touches[0].pageY;
 }
+
+scenceGame.onmousedown = function(e) {
+    e.preventDefault();
+    // game.start = true;
+    if (!navigator.maxTouchPoints) {
+        //navigator.maxTouchPoints为0时，PC端 为1移动端
+        scenceGame.addEventListener("mousemove", moveOurPC);
+    } else {
+        scenceGame.addEventListener("touchmove", moveOur);
+    }
+};
+
+scenceGame.ontouchmove = function(event) {
+    //  console.log(event);
+    event.preventDefault();
+    game.players[0].x = event.touches[0].pageX;
+    game.players[0].y = event.touches[0].pageY;
+
+    game.players.forEach(function(player) {
+        player.updataView();
+    });
+};
 
 // 点击游戏场景 暂停开始游戏
 scenceGame.ontouchstart = function(start) {

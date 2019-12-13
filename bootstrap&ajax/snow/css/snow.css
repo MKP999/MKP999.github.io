@@ -34,10 +34,13 @@ header .bg-mask nav.navbar-default {
   border: 0;
 }
 header .bg-mask nav.navbar-default .container-fluid {
-  padding: 20px 140px;
+  padding: 0 140px;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
+}
+header .bg-mask nav.navbar-default .container-fluid .navbar-header {
+  padding-top: 30px;
 }
 header .bg-mask nav.navbar-default .container-fluid .navbar-header button.navbar-toggle {
   margin-right: -50px;
@@ -48,7 +51,7 @@ header .bg-mask nav.navbar-default .container-fluid .navbar-header a.navbar-bran
 header .bg-mask nav.navbar-default .container-fluid .navbar-header a.navbar-brand img {
   width: 85px;
   margin-top: 10px;
-  margin-left: -10px;
+  margin-left: 10px;
   vertical-align: middle;
 }
 header .bg-mask nav.navbar-default .container-fluid .navbar-collapse ul.navbar-nav li a {
@@ -194,7 +197,7 @@ section.projects .container ul.row li.scenery {
   padding: 0;
   position: relative;
   cursor: pointer;
-  padding: 0 15px;
+  padding: 10px 15px;
 }
 section.projects .container ul.row li.scenery:hover .scen-mask {
   -webkit-transition: opacity 0.5s;
@@ -284,33 +287,33 @@ section.rolling .container {
   overflow: hidden;
   cursor: move;
 }
-section.rolling .container ul.picture {
-  width: 300%;
+section.rolling .container ul.row {
+  width: 100%;
   position: relative;
+  margin: 0;
+  text-align: center;
+  padding: 0 10px;
 }
-section.rolling .container ul.picture::after {
+section.rolling .container ul.row::after {
   clear: both;
   content: "";
   display: block;
 }
-section.rolling .container ul.picture li {
+section.rolling .container ul.row li {
   width: 200px;
   height: 150px;
-  float: left;
-  margin: 20px 25px;
-  position: relative;
-  top: 0;
-  left: 0;
+  margin: 15px 15px;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   -moz-transition: all 0.5s;
   transition: all 0.5s;
+  padding: 0;
 }
-section.rolling .container ul.picture li img {
+section.rolling .container ul.row li img {
   width: 100%;
   height: 100%;
 }
-section.rolling .container ul.picture li img:hover {
+section.rolling .container ul.row li img:hover {
   opacity: 0.5;
 }
 section.blog {
@@ -594,6 +597,110 @@ footer.Sprite .copy a {
 }
 /* 小屏幕（平板，大于等于 768px） */
 @media (min-width: 768px) {
+  header {
+    width: 100%;
+    height: 550px;
+    background: url("../images/home-7.jpg") no-repeat;
+    -moz-background-size: cover;
+         background-size: cover;
+  }
+  header .bg-mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, 0.6);
+  }
+  header .bg-mask nav.navbar-default {
+    border-color: transparent;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+    border: 0;
+  }
+  header .bg-mask nav.navbar-default .container-fluid {
+    padding: 0 140px;
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+  }
+  header .bg-mask nav.navbar-default .container-fluid .navbar-header {
+    padding-top: 30px;
+  }
+  header .bg-mask nav.navbar-default .container-fluid .navbar-header button.navbar-toggle {
+    margin-right: -50px;
+  }
+  header .bg-mask nav.navbar-default .container-fluid .navbar-header a.navbar-brand {
+    padding: 0;
+  }
+  header .bg-mask nav.navbar-default .container-fluid .navbar-header a.navbar-brand img {
+    width: 85px;
+    margin-top: -20px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+  header .bg-mask nav.navbar-default .container-fluid .navbar-collapse ul.navbar-nav li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #5f5f55;
+    padding: 6px 14.6px;
+    font-weight: 600;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+    line-height: 2em;
+    font-size: 14px;
+  }
+  header .bg-mask nav.navbar-default .container-fluid .navbar-collapse ul.navbar-nav li a:hover {
+    color: black;
+  }
+  header .bg-mask .container .row .title {
+    z-index: 10;
+    text-align: center;
+    margin-top: 150px;
+    position: relative;
+  }
+  header .bg-mask .container .row .title h3 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.8em;
+    margin-bottom: 10px;
+  }
+  header .bg-mask .container .row .title h1 {
+    color: white;
+    font-size: 36px;
+    font-weight: bolder;
+    font-family: Playfair Display, serif;
+  }
+  header .bg-mask .container .row .title h1 em {
+    font-weight: 400;
+    line-height: 1.5em;
+  }
+  header .bg-mask .container .row .title span {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    border: 1px solid #999;
+    color: #999;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: 100px;
+    z-index: 10;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+  }
+  header .bg-mask .container .row .title span:hover {
+    color: white;
+    border-color: white;
+  }
   section.projects .container {
     text-align: center;
   }
