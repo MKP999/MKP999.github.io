@@ -7,7 +7,6 @@ body {
 .stage {
   width: 200%;
   height: 100%;
-  background: red;
   margin-left: 0%;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -96,6 +95,26 @@ body {
   border: 1px solid black;
   text-align: center;
   line-height: 24px;
+}
+.stage .game .continue {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  opacity: 0;
+  border: 1px solid #333333;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
 }
 .stage .game .dead {
   -webkit-transition: all 0.3s;

@@ -6,7 +6,6 @@ var ranking = document.querySelector(".game .ranking");
 var resurgence = document.querySelector(".game .resurgence");
 var restart = document.querySelector(".game .restart");
 var dead = document.querySelector(".game .dead");
-// var scenceGame = document.querySelector('.stage .game-start button.start')
 
 //
 var typeOurPlane = {
@@ -372,10 +371,13 @@ Game.prototype.start = function() {
     this.state = 1;
     ranking.style.marginTop = -ranking.offsetHeight + "px";
     dead.style.bottom = -dead.offsetHeight + "px";
+    document.querySelector(".game .continue").style.opacity = "0";
 };
 
 Game.prototype.gameOver = function() {
-    this.pause();
+    clearInterval(this.setIntervalId);
+    this.state = 0;
+    document.querySelector(".ranking").style.marginTop = "100px";
     // 显示充值界面
     dead.style.bottom = "100px";
 };
@@ -384,7 +386,7 @@ Game.prototype.gameOver = function() {
 Game.prototype.pause = function() {
     clearInterval(this.setIntervalId);
     this.state = 0;
-    document.querySelector(".ranking").style.marginTop = "100px";
+    document.querySelector(".game .continue").style.opacity = "1";
 };
 
 var game;

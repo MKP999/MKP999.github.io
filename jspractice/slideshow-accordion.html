@@ -7,18 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轮播图与手风琴插件</title>
     <style>
-        html,body{
+        html,
+        body {
             width: 100%;
             height: 100%;
             margin: 0;
-            background: linear-gradient(rgb(214, 250, 12),pink,#9a6ef1);
+            background: linear-gradient(90deg, #67B26F, #4ca2cd);
         }
+
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
         .stage {
-            width: 400px;
+            width: 40%;
             height: 250px;
             position: relative;
             display: inline-block;
-            margin: 50px 100px;
         }
 
         .stage .swiper {
@@ -79,8 +86,13 @@
         }
 
         /* 手风琴 */
+        .accordion {
+            margin: 0 auto;
+            text-align: center;
+        }
+
         .content {
-            width: 800px;
+            width: 60%;
             margin: 100px auto;
             background: red;
             position: relative;
@@ -101,77 +113,113 @@
         .content img:first-child {
             position: static;
         }
+
+        .accordion .control {
+            position: relative;
+            top: -5vh;
+
+        }
+
+        .accordion .control button {
+            padding: 15px 30px;
+            background: rgb(0, 26, 255);
+            color: #fff;
+            font-size: 20px;
+            border-radius: 10px;
+
+        }
     </style>
 </head>
 
 <body>
-    <div class="stage aaa">
-        <div class="swiper">
-            <div class="slider"><img src="./img/a1.png" alt=""></div>
-            <div class="slider"><img src="./img/a2.png" alt=""></div>
-            <div class="slider"><img src="./img/a3.png" alt=""></div>
-            <div class="slider"><img src="./img/a4.png" alt=""></div>
+    <div class="container">
+        <div class="stage aaa">
+            <div class="swiper">
+                <div class="slider"><img src="./img/a1.png" alt=""></div>
+                <div class="slider"><img src="./img/a2.png" alt=""></div>
+                <div class="slider"><img src="./img/a3.png" alt=""></div>
+                <div class="slider"><img src="./img/a4.png" alt=""></div>
 
+            </div>
+
+            <!-- 分类页 -->
+            <div class="Category"></div>
+
+            <!-- 按钮键 -->
+            <div class="button">
+                <div class="next"></div>
+                <div class="prev"></div>
+            </div>
         </div>
 
-        <!-- 分类页 -->
-        <div class="Category"></div>
+        <div class="stage bbb">
+            <div class="swiper">
+                <div class="slider"><img src="./img/a4.png" alt=""></div>
+                <div class="slider"><img src="./img/a2.png" alt=""></div>
+                <div class="slider"><img src="./img/a3.png" alt=""></div>
+                <div class="slider"><img src="./img/a1.png" alt=""></div>
+            </div>
 
-        <!-- 按钮键 -->
-        <div class="button">
-            <div class="next"></div>
-            <div class="prev"></div>
+            <!-- 分类页 -->
+            <div class="Category"></div>
+
+            <!-- 按钮键 -->
+            <div class="button">
+                <div class="next"></div>
+                <div class="prev"></div>
+            </div>
+        </div>
+
+        <div class="stage ccc">
+            <div class="swiper">
+                <div class="slider"><img src="./img/a4.png" alt=""></div>
+                <div class="slider"><img src="./img/a2.png" alt=""></div>
+                <div class="slider"><img src="./img/a3.png" alt=""></div>
+            </div>
+
+            <!-- 分类页 -->
+            <div class="Category"></div>
+
+            <!-- 按钮键 -->
+            <div class="button">
+                <div class="next"></div>
+                <div class="prev"></div>
+            </div>
+        </div>
+
+        <div class="stage ddd">
+            <div class="swiper">
+                <div class="slider"><img src="./img/a1.png" alt=""></div>
+                <div class="slider"><img src="./img/a4.png" alt=""></div>
+                <div class="slider"><img src="./img/a3.png" alt=""></div>
+                <div class="slider"><img src="./img/a2.png" alt=""></div>
+            </div>
+
+            <!-- 分类页 -->
+            <div class="Category"></div>
+
+            <!-- 按钮键 -->
+            <div class="button">
+                <div class="next"></div>
+                <div class="prev"></div>
+            </div>
         </div>
     </div>
-
-    <div class="stage bbb">
-        <div class="swiper">
-            <div class="slider"><img src="./img/a4.png" alt=""></div>
-            <div class="slider"><img src="./img/a2.png" alt=""></div>
-            <div class="slider"><img src="./img/a3.png" alt=""></div>
-            <div class="slider"><img src="./img/a1.png" alt=""></div>
-        </div>
-
-        <!-- 分类页 -->
-        <div class="Category"></div>
-
-        <!-- 按钮键 -->
-        <div class="button">
-            <div class="next"></div>
-            <div class="prev"></div>
-        </div>
-    </div>
-
-
-    <div class="stage ccc">
-        <div class="swiper">
-            <div class="slider"><img src="./img/a1.png" alt=""></div>
-            <div class="slider"><img src="./img/a2.png" alt=""></div>
-            <div class="slider"><img src="./img/a3.png" alt=""></div>
-            <div class="slider"><img src="./img/a4.png" alt=""></div>
-        </div>
-
-        <!-- 分类页 -->
-        <div class="Category"></div>
-
-        <!-- 按钮键 -->
-        <div class="button">
-            <div class="next"></div>
-            <div class="prev"></div>
-        </div>
-    </div>
-
 
     <!-- 手风琴 -->
-    <div class="content">
-        <img src="./img/a1.png" alt="">
-        <img src="./img/a2.png" alt="">
-        <img src="./img/a3.png" alt="">
-        <img src="./img/a4.png" alt="">
-        <img src="./img/a1.png" alt="">
-        <img src="./img/a2.png" alt="">
-        <!-- <img src="./img/a3.png" alt=""> -->
+    <div class="accordion">
+        <div class="content">
+            <img src="./img/a1.png" alt="">
+            <img src="./img/a2.png" alt="">
+            <img src="./img/a3.png" alt="">
+            <img src="./img/a4.png" alt="">
+            <img src="./img/a1.png" alt="">
+            <img src="./img/a2.png" alt="">
+            <!-- <img src="./img/a3.png" alt=""> -->
+        </div>
     </div>
+
+
 
     <script>
         function Myswiper(className, obj) {
@@ -309,43 +357,46 @@
         var myswiperC = new Myswiper('.ccc', {
             createDots: true,
             createButton: false,
-            setTime: {
-                delay: 3000
-            }
+            setTime: true
         });
-
-        // myswiper.createDots();
-        // myswiper.createButton(this.current);
-        // myswiper.setTime(this.current);
-
+        var myswiperC = new Myswiper('.ddd', {
+            createDots: false,
+            createButton: true,
+            setTime: false
+        });
 
         // 手风琴
         var content = document.querySelector('.content');
         var imgs = document.querySelectorAll('.content img');
+        var removeImg = document.querySelector('.control button.remove');
+        var addImg = document.querySelector('.control button.add');
 
-        imgs.forEach(function (e, i) {
-            imgs[i].style.left = (content.offsetWidth / imgs.length) * i + 'px';
+        function exchange() {
+            imgs.forEach(function (e, i) {
+                imgs[i].style.left = (content.offsetWidth / imgs.length) * i + 'px';
 
-            imgs[i].onmouseover = function () {
+                imgs[i].onmouseover = function () {
 
-                console.log(i);
-                for (var j = 0; j < imgs.length; j++) {
+                    for (var j = 0; j < imgs.length; j++) {
 
-                    if (j <= i) {
-                        imgs[j].style.left = ((content.offsetWidth - imgs[0].offsetWidth) / (imgs.length - 1) * j) + 'px';
-                    } else {
-                        imgs[j].style.left = (j - 1) * ((content.offsetWidth - imgs[0].offsetWidth) / (imgs.length - 1)) + imgs[0].offsetWidth + 'px';
+                        if (j <= i) {
+                            imgs[j].style.left = ((content.offsetWidth - imgs[0].offsetWidth) / (imgs.length - 1) * j) + 'px';
+                        } else {
+                            imgs[j].style.left = (j - 1) * ((content.offsetWidth - imgs[0].offsetWidth) / (imgs.length - 1)) + imgs[0].offsetWidth + 'px';
+                        }
+
                     }
-
                 }
-            }
-            imgs[i].onmouseout = function () {
-                for (var j = 0; j < imgs.length; j++) {
-                    imgs[j].style.left = (content.offsetWidth / imgs.length) * j + 'px';
+                imgs[i].onmouseout = function () {
+                    for (var j = 0; j < imgs.length; j++) {
+                        imgs[j].style.left = (content.offsetWidth / imgs.length) * j + 'px';
 
+                    }
                 }
-            }
-        });
+            });
+        }
+        exchange();
+
     </script>
 </body>
 
