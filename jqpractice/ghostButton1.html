@@ -193,7 +193,6 @@
         .border {
             position: relative;
             top: 90px;
-            /* left: 1000px; */
             width: 300px;
             height: 300px;
             border-radius: 50%;
@@ -209,7 +208,7 @@
             height: 300px;
             border-radius: 50%;
             position: absolute;
-            left: 1000px;
+            left: 40%;
         }
 
         .container .content {
@@ -241,7 +240,7 @@
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0px;
+            top: 0;
             left: 0;
             text-align: center;
             background: rgba(0, 0, 0, .6);
@@ -398,6 +397,76 @@
         .btn-3:hover .mask {
             opacity: 1;
         }
+
+        /* 第四个 */
+        .btn-4 {
+            position: absolute;
+            top: 55vh;
+            left: 75%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            transition: all .8s;
+            text-align: center;
+            border-radius: 50%;
+            perspective: 800px;
+        }
+
+        .btn-4 .shrink {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: url('./img/images/6.png') no-repeat center;
+            background-size: 120%;
+            transition: all .8s;
+            margin: 0 auto;
+            border: 20px solid rgba(255, 255, 255, .5);
+            box-sizing: border-box;
+            transform-origin: center;
+        }
+
+        .btn-4 .mask {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all .8s;
+            transform: scale(0.5);
+            background: rgba(0, 0, 0, .6);
+            border-radius: 50%;
+
+        }
+
+        .btn-4 h3 {
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-top: 60px;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .btn-4 p {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            border-top: 1px solid #999;
+            color: #999;
+            font-style: italic;
+
+        }
+
+        .btn-4:hover .shrink {
+            transform: scale(.5);
+            opacity: 0;
+        }
+
+        .btn-4:hover .mask {
+            transform: scale(1);
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -465,7 +534,17 @@
             <p>Description goes here</p>
         </div>
     </div>
+    <!-- 第四个 -->
+    <div class="btn-4">
+        <span></span>
+        <div class="shrink">
 
+        </div>
+        <div class="mask">
+            <h3>Heading <br> here</h3>
+            <p>Description goes here</p>
+        </div>
+    </div>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script>
         //谷歌幽灵按钮
