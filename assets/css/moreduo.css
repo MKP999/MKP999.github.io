@@ -21,14 +21,14 @@ a {
     position: fixed;
     overflow: hidden;
     overflow-y: auto;
-    background: #4b4b4b;
+    background: #333333;
 }
 /* -- 头像 */
 .sidebar .avatar {
     width: 160px;
-    height: 160px;
+    height: 200px;
     margin: 2em auto;
-    background: url('../img/lz3.jpeg') no-repeat center top;
+    /* background: url('../img/a8aa7df7726a759ad4f4d3ac08adc95.jpg') no-repeat center top; */
     background-size: cover;
     border-radius: 100%;
     border: #fff 5px solid;
