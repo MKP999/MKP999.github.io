@@ -3,7 +3,7 @@ var stage = document.querySelector(".stage");
 function stagemove(e) {
     var x = e.clientX - stage.offsetLeft - stage.offsetWidth / 2;
     var y = e.clientY - stage.offsetTop - stage.offsetHeight / 2;
-    stage.style.transform = "rotateX(" + -x / 20 + "deg) rotateY(" + -y / 20 + "deg)";
+    stage.style.transform = "rotateX(" + -y / 20 + "deg) rotateY(" + -x / 20 + "deg)";
 }
 
 document.body.addEventListener("mousemove", stagemove);

@@ -7,6 +7,9 @@ a {
 }
 .wrap {
     max-width: 1000px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 /* 1 - 页眉
 -------------------------------- */
