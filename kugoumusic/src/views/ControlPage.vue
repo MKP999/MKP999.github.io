@@ -28,7 +28,7 @@ export default {
                 this.SingleDetail = JSON.parse(SingleDetail).data;
             } else {
                 this.axios
-                    .get("http://music.kele8.cn/song/detail", {
+                    .get("https://music.kele8.cn/song/detail", {
                         params: {
                             ids: id
                         }
@@ -47,7 +47,7 @@ export default {
                     });
             }
         }
-        // http://music.kele8.cn/song/detail?ids=1405283464
+        // https://music.kele8.cn/song/detail?ids=1405283464
     },
     beforeRouteEnter(to, from, next) {
         // ...

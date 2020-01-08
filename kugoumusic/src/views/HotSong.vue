@@ -121,14 +121,14 @@ export default {
             this.isActive = false;
         },
         getRankingList() {
-            // this.axios.get("http://music.kele8.cn/toplist/detail").then(response => {
+            // this.axios.get("https://music.kele8.cn/toplist/detail").then(response => {
             //     window.console.log(response);
             // });
             let RankingList = localStorage.getItem("RankingList");
             if (RankingList && Date.now() < JSON.parse(RankingList).time + 60 * 60 * 1000) {
                 this.RankingList = JSON.parse(RankingList).data;
             } else {
-                this.axios.get("http://music.kele8.cn/toplist/detail").then(response => {
+                this.axios.get("https://music.kele8.cn/toplist/detail").then(response => {
                     // window.console.log(response.data.list);
                     ({ list: this.RankingList } = response.data);
                     localStorage.setItem(

@@ -54,7 +54,7 @@ export default {
             if (SongCardItems && Date.now() < JSON.parse(SongCardItems).time + 60 * 60 * 1000) {
                 this.SongCardItems = JSON.parse(SongCardItems).data;
             } else {
-                this.axios.get("http://music.kele8.cn/personalized?limit=6").then(response => {
+                this.axios.get("https://music.kele8.cn/personalized?limit=6").then(response => {
                     ({ result: this.SongCardItems } = response.data);
                     localStorage.setItem(
                         "SongCardItems",
@@ -71,7 +71,7 @@ export default {
             if (SingleSongItems && Date.now() < JSON.parse(SingleSongItems).time + 60 * 60 * 1000) {
                 this.SingleSongItems = JSON.parse(SingleSongItems).data;
             } else {
-                this.axios.get("http://music.kele8.cn/personalized/newsong").then(response => {
+                this.axios.get("https://music.kele8.cn/personalized/newsong").then(response => {
                     ({ result: this.SingleSongItems } = response.data);
                     localStorage.setItem(
                         "SingleSongItems",

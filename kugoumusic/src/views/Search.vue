@@ -124,7 +124,7 @@ export default {
             this.isloading = true;
             if (this.isValue !== null) {
                 //单曲搜索
-                this.axios("http://music.kele8.cn/search", {
+                this.axios("https://music.kele8.cn/search", {
                     params: {
                         keywords: text
                     }
@@ -135,7 +135,7 @@ export default {
                     }
                 });
                 //专辑搜索
-                this.axios("http://music.kele8.cn/search/suggest", {
+                this.axios("https://music.kele8.cn/search/suggest", {
                     params: {
                         keywords: text
                     }
@@ -157,7 +157,7 @@ export default {
             if (HotSearchWord && Date.now() < JSON.parse(HotSearchWord).time + 60 * 60 * 1000) {
                 this.HotSearchWord = JSON.parse(HotSearchWord).data;
             } else {
-                this.axios.get("http://music.kele8.cn/search/hot").then(response => {
+                this.axios.get("https://music.kele8.cn/search/hot").then(response => {
                     // window.console.log(response.data.result);
                     ({ hots: this.HotSearchWord } = response.data.result);
                     localStorage.setItem(

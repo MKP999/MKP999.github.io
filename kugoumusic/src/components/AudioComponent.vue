@@ -294,7 +294,7 @@ export default {
                             // window.console.log(MusicListString[index + 1].id);
                             // index = index > MusicListString.length - 1 ? 0 : ++index;
                             this.axios
-                                .get("http://music.kele8.cn/song/detail", {
+                                .get("https://music.kele8.cn/song/detail", {
                                     params: {
                                         ids: MusicListString[index + 1].id
                                     }
@@ -319,7 +319,7 @@ export default {
                     if (MusicListString[index][key] == this.itemObj.id && index > 0) {
                         // index = index < 0  ? MusicListString.length - 1 : --index;
                         this.axios
-                            .get("http://music.kele8.cn/song/detail", {
+                            .get("https://music.kele8.cn/song/detail", {
                                 params: {
                                     ids: MusicListString[index - 1].id
                                 }
@@ -338,7 +338,7 @@ export default {
             let audio = document.querySelector("audio");
             let index = Math.floor(Math.random() * (MusicListString.length - 1));
             this.axios
-                .get("http://music.kele8.cn/song/detail", {
+                .get("https://music.kele8.cn/song/detail", {
                     params: {
                         ids: MusicListString[index].id
                     }
@@ -361,7 +361,7 @@ export default {
                 this.lyric = JSON.parse(lyric).data;
             } else {
                 this.axios
-                    .get("http://music.kele8.cn/lyric", {
+                    .get("https://music.kele8.cn/lyric", {
                         params: {
                             id: this.itemObj.id
                         }

@@ -100,7 +100,7 @@ export default {
             } else {
                 this.isloading = true;
                 this.axios
-                    .get("http://music.kele8.cn/song/detail", {
+                    .get("https://music.kele8.cn/song/detail", {
                         params: {
                             ids: id
                         }
