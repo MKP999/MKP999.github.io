@@ -579,10 +579,10 @@
         //幽灵按钮2
         //当鼠标进去/点击按钮
         $('.stage').mouseenter(function () {
-            $('span.top').animate({ width: 100 + '%' }, function () {
-                $('span.right').animate({ height: 100 + '%' }, function () {
-                    $('span.bottom').animate({ width: 100 + '%' }, function () {
-                        $('span.left').animate({ height: 100 + '%' })
+            $('span.top').animate({ width: 100 + '%' },200, function () {
+                $('span.right').animate({ height: 100 + '%' },200, function () {
+                    $('span.bottom').animate({ width: 100 + '%' },200, function () {
+                        $('span.left').animate({ height: 100 + '%' },200)
 
                     })
                 })
