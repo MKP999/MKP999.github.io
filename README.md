@@ -26,8 +26,13 @@
   + [3d视差卡片](https://MKP999.github.io/CSS3/parallax/)
   + 
 + HTML5
-+ [canvas球球大作战](https://MKP999.github.io/HTML5/ballWar/)
-+ [模拟音乐播放器](https://MKP999.github.io/HTML5/musicAudio/audio.html)
-+ [es6&canvas进度条](https://MKP999.github.io/HTML5/progress-bar.html)
+  + [canvas球球大作战](https://MKP999.github.io/HTML5/ballWar/)
+  + [模拟音乐播放器](https://MKP999.github.io/HTML5/musicAudio/audio.html)
+  + [es6&canvas进度条](https://MKP999.github.io/HTML5/progress-bar.html)
 + 
 + VUE
+  + [酷狗音乐盒](https://mkp999.github.io/kgmusic/)
+  + [品书小说阅读器](https://mkp999.github.io/novel/)
+
++ 小程序
+  + [场库]
