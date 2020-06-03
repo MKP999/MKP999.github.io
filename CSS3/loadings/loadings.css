@@ -346,7 +346,7 @@ ul > li .loading {
 }
 ul > li .loading p {
   display: inline-block;
-  font-size: 48px;
+  font-size: 0.5rem;
   font-family: arial;
   font-weight: 600;
   color: #121212;
